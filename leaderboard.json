@@ -1,11 +1,34 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-27T17:00:00.000Z",
+  "updatedAt": "2026-08-27T17:37:35.744Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
-    "multiplierTiers": [],
-    "roleBonus": { "enabled": true, "multiplier": 1.1 }
+    "multiplierTiers": [
+      {
+        "minimumRuns": 5,
+        "multiplier": 1.1
+      },
+      {
+        "minimumRuns": 15,
+        "multiplier": 1.2
+      },
+      {
+        "minimumRuns": 30,
+        "multiplier": 1.3
+      },
+      {
+        "minimumRuns": 50,
+        "multiplier": 1.4
+      }
+    ],
+    "roleBonus": {
+      "enabled": true,
+      "multiplier": 1.1,
+      "subscribers": true,
+      "moderators": true,
+      "vips": true
+    }
   },
   "players": []
 }
