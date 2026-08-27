@@ -9,8 +9,8 @@
   <meta property="og:description" content="Recordes, runs e multiplicadores da comunidade Z3RGtv.">
   <title>Words on ZTR3AM — Leaderboard</title>
   <link rel="preconnect" href="https://static-cdn.jtvnw.net">
-  <link rel="stylesheet" href="styles.css?v=1">
-  <script src="app.js?v=2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="app.js?v=3" defer></script>
 </head>
 <body>
   <div class="wood-frame" aria-hidden="true"></div>
@@ -23,27 +23,12 @@
       <div id="account-area" class="account-area"></div>
     </header>
 
-    <section id="login-view" class="login-view">
-      <div class="login-card">
-        <p class="eyebrow">CLASSIFICAÇÃO OFICIAL</p>
-        <h1>As melhores palavras<br>ficam para a história.</h1>
-        <p class="login-copy">Entra com a Twitch para consultar recordes, runs, multiplicadores e a tua posição na comunidade.</p>
-        <button id="login-button" class="twitch-button" type="button">
-          <span aria-hidden="true">◈</span> Entrar com a Twitch
-        </button>
-        <p class="privacy-note">O login serve apenas para confirmar a tua identidade Twitch. Nunca guardamos a tua palavra-passe.</p>
-      </div>
-      <div class="letter-showcase" aria-label="Peças de letras decorativas">
-        <span>J</span><span>O</span><span>G</span><span>A</span><span>R</span>
-      </div>
-    </section>
-
-    <section id="leaderboard-view" class="leaderboard-view" hidden>
+    <section id="leaderboard-view" class="leaderboard-view">
       <div class="hero-row">
         <div>
           <p class="eyebrow">HALL OF WORDS</p>
           <h1>Leaderboard</h1>
-          <p id="welcome-copy" class="hero-copy"></p>
+          <p id="welcome-copy" class="hero-copy">Recordes de todos os jogadores da Twitch e do YouTube. O login é opcional e serve para destacar o teu perfil.</p>
         </div>
         <div class="hero-stats" aria-label="Resumo da classificação">
           <div><strong id="player-count">0</strong><span>jogadores</span></div>
@@ -57,7 +42,11 @@
       <div class="toolbar">
         <div>
           <h2>Classificação geral</h2>
-          <p>O melhor resultado de sempre de cada jogador.</p>
+          <p>O melhor resultado de sempre de cada jogador, numa tabela conjunta.</p>
+          <div class="platform-legend" aria-label="Plataformas">
+            <span class="platform-badge twitch"><i aria-hidden="true"></i> Twitch</span>
+            <span class="platform-badge youtube"><i aria-hidden="true"></i> YouTube</span>
+          </div>
         </div>
         <label class="search-box">
           <span class="sr-only">Pesquisar jogador</span>
