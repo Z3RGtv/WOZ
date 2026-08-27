@@ -60,6 +60,10 @@ body::before {
 .brand strong { margin-top: 5px; font: 900 20px Georgia, serif; }
 
 .account-area { min-height: 42px; }
+.account-login-actions { display: flex; align-items: center; gap: 8px; }
+.account-login-button { border: 1px solid #7252bd; border-radius: 8px; padding: 9px 12px; color: #f4edff; background: #442b78; cursor: pointer; font-size: 12px; font-weight: 900; }
+.account-login-button:hover { filter: brightness(1.15); }
+.youtube-coming-soon { padding: 9px 11px; border: 1px solid rgba(255, 78, 78, .35); border-radius: 8px; color: #ffaaa5; background: rgba(117, 22, 22, .24); font-size: 10px; font-weight: 900; letter-spacing: .05em; }
 .account-chip { display: flex; align-items: center; gap: 10px; }
 .account-chip img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--gold); }
 .account-chip strong { display: block; font-size: 14px; }
@@ -129,6 +133,17 @@ tbody tr.is-me { background: rgba(145,71,255,.12); box-shadow: inset 3px 0 var(-
 .badge.sub { color: #fff; background: #7651c9; }
 .badge.vip { color: #2a0723; background: #ef72cf; }
 .badge.mod { color: #062514; background: #55c982; }
+.badge.member { color: #fff; background: #d43b36; }
+.platform-badge { display: inline-flex; align-items: center; gap: 4px; margin-left: 6px; padding: 2px 5px; border-radius: 4px; font-size: 8px; font-weight: 900; vertical-align: 2px; }
+.platform-badge.twitch { color: #fff; background: #6f42c1; }
+.platform-badge.youtube { color: #fff; background: #c9342f; }
+.platform-badge i { position: relative; display: inline-block; width: 10px; height: 8px; font-style: normal; }
+.platform-badge.twitch i { border: 1px solid currentColor; border-radius: 2px; transform: skew(-5deg); }
+.platform-badge.twitch i::after { content: ""; position: absolute; left: 2px; bottom: -3px; width: 3px; height: 3px; border-left: 1px solid currentColor; transform: skew(5deg); }
+.platform-badge.youtube i { border-radius: 3px; background: #fff; }
+.platform-badge.youtube i::after { content: ""; position: absolute; left: 4px; top: 2px; border-left: 3px solid #c9342f; border-top: 2px solid transparent; border-bottom: 2px solid transparent; }
+.platform-legend { display: flex; gap: 6px; margin-top: 10px; }
+.platform-legend .platform-badge { margin-left: 0; padding: 4px 7px; font-size: 9px; }
 .score { color: var(--gold); font: 800 17px Georgia, serif; white-space: nowrap; }
 .multiplier { display: inline-block; min-width: 48px; padding: 5px 8px; border-radius: 6px; color: #84e1cd; background: rgba(52,137,119,.18); font-weight: 900; }
 .muted { color: var(--muted); }
