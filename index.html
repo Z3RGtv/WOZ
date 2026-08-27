@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082f2c">
+  <meta name="description" content="Classificação oficial do Words on ZTR3AM.">
+  <meta property="og:title" content="Words on ZTR3AM — Leaderboard">
+  <meta property="og:description" content="Recordes, runs e multiplicadores da comunidade Z3RGtv.">
+  <title>Words on ZTR3AM — Leaderboard</title>
+  <link rel="preconnect" href="https://static-cdn.jtvnw.net">
+  <link rel="stylesheet" href="styles.css?v=1">
+  <script src="app.js?v=1" defer></script>
+</head>
+<body>
+  <div class="wood-frame" aria-hidden="true"></div>
+  <main class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Words on ZTR3AM">
+        <span class="brand-tile">W</span>
+        <span><small>WORDS ON</small><strong>ZTR3AM</strong></span>
+      </a>
+      <div id="account-area" class="account-area"></div>
+    </header>
+
+    <section id="login-view" class="login-view">
+      <div class="login-card">
+        <p class="eyebrow">CLASSIFICAÇÃO OFICIAL</p>
+        <h1>As melhores palavras<br>ficam para a história.</h1>
+        <p class="login-copy">Entra com a Twitch para consultar recordes, runs, multiplicadores e a tua posição na comunidade.</p>
+        <button id="login-button" class="twitch-button" type="button">
+          <span aria-hidden="true">◈</span> Entrar com a Twitch
+        </button>
+        <p class="privacy-note">O login serve apenas para confirmar a tua identidade Twitch. Nunca guardamos a tua palavra-passe.</p>
+      </div>
+      <div class="letter-showcase" aria-label="Peças de letras decorativas">
+        <span>J</span><span>O</span><span>G</span><span>A</span><span>R</span>
+      </div>
+    </section>
+
+    <section id="leaderboard-view" class="leaderboard-view" hidden>
+      <div class="hero-row">
+        <div>
+          <p class="eyebrow">HALL OF WORDS</p>
+          <h1>Leaderboard</h1>
+          <p id="welcome-copy" class="hero-copy"></p>
+        </div>
+        <div class="hero-stats" aria-label="Resumo da classificação">
+          <div><strong id="player-count">0</strong><span>jogadores</span></div>
+          <div><strong id="top-score">0</strong><span>recorde</span></div>
+          <div><strong id="updated-at">—</strong><span>atualizada</span></div>
+        </div>
+      </div>
+
+      <section id="my-profile" class="my-profile" hidden></section>
+
+      <div class="toolbar">
+        <div>
+          <h2>Classificação geral</h2>
+          <p>O melhor resultado de sempre de cada jogador.</p>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">Pesquisar jogador</span>
+          <input id="search-input" type="search" autocomplete="off" placeholder="Pesquisar jogador…">
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Jogador</th>
+              <th scope="col">Recorde</th>
+              <th scope="col">Melhor nível</th>
+              <th scope="col">Runs</th>
+              <th scope="col">Multiplicador</th>
+              <th scope="col">Última run</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+        <div id="empty-state" class="empty-state" hidden>Nenhum jogador encontrado.</div>
+      </div>
+    </section>
+
+    <div id="status-message" class="status-message" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>
