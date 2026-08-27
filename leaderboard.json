@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-27T18:05:50.512Z",
+  "updatedAt": "2026-08-27T19:00:34.579Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -30,5 +30,195 @@
       "vips": true
     }
   },
-  "players": []
+  "players": [
+    {
+      "id": "twitch:164609804",
+      "name": "soniagoncalves",
+      "maxPoints": 86.9,
+      "lastRunPoints": 86.9,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1.1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1.1,
+      "roles": {
+        "subscriber": false,
+        "moderator": true,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    },
+    {
+      "id": "twitch:491270065",
+      "name": "manodrico",
+      "maxPoints": 83.6,
+      "lastRunPoints": 83.6,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1.1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1.1,
+      "roles": {
+        "subscriber": true,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    },
+    {
+      "id": "twitch:645555689",
+      "name": "sheisdani",
+      "maxPoints": 55,
+      "lastRunPoints": 55,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1.1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1.1,
+      "roles": {
+        "subscriber": false,
+        "moderator": true,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    },
+    {
+      "id": "twitch:577905142",
+      "name": "k1ngpt14",
+      "maxPoints": 45,
+      "lastRunPoints": 45,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    },
+    {
+      "id": "twitch:972248156",
+      "name": "marquesrcarol",
+      "maxPoints": 41.8,
+      "lastRunPoints": 41.8,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1.1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1.1,
+      "roles": {
+        "subscriber": true,
+        "moderator": true,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    },
+    {
+      "id": "twitch:423908473",
+      "name": "garzia17",
+      "maxPoints": 20,
+      "lastRunPoints": 20,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    },
+    {
+      "id": "twitch:1352711259",
+      "name": "igl_migaas",
+      "maxPoints": 9,
+      "lastRunPoints": 9,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    },
+    {
+      "id": "twitch:428320452",
+      "name": "ipowerlz",
+      "maxPoints": 8,
+      "lastRunPoints": 8,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    },
+    {
+      "id": "twitch:815496714",
+      "name": "ganasonic_pt",
+      "maxPoints": 5,
+      "lastRunPoints": 5,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 6,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1787857234576
+    }
+  ]
 }
