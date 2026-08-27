@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-27T17:00:00.000Z",
+  "game": {
+    "name": "Words on ZTR3AM",
+    "minimumLevelForRun": 5,
+    "multiplierTiers": [],
+    "roleBonus": { "enabled": true, "multiplier": 1.1 }
+  },
+  "players": []
+}
