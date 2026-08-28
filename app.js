@@ -50,11 +50,11 @@ const DEFAULT_POWERUPS = [
   { id: 'next_hint_extra_letter', name: 'Pista Mais Nítida', icon: '🔍', effectLabel: '+1 letra já', rarity: 'rare', minimumLevel: 2, scope: 'NEXT_LEVEL', description: 'No próximo nível, mostra mais uma letra no número de palavras já melhorado (máximo 4).' },
   { id: 'next_target_reduction', name: 'Meta Acessível', icon: '✂️', effectLabel: '−10% meta', rarity: 'rare', minimumLevel: 2, scope: 'NEXT_LEVEL', description: 'Corta 10% da meta necessária do próximo nível e mostra o corte no marcador.' },
   { id: 'hint_letters_plus_one', name: 'Pista Reforçada', icon: '🔎', effectLabel: '+1 letra', rarity: 'epic', minimumLevel: 4, scope: 'RUN', maxValue: 4, description: 'As palavras com pista mostram mais uma letra em todos os próximos níveis.' },
-  { id: 'permanent_extra_time', name: 'Relógio Melhorado', icon: '🕰️', effectLabel: '+15s sempre', rarity: 'epic', minimumLevel: 4, scope: 'RUN', maxStacks: 8, description: 'Todos os próximos níveis recebem mais 15 segundos.' },
+  { id: 'permanent_extra_time', name: 'Relógio Melhorado', icon: '🕰️', effectLabel: '+15s sempre', rarity: 'epic', minimumLevel: 4, scope: 'RUN', maxStacks: 3, maxValue: 45000, description: 'Todos os próximos níveis recebem mais 15 segundos (acumula até +45s).' },
   { id: 'next_head_start', name: 'Arranque Lançado', icon: '🚀', effectLabel: '+10% arranque', rarity: 'epic', minimumLevel: 4, scope: 'NEXT_LEVEL', description: 'O próximo nível começa com 10% da meta já preenchida.' },
   { id: 'next_hint_all_words', name: 'Tabuleiro Iluminado', icon: '💡', effectLabel: 'Todas', rarity: 'legendary', minimumLevel: 7, scope: 'NEXT_LEVEL', description: 'Revela uma letra em todas as palavras apenas no próximo nível.' },
   { id: 'permanent_target_reduction', name: 'Lâmina da Meta', icon: '🗡️', effectLabel: '−5% sempre', rarity: 'legendary', minimumLevel: 7, scope: 'RUN', maxStacks: 3, maxValue: 0.15, description: 'Corta 5% da meta de todos os próximos níveis para sempre; acumula até ao corte máximo de 15%.' },
-  { id: 'long_word_boost', name: 'Mestre das Palavras', icon: '🏆', effectLabel: '6+ ×1,5', rarity: 'legendary', minimumLevel: 7, scope: 'RUN', maxStacks: 3, description: 'Palavras com 6 ou mais letras dão ×1,5 de progresso.' },
+  { id: 'long_word_boost', name: 'Mestre das Palavras', icon: '🏆', effectLabel: '6+ ×1,25', rarity: 'legendary', minimumLevel: 7, scope: 'RUN', maxStacks: 2, maxValue: 1.5, description: 'Palavras com 6 ou mais letras dão bónus de ×1,25 de progresso (acumula até ao máximo de ×1,5 nesta run).' },
 ];
 
 const RARITY_LABELS = {
