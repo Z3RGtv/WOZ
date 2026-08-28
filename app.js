@@ -382,7 +382,8 @@ function openPlayerHistory(playerId) {
 
   let personalSection = '';
   if (isMe) {
-    const trackedRuns = Number(player.trackedRuns) || (player.runHistory ?? []).length;
+    const hasLifetimeTotals = Number.isFinite(Number(player.trackedRuns)) && Number(player.trackedRuns) > 0;
+    const trackedRuns = hasLifetimeTotals ? Number(player.trackedRuns) : (player.runHistory ?? []).length;
     const totalWords = Number(player.totalWordsFound) || (player.runHistory ?? []).reduce((sum, r) => sum + (Number(r.wordsFound) || 0), 0);
     const totalBasePoints = Number(player.totalBasePoints) || (player.runHistory ?? []).reduce((sum, r) => sum + (Number(r.basePoints) || 0), 0);
     const totalLevels = Number(player.totalLevelsReached) || (player.runHistory ?? []).reduce((sum, r) => sum + (Number(r.levelReached) || 0), 0);
@@ -410,13 +411,18 @@ function openPlayerHistory(playerId) {
       </div>`;
     }
 
+    const statisticsScope = hasLifetimeTotals
+      ? 'Totais históricos completos'
+      : `Análise baseada nas ${trackedRuns} runs detalhadas disponíveis`;
+
     personalSection = `<div class="personal-view-banner">⭐ O Teu Perfil Autenticado · Estatísticas Avançadas</div>
+      <p class="personal-statistics-scope">${statisticsScope}</p>
       <div class="personal-insights-grid is-detailed">
         <div class="insight-box"><strong>${player.runs}</strong><span>runs válidas</span></div>
-        <div class="insight-box"><strong>${totalWords}</strong><span>palavras no total</span></div>
-        <div class="insight-box"><strong>${avgWordsPerRun}</strong><span>palavras / run</span></div>
-        <div class="insight-box"><strong>${avgPointsPerRun}</strong><span>pontos-base / run</span></div>
-        <div class="insight-box"><strong>${avgLevel}</strong><span>nível médio</span></div>
+        <div class="insight-box"><strong>${totalWords}</strong><span>${hasLifetimeTotals ? 'palavras no total' : 'palavras analisadas'}</span></div>
+        <div class="insight-box"><strong>${avgWordsPerRun}</strong><span>palavras / run analisada</span></div>
+        <div class="insight-box"><strong>${avgPointsPerRun}</strong><span>pontos / run analisada</span></div>
+        <div class="insight-box"><strong>${avgLevel}</strong><span>nível médio analisado</span></div>
         <div class="insight-box"><strong>${longestWord ? escapeHtml(longestWord.toLocaleUpperCase('pt-PT')) : '—'}</strong><span>maior palavra</span></div>
       </div>
       ${runTrendMarkup(recentRuns)}
