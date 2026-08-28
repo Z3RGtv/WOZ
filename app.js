@@ -1,4 +1,5 @@
 const TWITCH_CLIENT_ID = '3rg5uodkyj3s4oa9eec66td49uc1qt';
+const GOOGLE_CLIENT_ID = '128990685472-2ef08a8s9n0ah76sd3nikru5am2vf3n7.apps.googleusercontent.com';
 const REDIRECT_URI = 'https://z3rgtv.github.io/WOZ/';
 const TOKEN_KEY = 'woz_twitch_access_token';
 const YOUTUBE_USER_KEY = 'woz_youtube_user';
@@ -141,9 +142,18 @@ function platformBadge(player) {
 }
 
 function avatarMarkup(player) {
-  const profile = platformOf(player) === 'twitch' ? twitchProfiles.get(externalId(player)) : null;
-  const image = safeImageUrl(profile?.profile_image_url || player.profileImageUrl);
-  if (image) return `<img src="${image}" alt="" loading="lazy">`;
+  if (platformOf(player) === 'twitch') {
+    const profile = twitchProfiles.get(externalId(player));
+    const image = safeImageUrl(profile?.profile_image_url || player.profileImageUrl);
+    if (image) return `<img src="${image}" alt="" loading="lazy">`;
+  } else if (platformOf(player) === 'youtube') {
+    if (playerIsMe(player) && youtubeUser?.picture) {
+      const image = safeImageUrl(youtubeUser.picture);
+      if (image) return `<img src="${image}" alt="" loading="lazy">`;
+    }
+    const image = safeImageUrl(player.profileImageUrl);
+    if (image) return `<img src="${image}" alt="" loading="lazy">`;
+  }
   const initial = escapeHtml(String(player.name || '?').slice(0, 1).toLocaleUpperCase('pt-PT'));
   return `<span class="avatar-fallback" aria-hidden="true">${initial}</span>`;
 }
@@ -287,20 +297,60 @@ function renderMyProfile() {
     <div class="profile-stat"><strong>x${Number(player.multiplier || 1).toFixed(1)}</strong><span>multiplicador</span></div>`;
 }
 
-function renderSignedOutAccount() {
-  elements.accountArea.innerHTML = '<div class="account-login-actions"><button id="header-twitch-login" class="account-login-button" type="button">Entrar com Twitch</button><button id="header-youtube-login" class="account-login-button youtube" type="button">Entrar com YouTube</button></div>';
-  document.querySelector('#header-twitch-login').addEventListener('click', beginTwitchLogin);
-  document.querySelector('#header-youtube-login').addEventListener('click', () => {
+function beginGoogleLogin() {
+  if (window.google?.accounts?.oauth2) {
+    const client = window.google.accounts.oauth2.initTokenClient({
+      client_id: GOOGLE_CLIENT_ID,
+      scope: 'https://www.googleapis.com/auth/userinfo.profile',
+      callback: async (tokenResponse) => {
+        if (tokenResponse && tokenResponse.access_token) {
+          try {
+            elements.status.textContent = 'A autenticar com a Google…';
+            const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+              headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+            });
+            if (res.ok) {
+              const profile = await res.json();
+              youtubeUser = {
+                id: profile.sub,
+                name: profile.name,
+                picture: profile.picture,
+                platform: 'youtube',
+              };
+              sessionStorage.setItem(YOUTUBE_USER_KEY, JSON.stringify(youtubeUser));
+              renderAccount();
+              renderMyProfile();
+              renderRows(elements.search.value);
+              elements.status.textContent = '';
+            }
+          } catch (err) {
+            elements.status.textContent = 'Falha ao autenticar com a Google. Tenta novamente.';
+            elements.status.classList.add('error');
+          }
+        }
+      },
+    });
+    client.requestAccessToken();
+  } else {
     elements.youtubeDialog.showModal();
     elements.youtubeInput.focus();
-  });
+  }
+}
+
+function renderSignedOutAccount() {
+  elements.accountArea.innerHTML = '<div class="account-login-actions"><button id="header-twitch-login" class="account-login-button" type="button">Entrar com Twitch</button><button id="header-youtube-login" class="account-login-button youtube" type="button">Entrar com Google / YouTube</button></div>';
+  document.querySelector('#header-twitch-login').addEventListener('click', beginTwitchLogin);
+  document.querySelector('#header-youtube-login').addEventListener('click', beginGoogleLogin);
 }
 
 function renderAccount() {
   if (twitchUser) {
     elements.accountArea.innerHTML = `<div class="account-chip"><img src="${safeImageUrl(twitchUser.profile_image_url)}" alt=""><div><strong>${escapeHtml(twitchUser.display_name)}</strong><button id="logout-button" type="button">Terminar sessão</button></div></div>`;
   } else if (youtubeUser) {
-    elements.accountArea.innerHTML = `<div class="account-chip"><span class="avatar-fallback youtube">${escapeHtml(youtubeUser.name.slice(0, 1).toUpperCase())}</span><div><strong>${escapeHtml(youtubeUser.name)}</strong><button id="logout-button" type="button">Terminar sessão</button></div></div>`;
+    const avatar = youtubeUser.picture
+      ? `<img src="${safeImageUrl(youtubeUser.picture)}" alt="">`
+      : `<span class="avatar-fallback youtube">${escapeHtml(youtubeUser.name.slice(0, 1).toUpperCase())}</span>`;
+    elements.accountArea.innerHTML = `<div class="account-chip">${avatar}<div><strong>${escapeHtml(youtubeUser.name)}</strong><button id="logout-button" type="button">Terminar sessão</button></div></div>`;
   }
   document.querySelector('#logout-button')?.addEventListener('click', () => {
     sessionStorage.removeItem(TOKEN_KEY);
