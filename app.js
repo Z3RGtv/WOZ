@@ -14,6 +14,9 @@ const elements = {
   playerCount: document.querySelector('#player-count'),
   topScore: document.querySelector('#top-score'),
   updatedAt: document.querySelector('#updated-at'),
+  historyDialog: document.querySelector('#player-history-dialog'),
+  historyContent: document.querySelector('#player-history-content'),
+  historyClose: document.querySelector('#history-close'),
 };
 
 let leaderboard = [];
@@ -136,6 +139,45 @@ function formatPoints(value) {
   return new Intl.NumberFormat('pt-PT', { maximumFractionDigits: 2 }).format(Number(value) || 0);
 }
 
+function formatRunDate(value) {
+  if (!Number(value)) return 'Data indisponível';
+  return new Intl.DateTimeFormat('pt-PT', {
+    day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit',
+  }).format(new Date(Number(value)));
+}
+
+function runMarkup(run, label = '') {
+  if (!run) return '<p class="history-empty">Ainda não existe uma run registada.</p>';
+  const hasDetailedStats = Number(run.wordsFound) > 0 || Boolean(run.longestWord);
+  return `<article class="history-run-card">
+    <div class="history-run-heading"><div>${label ? `<span>${escapeHtml(label)}</span>` : ''}<strong>Nível ${Number(run.levelReached) || '—'}</strong></div><time>${escapeHtml(formatRunDate(run.endedAt))}</time></div>
+    <div class="history-run-stats">
+      <div><strong>${formatPoints(run.points)}</strong><span>pontos atuais</span></div>
+      <div><strong>${formatPoints(run.basePoints)}</strong><span>pontos-base</span></div>
+      <div><strong>${hasDetailedStats ? Number(run.wordsFound) : '—'}</strong><span>palavras</span></div>
+      <div><strong>${run.longestWord ? escapeHtml(String(run.longestWord).toLocaleUpperCase('pt-PT')) : '—'}</strong><span>maior palavra</span></div>
+      <div><strong>${hasDetailedStats ? Number(run.averageWordLength || 0).toFixed(1).replace('.', ',') : '—'}</strong><span>média de letras</span></div>
+    </div>
+    ${hasDetailedStats ? '' : '<p class="history-legacy-note">Este recorde é anterior à introdução das estatísticas detalhadas.</p>'}
+  </article>`;
+}
+
+function openPlayerHistory(playerId) {
+  const player = leaderboard.find((candidate) => String(candidate.id) === String(playerId));
+  if (!player) return;
+  const platform = platformOf(player);
+  const recentRuns = Array.isArray(player.runHistory) ? player.runHistory.slice(0, 5) : [];
+  elements.historyContent.innerHTML = `<header class="history-profile-header">
+    ${avatarMarkup(player)}
+    <div><span class="eyebrow">PERFIL DO JOGADOR</span><h2 id="history-title">${escapeHtml(player.name)}</h2><div class="badges">${platformBadge(player)}${roleBadges(player.roles, platform)}</div></div>
+    <div class="history-profile-score"><strong>${formatPoints(player.maxPoints)}</strong><span>recorde atual · x${Number(player.multiplier || 1).toFixed(1)}</span></div>
+  </header>
+  <p class="history-role-note">Os cargos e os recordes são recalculados quando o jogador volta a escrever no chat. Ganhar ou perder SUB, VIP, MOD ou membro YouTube altera também os resultados anteriores.</p>
+  <section class="history-best"><h3>Melhor run</h3>${runMarkup(player.bestRun, 'RECORDE PESSOAL')}</section>
+  <section class="history-recent"><h3>Últimas ${Math.min(5, recentRuns.length)} runs</h3>${recentRuns.length ? recentRuns.map((run, index) => runMarkup(run, `RUN ${player.runs - index}`)).join('') : '<p class="history-empty">Ainda não existem runs detalhadas.</p>'}</section>`;
+  elements.historyDialog.showModal();
+}
+
 function playerIsMe(player) {
   return Boolean(twitchUser && platformOf(player) === 'twitch' && externalId(player) === String(twitchUser.id));
 }
@@ -148,7 +190,7 @@ function renderRows(filter = '') {
     const platform = platformOf(player);
     return `<tr class="${playerIsMe(player) ? 'is-me' : ''}">
       <td class="rank ${position <= 3 ? 'top' : ''}">${position}</td>
-      <td><div class="player-cell">${avatarMarkup(player)}<div><div class="player-name">${escapeHtml(player.name)}${platformBadge(player)}</div><div class="badges">${roleBadges(player.roles, platform)}</div></div></div></td>
+      <td><div class="player-cell">${avatarMarkup(player)}<div><div class="player-name"><button class="player-profile-button" type="button" data-player-id="${escapeHtml(player.id)}">${escapeHtml(player.name)}</button>${platformBadge(player)}</div><div class="badges">${roleBadges(player.roles, platform)}</div></div></div></td>
       <td class="score">${formatPoints(player.maxPoints)} pts</td>
       <td>Nível ${player.bestLevel || '—'}</td>
       <td>${player.runs}</td>
@@ -213,6 +255,14 @@ function renderPublicLeaderboard() {
 
 async function initialize() {
   elements.search.addEventListener('input', () => renderRows(elements.search.value));
+  elements.body.addEventListener('click', (event) => {
+    const button = event.target.closest('.player-profile-button');
+    if (button) openPlayerHistory(button.dataset.playerId);
+  });
+  elements.historyClose.addEventListener('click', () => elements.historyDialog.close());
+  elements.historyDialog.addEventListener('click', (event) => {
+    if (event.target === elements.historyDialog) elements.historyDialog.close();
+  });
   try {
     readOAuthResponse();
     elements.status.textContent = 'A carregar a classificação…';
