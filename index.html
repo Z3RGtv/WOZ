@@ -79,5 +79,18 @@
     <button id="history-close" class="history-close" type="button" aria-label="Fechar histórico">×</button>
     <div id="player-history-content"></div>
   </dialog>
+
+  <dialog id="youtube-login-dialog" class="youtube-login-dialog" aria-labelledby="youtube-dialog-title">
+    <button id="youtube-login-close" class="history-close" type="button" aria-label="Fechar">×</button>
+    <div class="youtube-login-content">
+      <span class="platform-badge youtube"><i aria-hidden="true"></i> YouTube</span>
+      <h3 id="youtube-dialog-title">Identificar Conta YouTube</h3>
+      <p>Escreve o teu nome de utilizador ou canal do YouTube para veres o teu histórico completo:</p>
+      <form id="youtube-login-form">
+        <input id="youtube-username-input" type="text" placeholder="Ex: @NomeDoCanal ou Nome" required autocomplete="off">
+        <button type="submit" class="account-login-button youtube">Entrar e Ver Perfil</button>
+      </form>
+    </div>
+  </dialog>
 </body>
 </html>
