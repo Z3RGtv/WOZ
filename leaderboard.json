@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-28T01:17:32.551Z",
+  "updatedAt": "2026-08-28T05:18:01.140Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -28,7 +28,165 @@
       "subscribers": true,
       "moderators": true,
       "vips": true
-    }
+    },
+    "powerUps": [
+      {
+        "id": "score_multiplier_11",
+        "name": "Pontuação Afinada",
+        "icon": "🎯",
+        "rarity": "rare",
+        "effectLabel": "×1,1",
+        "scope": "RUN",
+        "minimumLevel": 2,
+        "description": "Soma +0,1 aos pontos de progresso até ao limite máximo de ×1,3 nesta run.",
+        "maxStacks": 3,
+        "maxValue": 1.3
+      },
+      {
+        "id": "hint_words_plus_one",
+        "name": "Olhar Mais Atento",
+        "icon": "👓",
+        "rarity": "rare",
+        "effectLabel": "+1 palavra",
+        "scope": "RUN",
+        "minimumLevel": 2,
+        "description": "Uma letra fica visível em mais uma palavra de todos os próximos níveis.",
+        "maxStacks": 1,
+        "maxValue": 4
+      },
+      {
+        "id": "hint_letters_plus_one",
+        "name": "Pista Reforçada",
+        "icon": "🔎",
+        "rarity": "epic",
+        "effectLabel": "+1 letra",
+        "scope": "RUN",
+        "minimumLevel": 4,
+        "description": "As palavras com pista mostram mais uma letra em todos os próximos níveis.",
+        "maxStacks": 1,
+        "maxValue": 4
+      },
+      {
+        "id": "next_hint_one_word",
+        "name": "Pequena Pista",
+        "icon": "👁️",
+        "rarity": "common",
+        "effectLabel": "1 pista",
+        "scope": "NEXT_LEVEL",
+        "minimumLevel": 2,
+        "description": "Revela uma letra aleatória numa palavra do próximo nível.",
+        "maxStacks": 1,
+        "maxValue": null
+      },
+      {
+        "id": "next_hint_two_words",
+        "name": "Pista Dupla",
+        "icon": "👀",
+        "rarity": "common",
+        "effectLabel": "2 pistas",
+        "scope": "NEXT_LEVEL",
+        "minimumLevel": 2,
+        "description": "Revela uma letra aleatória em duas palavras do próximo nível.",
+        "maxStacks": 1,
+        "maxValue": null
+      },
+      {
+        "id": "next_hint_extra_letter",
+        "name": "Pista Mais Nítida",
+        "icon": "🔍",
+        "rarity": "rare",
+        "effectLabel": "+1 letra já",
+        "scope": "NEXT_LEVEL",
+        "minimumLevel": 2,
+        "description": "No próximo nível, mostra mais uma letra no número de palavras já melhorado (máximo 4).",
+        "maxStacks": 1,
+        "maxValue": null
+      },
+      {
+        "id": "next_hint_all_words",
+        "name": "Tabuleiro Iluminado",
+        "icon": "💡",
+        "rarity": "legendary",
+        "effectLabel": "Todas",
+        "scope": "NEXT_LEVEL",
+        "minimumLevel": 7,
+        "description": "Revela uma letra em todas as palavras apenas no próximo nível.",
+        "maxStacks": 1,
+        "maxValue": null
+      },
+      {
+        "id": "next_extra_time",
+        "name": "Fôlego Extra",
+        "icon": "⏱️",
+        "rarity": "common",
+        "effectLabel": "+15s",
+        "scope": "NEXT_LEVEL",
+        "minimumLevel": 2,
+        "description": "Acrescenta 15 segundos ao próximo nível.",
+        "maxStacks": 1,
+        "maxValue": null
+      },
+      {
+        "id": "permanent_extra_time",
+        "name": "Relógio Melhorado",
+        "icon": "🕰️",
+        "rarity": "epic",
+        "effectLabel": "+15s sempre",
+        "scope": "RUN",
+        "minimumLevel": 4,
+        "description": "Todos os próximos níveis recebem mais 15 segundos (acumula até +45s).",
+        "maxStacks": 3,
+        "maxValue": 45000
+      },
+      {
+        "id": "next_target_reduction",
+        "name": "Meta Acessível",
+        "icon": "✂️",
+        "rarity": "rare",
+        "effectLabel": "−10% meta",
+        "scope": "NEXT_LEVEL",
+        "minimumLevel": 2,
+        "description": "Corta 10% da meta necessária do próximo nível e mostra o corte no marcador.",
+        "maxStacks": 1,
+        "maxValue": null
+      },
+      {
+        "id": "permanent_target_reduction",
+        "name": "Lâmina da Meta",
+        "icon": "🗡️",
+        "rarity": "legendary",
+        "effectLabel": "−5% sempre",
+        "scope": "RUN",
+        "minimumLevel": 7,
+        "description": "Corta 5% da meta de todos os próximos níveis para sempre; acumula até ao corte máximo de 15%.",
+        "maxStacks": 3,
+        "maxValue": 0.15
+      },
+      {
+        "id": "long_word_boost",
+        "name": "Mestre das Palavras",
+        "icon": "🏆",
+        "rarity": "legendary",
+        "effectLabel": "6+ ×1,25",
+        "scope": "RUN",
+        "minimumLevel": 7,
+        "description": "Palavras com 6 ou mais letras dão bónus de ×1,25 de progresso (acumula até ao máximo de ×1,5 nesta run).",
+        "maxStacks": 2,
+        "maxValue": 1.5
+      },
+      {
+        "id": "next_head_start",
+        "name": "Arranque Lançado",
+        "icon": "🚀",
+        "rarity": "epic",
+        "effectLabel": "+10% arranque",
+        "scope": "NEXT_LEVEL",
+        "minimumLevel": 4,
+        "description": "O próximo nível começa com 10% da meta já preenchida.",
+        "maxStacks": 1,
+        "maxValue": null
+      }
+    ]
   },
   "players": [
     {
