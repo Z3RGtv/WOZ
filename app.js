@@ -243,16 +243,28 @@ function openPlayerHistory(playerId) {
   }
 
   elements.historyContent.innerHTML = `<header class="history-profile-header">
-    ${avatarMarkup(player)}
-    <div><span class="eyebrow">${isMe ? 'O TEU PERFIL' : 'PERFIL DO JOGADOR'}</span><h2 id="history-title">${escapeHtml(player.name)}</h2><div class="badges">${platformBadge(player)}${roleBadges(player.roles, platform)}</div></div>
-    <div class="history-profile-score"><strong>${formatPoints(player.maxPoints)}</strong><span>recorde atual · x${Number(player.multiplier || 1).toFixed(1)}</span></div>
+    <div class="history-profile-info">
+      ${avatarMarkup(player)}
+      <div class="history-profile-text">
+        <span class="eyebrow">${isMe ? 'O TEU PERFIL' : 'PERFIL DO JOGADOR'}</span>
+        <h2 id="history-title">${escapeHtml(player.name)}</h2>
+        <div class="badges">${platformBadge(player)}${roleBadges(player.roles, platform)}</div>
+      </div>
+    </div>
+    <div class="history-profile-score">
+      <strong>${formatPoints(player.maxPoints)}</strong>
+      <span>recorde atual · x${Number(player.multiplier || 1).toFixed(1)}</span>
+    </div>
   </header>
   ${personalSection}
   <p class="history-role-note">Os cargos e os recordes são recalculados quando o jogador volta a escrever no chat. Ganhar ou perder SUB, VIP, MOD ou membro YouTube altera também os resultados anteriores.</p>
   <section class="history-best"><h3>Melhor run</h3>${runMarkup(player.bestRun, 'RECORDE PESSOAL')}</section>
   <section class="history-recent"><h3>${isMe ? `As tuas últimas ${Math.min(10, recentRuns.length)} runs` : `Últimas ${Math.min(5, recentRuns.length)} runs`}</h3>${recentRuns.length ? recentRuns.map((run, index) => runMarkup(run, `RUN ${player.runs - index}`)).join('') : '<p class="history-empty">Ainda não existem runs detalhadas.</p>'}</section>`;
 
-  elements.historyDialog.showModal();
+  document.body.classList.add('has-drawer-open');
+  if (!elements.historyDialog.open) {
+    elements.historyDialog.showModal();
+  }
 }
 
 function renderRows(filter = '') {
@@ -408,9 +420,16 @@ async function initialize() {
     }
   });
 
-  elements.historyClose.addEventListener('click', () => elements.historyDialog.close());
+  const closeDrawer = () => {
+    document.body.classList.remove('has-drawer-open');
+    elements.historyDialog.close();
+  };
+  elements.historyClose.addEventListener('click', closeDrawer);
+  elements.historyDialog.addEventListener('close', () => {
+    document.body.classList.remove('has-drawer-open');
+  });
   elements.historyDialog.addEventListener('click', (event) => {
-    if (event.target === elements.historyDialog) elements.historyDialog.close();
+    if (event.target === elements.historyDialog) closeDrawer();
   });
 
   elements.youtubeClose?.addEventListener('click', () => elements.youtubeDialog.close());
