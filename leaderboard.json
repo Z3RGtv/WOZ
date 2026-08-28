@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-28T05:37:38.487Z",
+  "updatedAt": "2026-08-28T05:59:24.341Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -392,31 +392,6 @@
         "longestWord": "",
         "averageWordLength": 0
       }
-    },
-    {
-      "id": "twitch:895327657",
-      "name": "z3rgtv",
-      "maxPoints": 134.2,
-      "maxBasePoints": 122,
-      "lastRunPoints": 134.2,
-      "lastRunBasePoints": 122,
-      "runs": 1,
-      "totalGames": 2,
-      "bestLevel": 18,
-      "platform": "twitch",
-      "profileImageUrl": "",
-      "multiplier": 1.1,
-      "regularityMultiplier": 1,
-      "roleMultiplier": 1.1,
-      "roles": {
-        "subscriber": true,
-        "moderator": true,
-        "vip": false,
-        "broadcaster": false
-      },
-      "updatedAt": 1787895458486,
-      "runHistory": [],
-      "bestRun": null
     },
     {
       "id": "twitch:1352711259",
