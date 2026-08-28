@@ -1,7 +1,15 @@
 const TWITCH_CLIENT_ID = '3rg5uodkyj3s4oa9eec66td49uc1qt';
 const REDIRECT_URI = 'https://z3rgtv.github.io/WOZ/';
 const TOKEN_KEY = 'woz_twitch_access_token';
+const YOUTUBE_USER_KEY = 'woz_youtube_user';
 const OAUTH_STATE_KEY = 'woz_oauth_state';
+
+const MULTIPLIER_TIERS = [
+  { min: 5, mult: 1.1 },
+  { min: 15, mult: 1.2 },
+  { min: 30, mult: 1.3 },
+  { min: 50, mult: 1.4 },
+];
 
 const elements = {
   accountArea: document.querySelector('#account-area'),
@@ -17,10 +25,15 @@ const elements = {
   historyDialog: document.querySelector('#player-history-dialog'),
   historyContent: document.querySelector('#player-history-content'),
   historyClose: document.querySelector('#history-close'),
+  youtubeDialog: document.querySelector('#youtube-login-dialog'),
+  youtubeClose: document.querySelector('#youtube-login-close'),
+  youtubeForm: document.querySelector('#youtube-login-form'),
+  youtubeInput: document.querySelector('#youtube-username-input'),
 };
 
 let leaderboard = [];
 let twitchUser = null;
+let youtubeUser = null;
 let twitchProfiles = new Map();
 
 function escapeHtml(value) {
@@ -162,24 +175,74 @@ function runMarkup(run, label = '') {
   </article>`;
 }
 
+function playerIsMe(player) {
+  if (twitchUser && platformOf(player) === 'twitch') {
+    return externalId(player) === String(twitchUser.id) ||
+      player.name.toLowerCase() === String(twitchUser.login || '').toLowerCase() ||
+      player.name.toLowerCase() === String(twitchUser.display_name || '').toLowerCase();
+  }
+  if (youtubeUser && platformOf(player) === 'youtube') {
+    const rawCleanName = String(youtubeUser.name).replace(/^@/, '').toLowerCase();
+    const playerCleanName = String(player.name).replace(/^@/, '').toLowerCase();
+    return playerCleanName === rawCleanName || externalId(player).toLowerCase() === rawCleanName;
+  }
+  return false;
+}
+
 function openPlayerHistory(playerId) {
   const player = leaderboard.find((candidate) => String(candidate.id) === String(playerId));
   if (!player) return;
   const platform = platformOf(player);
-  const recentRuns = Array.isArray(player.runHistory) ? player.runHistory.slice(0, 5) : [];
+  const isMe = playerIsMe(player);
+  const maxRuns = isMe ? 10 : 5;
+  const recentRuns = Array.isArray(player.runHistory) ? player.runHistory.slice(0, maxRuns) : [];
+
+  let personalSection = '';
+  if (isMe) {
+    const totalWords = (player.runHistory ?? []).reduce((sum, r) => sum + (Number(r.wordsFound) || 0), 0);
+    const runsWithWords = (player.runHistory ?? []).filter((r) => Number(r.wordsFound) > 0);
+    const avgWordsPerRun = runsWithWords.length > 0 ? (totalWords / runsWithWords.length).toFixed(1).replace('.', ',') : '—';
+    const longestWord = player.bestRun?.longestWord || (player.runHistory ?? []).reduce((max, r) => (r.longestWord?.length > max.length ? r.longestWord : max), '');
+
+    const nextTier = MULTIPLIER_TIERS.find((t) => t.min > player.runs);
+    let progressionMarkup = '';
+    if (nextTier) {
+      const needed = nextTier.min - player.runs;
+      const pct = Math.min(100, Math.max(4, Math.round((player.runs / nextTier.min) * 100)));
+      progressionMarkup = `<div class="progression-card">
+        <div class="progression-head"><span>PROGRESSO DE RUNS</span><strong>Próximo patamar: ×${nextTier.mult} (${player.runs}/${nextTier.min} runs)</strong></div>
+        <div class="progression-bar"><span style="width: ${pct}%"></span></div>
+        <small>Faltam apenas ${needed} ${needed === 1 ? 'run válida' : 'runs válidas'} para subires o multiplicador de regularidade!</small>
+      </div>`;
+    } else {
+      progressionMarkup = `<div class="progression-card">
+        <div class="progression-head"><span>PROGRESSO DE RUNS</span><strong>🏆 Patamar Máximo de Regularidade Atingido! (×1.4)</strong></div>
+        <div class="progression-bar"><span style="width: 100%"></span></div>
+        <small>Parabéns! Tens mais de 50 runs válidas na comunidade.</small>
+      </div>`;
+    }
+
+    personalSection = `<div class="personal-view-banner">⭐ O Teu Perfil Autenticado · Estatísticas Avançadas</div>
+      <div class="personal-insights-grid">
+        <div class="insight-box"><strong>${totalWords}</strong><span>palavras acertadas</span></div>
+        <div class="insight-box"><strong>${avgWordsPerRun}</strong><span>média palavras / run</span></div>
+        <div class="insight-box"><strong>${longestWord ? escapeHtml(longestWord.toLocaleUpperCase('pt-PT')) : '—'}</strong><span>maior palavra</span></div>
+        <div class="insight-box"><strong>Nível ${player.bestLevel || '—'}</strong><span>melhor nível</span></div>
+      </div>
+      ${progressionMarkup}`;
+  }
+
   elements.historyContent.innerHTML = `<header class="history-profile-header">
     ${avatarMarkup(player)}
-    <div><span class="eyebrow">PERFIL DO JOGADOR</span><h2 id="history-title">${escapeHtml(player.name)}</h2><div class="badges">${platformBadge(player)}${roleBadges(player.roles, platform)}</div></div>
+    <div><span class="eyebrow">${isMe ? 'O TEU PERFIL' : 'PERFIL DO JOGADOR'}</span><h2 id="history-title">${escapeHtml(player.name)}</h2><div class="badges">${platformBadge(player)}${roleBadges(player.roles, platform)}</div></div>
     <div class="history-profile-score"><strong>${formatPoints(player.maxPoints)}</strong><span>recorde atual · x${Number(player.multiplier || 1).toFixed(1)}</span></div>
   </header>
+  ${personalSection}
   <p class="history-role-note">Os cargos e os recordes são recalculados quando o jogador volta a escrever no chat. Ganhar ou perder SUB, VIP, MOD ou membro YouTube altera também os resultados anteriores.</p>
   <section class="history-best"><h3>Melhor run</h3>${runMarkup(player.bestRun, 'RECORDE PESSOAL')}</section>
-  <section class="history-recent"><h3>Últimas ${Math.min(5, recentRuns.length)} runs</h3>${recentRuns.length ? recentRuns.map((run, index) => runMarkup(run, `RUN ${player.runs - index}`)).join('') : '<p class="history-empty">Ainda não existem runs detalhadas.</p>'}</section>`;
-  elements.historyDialog.showModal();
-}
+  <section class="history-recent"><h3>${isMe ? `As tuas últimas ${Math.min(10, recentRuns.length)} runs` : `Últimas ${Math.min(5, recentRuns.length)} runs`}</h3>${recentRuns.length ? recentRuns.map((run, index) => runMarkup(run, `RUN ${player.runs - index}`)).join('') : '<p class="history-empty">Ainda não existem runs detalhadas.</p>'}</section>`;
 
-function playerIsMe(player) {
-  return Boolean(twitchUser && platformOf(player) === 'twitch' && externalId(player) === String(twitchUser.id));
+  elements.historyDialog.showModal();
 }
 
 function renderRows(filter = '') {
@@ -188,7 +251,8 @@ function renderRows(filter = '') {
   elements.body.innerHTML = filtered.map((player) => {
     const position = leaderboard.indexOf(player) + 1;
     const platform = platformOf(player);
-    return `<tr class="${playerIsMe(player) ? 'is-me' : ''}">
+    const isMe = playerIsMe(player);
+    return `<tr class="${isMe ? 'is-me' : ''}" data-player-id="${escapeHtml(player.id)}" tabindex="0" role="button" aria-label="Ver histórico de ${escapeHtml(player.name)}">
       <td class="rank ${position <= 3 ? 'top' : ''}">${position}</td>
       <td><div class="player-cell">${avatarMarkup(player)}<div><div class="player-name"><button class="player-profile-button" type="button" data-player-id="${escapeHtml(player.id)}">${escapeHtml(player.name)}</button>${platformBadge(player)}</div><div class="badges">${roleBadges(player.roles, platform)}</div></div></div></td>
       <td class="score">${formatPoints(player.maxPoints)} pts</td>
@@ -202,35 +266,45 @@ function renderRows(filter = '') {
 }
 
 function renderMyProfile() {
-  if (!twitchUser) {
+  if (!twitchUser && !youtubeUser) {
     elements.myProfile.hidden = true;
     return;
   }
   const player = leaderboard.find(playerIsMe);
-  elements.welcome.textContent = `Olá, ${twitchUser.display_name}. A tabela continua visível para todos; o login apenas destaca o teu perfil.`;
+  const currentName = twitchUser ? twitchUser.display_name : youtubeUser.name;
+  elements.welcome.textContent = `Olá, ${currentName}. A tabela continua visível para todos; o login destaca o teu perfil e desbloqueia as tuas 10 últimas runs e estatísticas.`;
   if (!player) {
     elements.myProfile.hidden = false;
-    elements.myProfile.innerHTML = `${avatarMarkup({ id: `twitch:${twitchUser.id}`, platform: 'twitch', name: twitchUser.display_name })}<div class="profile-name"><strong>${escapeHtml(twitchUser.display_name)}</strong><span>Ainda não tens uma run registada. Entra no próximo jogo!</span></div>`;
+    elements.myProfile.innerHTML = `${avatarMarkup({ id: twitchUser ? `twitch:${twitchUser.id}` : `youtube:${youtubeUser.name}`, platform: twitchUser ? 'twitch' : 'youtube', name: currentName })}<div class="profile-name"><strong>${escapeHtml(currentName)}</strong><span>Ainda não tens uma run registada. Entra no próximo jogo no chat!</span></div>`;
     return;
   }
   const position = leaderboard.indexOf(player) + 1;
   elements.myProfile.hidden = false;
   elements.myProfile.innerHTML = `${avatarMarkup(player)}
-    <div class="profile-name"><strong>${escapeHtml(player.name)}</strong><span>A tua posição na comunidade</span><div class="badges">${roleBadges(player.roles, 'twitch')}</div></div>
+    <div class="profile-name"><strong>${escapeHtml(player.name)}</strong><span>A tua posição na comunidade</span><div class="badges">${roleBadges(player.roles, platformOf(player))}</div></div>
     <div class="profile-stat"><strong>#${position}</strong><span>posição</span></div>
     <div class="profile-stat"><strong>${formatPoints(player.maxPoints)}</strong><span>recorde</span></div>
     <div class="profile-stat"><strong>x${Number(player.multiplier || 1).toFixed(1)}</strong><span>multiplicador</span></div>`;
 }
 
 function renderSignedOutAccount() {
-  elements.accountArea.innerHTML = '<div class="account-login-actions"><button id="header-twitch-login" class="account-login-button" type="button">Entrar com Twitch</button><span class="youtube-coming-soon">LOGIN YOUTUBE · EM PREPARAÇÃO</span></div>';
+  elements.accountArea.innerHTML = '<div class="account-login-actions"><button id="header-twitch-login" class="account-login-button" type="button">Entrar com Twitch</button><button id="header-youtube-login" class="account-login-button youtube" type="button">Entrar com YouTube</button></div>';
   document.querySelector('#header-twitch-login').addEventListener('click', beginTwitchLogin);
+  document.querySelector('#header-youtube-login').addEventListener('click', () => {
+    elements.youtubeDialog.showModal();
+    elements.youtubeInput.focus();
+  });
 }
 
 function renderAccount() {
-  elements.accountArea.innerHTML = `<div class="account-chip"><img src="${safeImageUrl(twitchUser.profile_image_url)}" alt=""><div><strong>${escapeHtml(twitchUser.display_name)}</strong><button id="logout-button" type="button">Terminar sessão</button></div></div>`;
-  document.querySelector('#logout-button').addEventListener('click', () => {
+  if (twitchUser) {
+    elements.accountArea.innerHTML = `<div class="account-chip"><img src="${safeImageUrl(twitchUser.profile_image_url)}" alt=""><div><strong>${escapeHtml(twitchUser.display_name)}</strong><button id="logout-button" type="button">Terminar sessão</button></div></div>`;
+  } else if (youtubeUser) {
+    elements.accountArea.innerHTML = `<div class="account-chip"><span class="avatar-fallback youtube">${escapeHtml(youtubeUser.name.slice(0, 1).toUpperCase())}</span><div><strong>${escapeHtml(youtubeUser.name)}</strong><button id="logout-button" type="button">Terminar sessão</button></div></div>`;
+  }
+  document.querySelector('#logout-button')?.addEventListener('click', () => {
     sessionStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(YOUTUBE_USER_KEY);
     location.reload();
   });
 }
@@ -246,6 +320,20 @@ async function enrichWithTwitchLogin(token, validation) {
   renderRows(elements.search.value);
 }
 
+function checkYouTubeSession() {
+  const saved = sessionStorage.getItem(YOUTUBE_USER_KEY);
+  if (saved) {
+    try {
+      youtubeUser = JSON.parse(saved);
+      renderAccount();
+      renderMyProfile();
+      renderRows(elements.search.value);
+    } catch {
+      sessionStorage.removeItem(YOUTUBE_USER_KEY);
+    }
+  }
+}
+
 function renderPublicLeaderboard() {
   elements.playerCount.textContent = leaderboard.length;
   elements.topScore.textContent = formatPoints(leaderboard[0]?.maxPoints ?? 0);
@@ -255,20 +343,50 @@ function renderPublicLeaderboard() {
 
 async function initialize() {
   elements.search.addEventListener('input', () => renderRows(elements.search.value));
+
   elements.body.addEventListener('click', (event) => {
-    const button = event.target.closest('.player-profile-button');
-    if (button) openPlayerHistory(button.dataset.playerId);
+    const row = event.target.closest('tr[data-player-id]');
+    if (row) openPlayerHistory(row.dataset.playerId);
   });
+  elements.body.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      const row = event.target.closest('tr[data-player-id]');
+      if (row) {
+        event.preventDefault();
+        openPlayerHistory(row.dataset.playerId);
+      }
+    }
+  });
+
   elements.historyClose.addEventListener('click', () => elements.historyDialog.close());
   elements.historyDialog.addEventListener('click', (event) => {
     if (event.target === elements.historyDialog) elements.historyDialog.close();
   });
+
+  elements.youtubeClose?.addEventListener('click', () => elements.youtubeDialog.close());
+  elements.youtubeDialog?.addEventListener('click', (event) => {
+    if (event.target === elements.youtubeDialog) elements.youtubeDialog.close();
+  });
+  elements.youtubeForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const handle = elements.youtubeInput.value.trim();
+    if (!handle) return;
+    youtubeUser = { name: handle, platform: 'youtube' };
+    sessionStorage.setItem(YOUTUBE_USER_KEY, JSON.stringify(youtubeUser));
+    elements.youtubeDialog.close();
+    renderAccount();
+    renderMyProfile();
+    renderRows(elements.search.value);
+  });
+
   try {
     readOAuthResponse();
     elements.status.textContent = 'A carregar a classificação…';
     await loadLeaderboard();
     renderPublicLeaderboard();
     elements.status.textContent = '';
+
+    checkYouTubeSession();
 
     const token = sessionStorage.getItem(TOKEN_KEY);
     if (!token) return;
