@@ -1,15 +1,15 @@
 const TWITCH_CLIENT_ID = '3rg5uodkyj3s4oa9eec66td49uc1qt';
 const GOOGLE_CLIENT_ID = '128990685472-2ef08a8s9n0ah76sd3nikru5am2vf3n7.apps.googleusercontent.com';
-const REDIRECT_URI = 'https://z3rgtv.github.io/WOZ/';
+const REDIRECT_URI = 'https://z3rgtv.github.io/woz/';
 const TOKEN_KEY = 'woz_twitch_access_token';
 const YOUTUBE_USER_KEY = 'woz_youtube_user';
 const OAUTH_STATE_KEY = 'woz_oauth_state';
 
-const MULTIPLIER_TIERS = [
-  { min: 5, mult: 1.1 },
-  { min: 15, mult: 1.2 },
-  { min: 30, mult: 1.3 },
-  { min: 50, mult: 1.4 },
+const DEFAULT_MULTIPLIER_TIERS = [
+  { minimumRuns: 5, multiplier: 1.1 },
+  { minimumRuns: 15, multiplier: 1.2 },
+  { minimumRuns: 30, multiplier: 1.3 },
+  { minimumRuns: 50, multiplier: 1.4 },
 ];
 
 const elements = {
@@ -35,10 +35,6 @@ const elements = {
   countRare: document.querySelector('#count-rare'),
   countEpic: document.querySelector('#count-epic'),
   countLegendary: document.querySelector('#count-legendary'),
-  youtubeDialog: document.querySelector('#youtube-login-dialog'),
-  youtubeClose: document.querySelector('#youtube-login-close'),
-  youtubeForm: document.querySelector('#youtube-login-form'),
-  youtubeInput: document.querySelector('#youtube-username-input'),
 };
 
 const DEFAULT_POWERUPS = [
@@ -70,6 +66,7 @@ let leaderboard = [];
 let twitchUser = null;
 let youtubeUser = null;
 let twitchProfiles = new Map();
+let multiplierTiers = [...DEFAULT_MULTIPLIER_TIERS];
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -208,6 +205,15 @@ async function loadLeaderboard() {
   if (!response.ok) throw new Error('Não foi possível carregar a leaderboard.');
   const document = await response.json();
   leaderboard = Array.isArray(document.players) ? document.players : [];
+  if (Array.isArray(document.game?.multiplierTiers) && document.game.multiplierTiers.length > 0) {
+    multiplierTiers = document.game.multiplierTiers
+      .map((tier) => ({
+        minimumRuns: Number(tier.minimumRuns),
+        multiplier: Number(tier.multiplier),
+      }))
+      .filter((tier) => Number.isFinite(tier.minimumRuns) && Number.isFinite(tier.multiplier))
+      .sort((a, b) => a.minimumRuns - b.minimumRuns);
+  }
   if (Array.isArray(document.game?.powerUps) && document.game.powerUps.length > 0) {
     gamePowerups = document.game.powerUps;
   }
@@ -254,6 +260,10 @@ function formatPoints(value) {
   return new Intl.NumberFormat('pt-PT', { maximumFractionDigits: 2 }).format(Number(value) || 0);
 }
 
+function formatMultiplier(value) {
+  return Number(value || 1).toFixed(2).replace('.', ',').replace(/,?0+$/, '');
+}
+
 function formatRunDate(value) {
   if (!Number(value)) return 'Data indisponível';
   return new Intl.DateTimeFormat('pt-PT', {
@@ -284,9 +294,7 @@ function playerIsMe(player) {
       player.name.toLowerCase() === String(twitchUser.display_name || '').toLowerCase();
   }
   if (youtubeUser && platformOf(player) === 'youtube') {
-    const rawCleanName = String(youtubeUser.name).replace(/^@/, '').toLowerCase();
-    const playerCleanName = String(player.name).replace(/^@/, '').toLowerCase();
-    return playerCleanName === rawCleanName || externalId(player).toLowerCase() === rawCleanName;
+    return externalId(player) === String(youtubeUser.id);
   }
   return false;
 }
@@ -296,8 +304,7 @@ function openPlayerHistory(playerId) {
   if (!player) return;
   const platform = platformOf(player);
   const isMe = playerIsMe(player);
-  const maxRuns = isMe ? 10 : 5;
-  const recentRuns = Array.isArray(player.runHistory) ? player.runHistory.slice(0, maxRuns) : [];
+  const recentRuns = Array.isArray(player.runHistory) ? player.runHistory.slice(0, 5) : [];
 
   let personalSection = '';
   if (isMe) {
@@ -306,21 +313,22 @@ function openPlayerHistory(playerId) {
     const avgWordsPerRun = runsWithWords.length > 0 ? (totalWords / runsWithWords.length).toFixed(1).replace('.', ',') : '—';
     const longestWord = player.bestRun?.longestWord || (player.runHistory ?? []).reduce((max, r) => (r.longestWord?.length > max.length ? r.longestWord : max), '');
 
-    const nextTier = MULTIPLIER_TIERS.find((t) => t.min > player.runs);
+    const nextTier = multiplierTiers.find((tier) => tier.minimumRuns > player.runs);
     let progressionMarkup = '';
     if (nextTier) {
-      const needed = nextTier.min - player.runs;
-      const pct = Math.min(100, Math.max(4, Math.round((player.runs / nextTier.min) * 100)));
+      const needed = nextTier.minimumRuns - player.runs;
+      const pct = Math.min(100, Math.max(4, Math.round((player.runs / nextTier.minimumRuns) * 100)));
       progressionMarkup = `<div class="progression-card">
-        <div class="progression-head"><span>PROGRESSO DE RUNS</span><strong>Próximo patamar: ×${nextTier.mult} (${player.runs}/${nextTier.min} runs)</strong></div>
+        <div class="progression-head"><span>PROGRESSO DE RUNS</span><strong>Próximo patamar: ×${formatMultiplier(nextTier.multiplier)} (${player.runs}/${nextTier.minimumRuns} runs)</strong></div>
         <div class="progression-bar"><span style="width: ${pct}%"></span></div>
         <small>Faltam apenas ${needed} ${needed === 1 ? 'run válida' : 'runs válidas'} para subires o multiplicador de regularidade!</small>
       </div>`;
     } else {
+      const maximumTier = multiplierTiers.at(-1) ?? { minimumRuns: 0, multiplier: 1 };
       progressionMarkup = `<div class="progression-card">
-        <div class="progression-head"><span>PROGRESSO DE RUNS</span><strong>🏆 Patamar Máximo de Regularidade Atingido! (×1.4)</strong></div>
+        <div class="progression-head"><span>PROGRESSO DE RUNS</span><strong>🏆 Patamar Máximo de Regularidade Atingido! (×${formatMultiplier(maximumTier.multiplier)})</strong></div>
         <div class="progression-bar"><span style="width: 100%"></span></div>
-        <small>Parabéns! Tens mais de 50 runs válidas na comunidade.</small>
+        <small>Parabéns! Atingiste o patamar máximo configurado, a partir de ${maximumTier.minimumRuns} runs válidas.</small>
       </div>`;
     }
 
@@ -386,7 +394,7 @@ function renderMyProfile() {
   }
   const player = leaderboard.find(playerIsMe);
   const currentName = twitchUser ? twitchUser.display_name : youtubeUser.name;
-  elements.welcome.textContent = `Olá, ${currentName}. A tabela continua visível para todos; o login destaca o teu perfil e desbloqueia as tuas 10 últimas runs e estatísticas.`;
+  elements.welcome.textContent = `Olá, ${currentName}. A tabela continua visível para todos; o login confirma e destaca o teu perfil.`;
   if (!player) {
     elements.myProfile.hidden = false;
     elements.myProfile.innerHTML = `${avatarMarkup({ id: twitchUser ? `twitch:${twitchUser.id}` : `youtube:${youtubeUser.name}`, platform: twitchUser ? 'twitch' : 'youtube', name: currentName })}<div class="profile-name"><strong>${escapeHtml(currentName)}</strong><span>Ainda não tens uma run registada. Entra no próximo jogo no chat!</span></div>`;
@@ -405,20 +413,21 @@ function beginGoogleLogin() {
   if (window.google?.accounts?.oauth2) {
     const client = window.google.accounts.oauth2.initTokenClient({
       client_id: GOOGLE_CLIENT_ID,
-      scope: 'https://www.googleapis.com/auth/userinfo.profile',
+      scope: 'https://www.googleapis.com/auth/youtube.readonly',
       callback: async (tokenResponse) => {
         if (tokenResponse && tokenResponse.access_token) {
           try {
             elements.status.textContent = 'A autenticar com a Google…';
-            const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+            const res = await fetch('https://www.googleapis.com/youtube/v3/channels?part=id,snippet&mine=true', {
               headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
             });
             if (res.ok) {
-              const profile = await res.json();
+              const channel = (await res.json()).items?.[0];
+              if (!channel?.id) throw new Error('youtube_channel_not_found');
               youtubeUser = {
-                id: profile.sub,
-                name: profile.name,
-                picture: profile.picture,
+                id: channel.id,
+                name: channel.snippet?.title ?? 'Canal YouTube',
+                picture: channel.snippet?.thumbnails?.default?.url ?? '',
                 platform: 'youtube',
               };
               sessionStorage.setItem(YOUTUBE_USER_KEY, JSON.stringify(youtubeUser));
@@ -426,7 +435,7 @@ function beginGoogleLogin() {
               renderMyProfile();
               renderRows(elements.search.value);
               elements.status.textContent = '';
-            }
+            } else throw new Error(`youtube_api_${res.status}`);
           } catch (err) {
             elements.status.textContent = 'Falha ao autenticar com a Google. Tenta novamente.';
             elements.status.classList.add('error');
@@ -436,8 +445,8 @@ function beginGoogleLogin() {
     });
     client.requestAccessToken();
   } else {
-    elements.youtubeDialog.showModal();
-    elements.youtubeInput.focus();
+    elements.status.textContent = 'O serviço de autenticação Google ainda não terminou de carregar. Tenta novamente dentro de instantes.';
+    elements.status.classList.add('error');
   }
 }
 
@@ -540,22 +549,6 @@ async function initialize() {
       activeRarityFilter = button.dataset.rarity || 'all';
       renderPowerups(activeRarityFilter);
     });
-  });
-
-  elements.youtubeClose?.addEventListener('click', () => elements.youtubeDialog.close());
-  elements.youtubeDialog?.addEventListener('click', (event) => {
-    if (event.target === elements.youtubeDialog) elements.youtubeDialog.close();
-  });
-  elements.youtubeForm?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const handle = elements.youtubeInput.value.trim();
-    if (!handle) return;
-    youtubeUser = { name: handle, platform: 'youtube' };
-    sessionStorage.setItem(YOUTUBE_USER_KEY, JSON.stringify(youtubeUser));
-    elements.youtubeDialog.close();
-    renderAccount();
-    renderMyProfile();
-    renderRows(elements.search.value);
   });
 
   try {
