@@ -26,12 +26,46 @@ const elements = {
   historyDialog: document.querySelector('#player-history-dialog'),
   historyContent: document.querySelector('#player-history-content'),
   historyClose: document.querySelector('#history-close'),
+  openPowerupsBtn: document.querySelector('#open-powerups-btn'),
+  powerupsDialog: document.querySelector('#powerups-dialog'),
+  powerupsClose: document.querySelector('#powerups-close'),
+  powerupsList: document.querySelector('#powerups-list'),
+  countAll: document.querySelector('#count-all'),
+  countCommon: document.querySelector('#count-common'),
+  countRare: document.querySelector('#count-rare'),
+  countEpic: document.querySelector('#count-epic'),
+  countLegendary: document.querySelector('#count-legendary'),
   youtubeDialog: document.querySelector('#youtube-login-dialog'),
   youtubeClose: document.querySelector('#youtube-login-close'),
   youtubeForm: document.querySelector('#youtube-login-form'),
   youtubeInput: document.querySelector('#youtube-username-input'),
 };
 
+const DEFAULT_POWERUPS = [
+  { id: 'next_hint_one_word', name: 'Pequena Pista', icon: '👁️', effectLabel: '1 pista', rarity: 'common', minimumLevel: 2, scope: 'NEXT_LEVEL', description: 'Revela uma letra aleatória numa palavra do próximo nível.' },
+  { id: 'next_hint_two_words', name: 'Pista Dupla', icon: '👀', effectLabel: '2 pistas', rarity: 'common', minimumLevel: 2, scope: 'NEXT_LEVEL', description: 'Revela uma letra aleatória em duas palavras do próximo nível.' },
+  { id: 'next_extra_time', name: 'Fôlego Extra', icon: '⏱️', effectLabel: '+15s', rarity: 'common', minimumLevel: 2, scope: 'NEXT_LEVEL', description: 'Acrescenta 15 segundos ao próximo nível.' },
+  { id: 'score_multiplier_11', name: 'Pontuação Afinada', icon: '🎯', effectLabel: '×1,1', rarity: 'rare', minimumLevel: 2, scope: 'RUN', maxStacks: 3, maxValue: 1.3, description: 'Soma +0,1 aos pontos de progresso até ao limite máximo de ×1,3 nesta run.' },
+  { id: 'hint_words_plus_one', name: 'Olhar Mais Atento', icon: '👓', effectLabel: '+1 palavra', rarity: 'rare', minimumLevel: 2, scope: 'RUN', maxValue: 4, description: 'Uma letra fica visível em mais uma palavra de todos os próximos níveis.' },
+  { id: 'next_hint_extra_letter', name: 'Pista Mais Nítida', icon: '🔍', effectLabel: '+1 letra já', rarity: 'rare', minimumLevel: 2, scope: 'NEXT_LEVEL', description: 'No próximo nível, mostra mais uma letra no número de palavras já melhorado (máximo 4).' },
+  { id: 'next_target_reduction', name: 'Meta Acessível', icon: '✂️', effectLabel: '−10% meta', rarity: 'rare', minimumLevel: 2, scope: 'NEXT_LEVEL', description: 'Corta 10% da meta necessária do próximo nível e mostra o corte no marcador.' },
+  { id: 'hint_letters_plus_one', name: 'Pista Reforçada', icon: '🔎', effectLabel: '+1 letra', rarity: 'epic', minimumLevel: 4, scope: 'RUN', maxValue: 4, description: 'As palavras com pista mostram mais uma letra em todos os próximos níveis.' },
+  { id: 'permanent_extra_time', name: 'Relógio Melhorado', icon: '🕰️', effectLabel: '+15s sempre', rarity: 'epic', minimumLevel: 4, scope: 'RUN', maxStacks: 8, description: 'Todos os próximos níveis recebem mais 15 segundos.' },
+  { id: 'next_head_start', name: 'Arranque Lançado', icon: '🚀', effectLabel: '+10% arranque', rarity: 'epic', minimumLevel: 4, scope: 'NEXT_LEVEL', description: 'O próximo nível começa com 10% da meta já preenchida.' },
+  { id: 'next_hint_all_words', name: 'Tabuleiro Iluminado', icon: '💡', effectLabel: 'Todas', rarity: 'legendary', minimumLevel: 7, scope: 'NEXT_LEVEL', description: 'Revela uma letra em todas as palavras apenas no próximo nível.' },
+  { id: 'permanent_target_reduction', name: 'Lâmina da Meta', icon: '🗡️', effectLabel: '−5% sempre', rarity: 'legendary', minimumLevel: 7, scope: 'RUN', maxStacks: 3, maxValue: 0.15, description: 'Corta 5% da meta de todos os próximos níveis para sempre; acumula até ao corte máximo de 15%.' },
+  { id: 'long_word_boost', name: 'Mestre das Palavras', icon: '🏆', effectLabel: '6+ ×1,5', rarity: 'legendary', minimumLevel: 7, scope: 'RUN', maxStacks: 3, description: 'Palavras com 6 ou mais letras dão ×1,5 de progresso.' },
+];
+
+const RARITY_LABELS = {
+  common: 'Comum',
+  rare: 'Raro',
+  epic: 'Épico',
+  legendary: 'Lendário',
+};
+
+let gamePowerups = [...DEFAULT_POWERUPS];
+let activeRarityFilter = 'all';
 let leaderboard = [];
 let twitchUser = null;
 let youtubeUser = null;
@@ -115,11 +149,69 @@ async function fetchTwitchUsers(token, ids = []) {
   return users;
 }
 
+function renderPowerups(filterRarity = 'all') {
+  const filtered = filterRarity === 'all'
+    ? gamePowerups
+    : gamePowerups.filter((p) => p.rarity === filterRarity);
+
+  if (elements.countAll) elements.countAll.textContent = gamePowerups.length;
+  if (elements.countCommon) elements.countCommon.textContent = gamePowerups.filter((p) => p.rarity === 'common').length;
+  if (elements.countRare) elements.countRare.textContent = gamePowerups.filter((p) => p.rarity === 'rare').length;
+  if (elements.countEpic) elements.countEpic.textContent = gamePowerups.filter((p) => p.rarity === 'epic').length;
+  if (elements.countLegendary) elements.countLegendary.textContent = gamePowerups.filter((p) => p.rarity === 'legendary').length;
+
+  if (!elements.powerupsList) return;
+
+  elements.powerupsList.innerHTML = filtered.map((powerup) => {
+    const isRunScope = powerup.scope === 'RUN';
+    const scopeLabel = isRunScope ? '♾️ Permanente (Run)' : '⚡ Próximo Nível';
+    const stackNote = Number(powerup.maxStacks || 1) > 1
+      ? `<span class="powerup-tag">Acumula até ${powerup.maxStacks}×</span>`
+      : '';
+    return `<article class="powerup-card rarity-${escapeHtml(powerup.rarity || 'common')}">
+      <div class="powerup-card-head">
+        <div class="powerup-card-title">
+          <span class="powerup-card-icon">${escapeHtml(powerup.icon || '⚡')}</span>
+          <strong>${escapeHtml(powerup.name)}</strong>
+        </div>
+        <span class="powerup-rarity-pill ${escapeHtml(powerup.rarity || 'common')}">${escapeHtml(RARITY_LABELS[powerup.rarity] || powerup.rarity)}</span>
+      </div>
+      <div class="powerup-card-tags">
+        <span class="powerup-tag ${isRunScope ? 'scope-run' : ''}">${scopeLabel}</span>
+        <span class="powerup-tag min-level">🎯 A partir do Nível ${Number(powerup.minimumLevel || 2)}</span>
+        ${powerup.effectLabel ? `<span class="powerup-tag">${escapeHtml(powerup.effectLabel)}</span>` : ''}
+        ${stackNote}
+      </div>
+      <p class="powerup-description">${escapeHtml(powerup.description)}</p>
+    </article>`;
+  }).join('');
+}
+
+function openPowerupsDialog() {
+  if (elements.historyDialog?.open) {
+    elements.historyDialog.close();
+  }
+  document.body.classList.add('has-drawer-open');
+  if (!elements.powerupsDialog.open) {
+    elements.powerupsDialog.showModal();
+  }
+  renderPowerups(activeRarityFilter);
+}
+
+function closePowerupsDialog() {
+  document.body.classList.remove('has-drawer-open');
+  elements.powerupsDialog.close();
+}
+
 async function loadLeaderboard() {
   const response = await fetch(`leaderboard.json?t=${Date.now()}`, { cache: 'no-store' });
   if (!response.ok) throw new Error('Não foi possível carregar a leaderboard.');
   const document = await response.json();
   leaderboard = Array.isArray(document.players) ? document.players : [];
+  if (Array.isArray(document.game?.powerUps) && document.game.powerUps.length > 0) {
+    gamePowerups = document.game.powerUps;
+  }
+  renderPowerups(activeRarityFilter);
   elements.updatedAt.textContent = document.updatedAt
     ? new Intl.DateTimeFormat('pt-PT', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }).format(new Date(document.updatedAt))
     : '—';
@@ -430,6 +522,24 @@ async function initialize() {
   });
   elements.historyDialog.addEventListener('click', (event) => {
     if (event.target === elements.historyDialog) closeDrawer();
+  });
+
+  elements.openPowerupsBtn?.addEventListener('click', openPowerupsDialog);
+  elements.powerupsClose?.addEventListener('click', closePowerupsDialog);
+  elements.powerupsDialog?.addEventListener('close', () => {
+    document.body.classList.remove('has-drawer-open');
+  });
+  elements.powerupsDialog?.addEventListener('click', (event) => {
+    if (event.target === elements.powerupsDialog) closePowerupsDialog();
+  });
+
+  document.querySelectorAll('.rarity-filter').forEach((button) => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.rarity-filter').forEach((b) => b.classList.remove('is-active'));
+      button.classList.add('is-active');
+      activeRarityFilter = button.dataset.rarity || 'all';
+      renderPowerups(activeRarityFilter);
+    });
   });
 
   elements.youtubeClose?.addEventListener('click', () => elements.youtubeDialog.close());
