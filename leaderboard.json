@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updatedAt": "2026-08-28T00:37:51.516Z",
+  "version": 2,
+  "updatedAt": "2026-08-28T00:47:46.186Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -35,7 +35,9 @@
       "id": "twitch:972248156",
       "name": "marquesrcarol",
       "maxPoints": 361.9,
+      "maxBasePoints": 329,
       "lastRunPoints": 361.9,
+      "lastRunBasePoints": 329,
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
@@ -50,13 +52,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 329,
+        "points": 361.9,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:645555689",
       "name": "sheisdani",
       "maxPoints": 275,
+      "maxBasePoints": 250,
       "lastRunPoints": 275,
+      "lastRunBasePoints": 250,
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
@@ -71,13 +86,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 250,
+        "points": 275,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:164609804",
       "name": "soniagoncalves",
       "maxPoints": 266.2,
+      "maxBasePoints": 242,
       "lastRunPoints": 266.2,
+      "lastRunBasePoints": 242,
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
@@ -92,13 +120,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 242,
+        "points": 266.2,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:491270065",
       "name": "manodrico",
       "maxPoints": 185.9,
+      "maxBasePoints": 169,
       "lastRunPoints": 185.9,
+      "lastRunBasePoints": 169,
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
@@ -113,13 +154,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 169,
+        "points": 185.9,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:577905142",
       "name": "k1ngpt14",
       "maxPoints": 182,
+      "maxBasePoints": 182,
       "lastRunPoints": 182,
+      "lastRunBasePoints": 182,
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
@@ -134,13 +188,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 182,
+        "points": 182,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:423908473",
       "name": "garzia17",
       "maxPoints": 140,
+      "maxBasePoints": 140,
       "lastRunPoints": 140,
+      "lastRunBasePoints": 140,
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
@@ -155,13 +222,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 140,
+        "points": 140,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:1352711259",
       "name": "igl_migaas",
       "maxPoints": 26,
+      "maxBasePoints": 26,
       "lastRunPoints": 26,
+      "lastRunBasePoints": 26,
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
@@ -176,13 +256,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 26,
+        "points": 26,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:932779495",
       "name": "gui_z0",
       "maxPoints": 25.3,
+      "maxBasePoints": 23,
       "lastRunPoints": 25.3,
+      "lastRunBasePoints": 23,
       "runs": 1,
       "totalGames": 1,
       "bestLevel": 18,
@@ -197,13 +290,26 @@
         "vip": true,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 23,
+        "points": 25.3,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:428320452",
       "name": "ipowerlz",
       "maxPoints": 8,
+      "maxBasePoints": 8,
       "lastRunPoints": 8,
+      "lastRunBasePoints": 8,
       "runs": 1,
       "totalGames": 1,
       "bestLevel": 6,
@@ -218,13 +324,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787857234576
+      "updatedAt": 1787857234576,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787857234576,
+        "levelReached": 6,
+        "basePoints": 8,
+        "points": 8,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:480842962",
       "name": "dj_manuel_12",
       "maxPoints": 7,
+      "maxBasePoints": 7,
       "lastRunPoints": 7,
+      "lastRunBasePoints": 7,
       "runs": 1,
       "totalGames": 1,
       "bestLevel": 18,
@@ -239,13 +358,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 7,
+        "points": 7,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:815496714",
       "name": "ganasonic_pt",
       "maxPoints": 5,
+      "maxBasePoints": 5,
       "lastRunPoints": 4,
+      "lastRunBasePoints": 4,
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
@@ -260,13 +392,26 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 5,
+        "points": 5,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     },
     {
       "id": "twitch:407961361",
       "name": "gusmao1993",
       "maxPoints": 3,
+      "maxBasePoints": 3,
       "lastRunPoints": 3,
+      "lastRunBasePoints": 3,
       "runs": 1,
       "totalGames": 1,
       "bestLevel": 18,
@@ -281,7 +426,18 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746
+      "updatedAt": 1787869508746,
+      "runHistory": [],
+      "bestRun": {
+        "gameId": "historico-anterior",
+        "endedAt": 1787869508746,
+        "levelReached": 18,
+        "basePoints": 3,
+        "points": 3,
+        "wordsFound": 0,
+        "longestWord": "",
+        "averageWordLength": 0
+      }
     }
   ]
 }
