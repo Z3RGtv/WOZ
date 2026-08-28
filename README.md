@@ -8,3 +8,5 @@ Site estático oficial da leaderboard, publicado por GitHub Pages em `https://z3
 - O documento público contém no máximo as cinco runs mais recentes e a melhor run de cada jogador.
 - A autenticação confirma o perfil através dos identificadores oficiais das plataformas; não altera a visibilidade pública da classificação.
 - Tokens GitHub nunca fazem parte deste repositório.
+
+Os ficheiros visuais são publicados com `npm run site:publish`. Para atualizar apenas os dados públicos sem iniciar o jogo, usar `npm run leaderboard:publish`.
