@@ -295,6 +295,55 @@ function formatRunDate(value) {
   }).format(new Date(Number(value)));
 }
 
+function runPowerupsMarkup(run) {
+  const powerups = Array.isArray(run?.powerups) ? run.powerups : [];
+  if (powerups.length === 0) {
+    return '<p class="run-powerups-empty">Os power-ups ainda não eram registados nesta run.</p>';
+  }
+
+  return `<section class="run-powerups">
+    <div class="run-powerups-heading"><strong>Power-ups conquistados</strong><span>${powerups.length}</span></div>
+    <div class="run-powerups-list">${powerups.map((powerup) => {
+      const rarity = ['common', 'rare', 'epic', 'legendary'].includes(powerup.rarity) ? powerup.rarity : 'common';
+      return `<div class="run-powerup rarity-${rarity}" title="Escolhido depois do nível ${Number(powerup.selectedAfterLevel) || '—'}">
+        <span class="run-powerup-icon" aria-hidden="true">${escapeHtml(powerup.icon || '⚡')}</span>
+        <span><strong>${escapeHtml(powerup.name || 'Power-up')}</strong><small>${escapeHtml(powerup.effectLabel || RARITY_LABELS[rarity])} · após nível ${Number(powerup.selectedAfterLevel) || '—'}</small></span>
+      </div>`;
+    }).join('')}</div>
+  </section>`;
+}
+
+function calculateRunTrend(runs = []) {
+  const validRuns = runs.filter((run) => Number(run.basePoints) >= 0).slice(0, 5);
+  if (validRuns.length < 2) return { status: 'neutral', label: 'Ainda sem tendência', detail: 'São necessárias pelo menos duas runs detalhadas.', percentage: 0 };
+
+  const newest = validRuns.slice(0, Math.min(2, validRuns.length));
+  const older = validRuns.length >= 4 ? validRuns.slice(2, 4) : validRuns.slice(1);
+  const average = (items) => items.reduce((sum, run) => sum + Number(run.basePoints || 0), 0) / Math.max(1, items.length);
+  const newestAverage = average(newest);
+  const olderAverage = average(older);
+  const percentage = olderAverage > 0 ? Math.round(((newestAverage - olderAverage) / olderAverage) * 100) : (newestAverage > 0 ? 100 : 0);
+
+  if (percentage >= 5) return { status: 'improving', label: 'A melhorar', detail: `As runs recentes subiram cerca de ${percentage}% em pontos-base.`, percentage };
+  if (percentage <= -5) return { status: 'declining', label: 'Abaixo do ritmo habitual', detail: `As runs recentes ficaram cerca de ${Math.abs(percentage)}% abaixo das anteriores.`, percentage };
+  return { status: 'steady', label: 'Desempenho estável', detail: 'As runs recentes mantêm um resultado semelhante.', percentage };
+}
+
+function runTrendMarkup(runs = []) {
+  const chronological = runs.slice(0, 5).reverse();
+  const trend = calculateRunTrend(runs);
+  const maximum = Math.max(1, ...chronological.map((run) => Number(run.basePoints) || 0));
+  const bars = chronological.map((run, index) => {
+    const height = Math.max(8, Math.round(((Number(run.basePoints) || 0) / maximum) * 100));
+    return `<div class="trend-bar-column"><span class="trend-bar" style="height:${height}%" title="${formatPoints(run.basePoints)} pontos-base"></span><small>${index + 1}</small></div>`;
+  }).join('');
+
+  return `<section class="performance-trend ${trend.status}">
+    <div class="trend-copy"><span>EVOLUÇÃO RECENTE</span><strong>${trend.label}</strong><p>${trend.detail}</p></div>
+    <div class="trend-chart" aria-label="Pontos-base das últimas runs, da mais antiga para a mais recente">${bars || '<span class="trend-empty">Sem dados</span>'}</div>
+  </section>`;
+}
+
 function runMarkup(run, label = '') {
   if (!run) return '<p class="history-empty">Ainda não existe uma run registada.</p>';
   const hasDetailedStats = Number(run.wordsFound) > 0 || Boolean(run.longestWord);
@@ -307,6 +356,7 @@ function runMarkup(run, label = '') {
       <div><strong>${run.longestWord ? escapeHtml(String(run.longestWord).toLocaleUpperCase('pt-PT')) : '—'}</strong><span>maior palavra</span></div>
       <div><strong>${hasDetailedStats ? Number(run.averageWordLength || 0).toFixed(1).replace('.', ',') : '—'}</strong><span>média de letras</span></div>
     </div>
+    ${runPowerupsMarkup(run)}
     ${hasDetailedStats ? '' : '<p class="history-legacy-note">Este recorde é anterior à introdução das estatísticas detalhadas.</p>'}
   </article>`;
 }
@@ -332,9 +382,13 @@ function openPlayerHistory(playerId) {
 
   let personalSection = '';
   if (isMe) {
-    const totalWords = (player.runHistory ?? []).reduce((sum, r) => sum + (Number(r.wordsFound) || 0), 0);
-    const runsWithWords = (player.runHistory ?? []).filter((r) => Number(r.wordsFound) > 0);
-    const avgWordsPerRun = runsWithWords.length > 0 ? (totalWords / runsWithWords.length).toFixed(1).replace('.', ',') : '—';
+    const trackedRuns = Number(player.trackedRuns) || (player.runHistory ?? []).length;
+    const totalWords = Number(player.totalWordsFound) || (player.runHistory ?? []).reduce((sum, r) => sum + (Number(r.wordsFound) || 0), 0);
+    const totalBasePoints = Number(player.totalBasePoints) || (player.runHistory ?? []).reduce((sum, r) => sum + (Number(r.basePoints) || 0), 0);
+    const totalLevels = Number(player.totalLevelsReached) || (player.runHistory ?? []).reduce((sum, r) => sum + (Number(r.levelReached) || 0), 0);
+    const avgWordsPerRun = trackedRuns > 0 ? (totalWords / trackedRuns).toFixed(1).replace('.', ',') : '—';
+    const avgPointsPerRun = trackedRuns > 0 ? formatPoints(totalBasePoints / trackedRuns) : '—';
+    const avgLevel = trackedRuns > 0 ? (totalLevels / trackedRuns).toFixed(1).replace('.', ',') : '—';
     const longestWord = player.bestRun?.longestWord || (player.runHistory ?? []).reduce((max, r) => (r.longestWord?.length > max.length ? r.longestWord : max), '');
 
     const nextTier = multiplierTiers.find((tier) => tier.minimumRuns > player.runs);
@@ -357,12 +411,15 @@ function openPlayerHistory(playerId) {
     }
 
     personalSection = `<div class="personal-view-banner">⭐ O Teu Perfil Autenticado · Estatísticas Avançadas</div>
-      <div class="personal-insights-grid">
-        <div class="insight-box"><strong>${totalWords}</strong><span>palavras acertadas</span></div>
-        <div class="insight-box"><strong>${avgWordsPerRun}</strong><span>média palavras / run</span></div>
+      <div class="personal-insights-grid is-detailed">
+        <div class="insight-box"><strong>${player.runs}</strong><span>runs válidas</span></div>
+        <div class="insight-box"><strong>${totalWords}</strong><span>palavras no total</span></div>
+        <div class="insight-box"><strong>${avgWordsPerRun}</strong><span>palavras / run</span></div>
+        <div class="insight-box"><strong>${avgPointsPerRun}</strong><span>pontos-base / run</span></div>
+        <div class="insight-box"><strong>${avgLevel}</strong><span>nível médio</span></div>
         <div class="insight-box"><strong>${longestWord ? escapeHtml(longestWord.toLocaleUpperCase('pt-PT')) : '—'}</strong><span>maior palavra</span></div>
-        <div class="insight-box"><strong>Nível ${player.bestLevel || '—'}</strong><span>melhor nível</span></div>
       </div>
+      ${runTrendMarkup(recentRuns)}
       ${progressionMarkup}`;
   }
 
@@ -430,7 +487,9 @@ function renderMyProfile() {
     <div class="profile-name"><strong>${escapeHtml(player.name)}</strong><span>A tua posição na comunidade</span><div class="badges">${roleBadges(player.roles, platformOf(player))}</div></div>
     <div class="profile-stat"><strong>#${position}</strong><span>posição</span></div>
     <div class="profile-stat"><strong>${formatPoints(player.maxPoints)}</strong><span>recorde</span></div>
-    <div class="profile-stat"><strong>x${Number(player.multiplier || 1).toFixed(1)}</strong><span>multiplicador</span></div>`;
+    <div class="profile-stat"><strong>x${Number(player.multiplier || 1).toFixed(1)}</strong><span>multiplicador</span></div>
+    <button class="profile-details-button" type="button">Ver evolução e runs</button>`;
+  elements.myProfile.querySelector('.profile-details-button')?.addEventListener('click', () => openPlayerHistory(player.id));
 }
 
 function beginGoogleLogin() {
