@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-28T05:59:24.341Z",
+  "updatedAt": "2026-08-28T06:23:35.368Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -199,6 +199,10 @@
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -220,7 +224,8 @@
         "points": 361.9,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -233,6 +238,10 @@
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -254,7 +263,8 @@
         "points": 275,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -267,6 +277,10 @@
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -288,7 +302,8 @@
         "points": 266.2,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -301,6 +316,10 @@
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -322,7 +341,8 @@
         "points": 185.9,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -335,6 +355,10 @@
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -356,7 +380,8 @@
         "points": 182,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -369,6 +394,10 @@
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -390,7 +419,8 @@
         "points": 140,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -403,6 +433,10 @@
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -424,7 +458,8 @@
         "points": 26,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -437,6 +472,10 @@
       "runs": 1,
       "totalGames": 1,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -458,7 +497,8 @@
         "points": 25.3,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -471,6 +511,10 @@
       "runs": 1,
       "totalGames": 1,
       "bestLevel": 6,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -492,7 +536,8 @@
         "points": 8,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -505,6 +550,10 @@
       "runs": 1,
       "totalGames": 1,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -526,7 +575,8 @@
         "points": 7,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -539,6 +589,10 @@
       "runs": 2,
       "totalGames": 2,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -560,7 +614,8 @@
         "points": 5,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     },
     {
@@ -573,6 +628,10 @@
       "runs": 1,
       "totalGames": 1,
       "bestLevel": 18,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -594,7 +653,8 @@
         "points": 3,
         "wordsFound": 0,
         "longestWord": "",
-        "averageWordLength": 0
+        "averageWordLength": 0,
+        "powerups": []
       }
     }
   ]
