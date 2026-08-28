@@ -360,37 +360,49 @@ tbody tr:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
 .account-login-button.youtube:hover { filter: brightness(1.15); }
 
 /* Compêndio de Power-ups */
-.powerups-header h2 { margin: 2px 0 6px; font: 900 clamp(24px, 2.6vw, 34px)/1.15 Georgia, serif; color: #fff1cf; }
-.powerups-header p { margin: 0 0 16px; color: #b8d2cc; font-size: 13px; line-height: 1.45; }
+.powerups-content { padding: clamp(24px, 3vw, 38px); }
+.powerups-header { padding-right: 48px; }
+.powerups-header h2 { margin: 4px 0 8px; font: 900 clamp(28px, 3vw, 40px)/1.08 Georgia, serif; color: #fff1cf; }
+.powerups-header p { max-width: 48ch; margin: 0 0 18px; color: #b8d2cc; font-size: 14px; line-height: 1.5; }
 
-.rarity-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 20px; }
-.rarity-filter { padding: 6px 12px; border: 1px solid rgba(225,180,90,.25); border-radius: 8px; background: rgba(0,25,24,.6); color: var(--muted); font-size: 11.5px; font-weight: 800; cursor: pointer; transition: all .15s ease; }
+.rarity-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin: 20px 0 28px; }
+.rarity-filter:first-child { grid-column: 1 / -1; }
+.rarity-filter { padding: 9px 10px; border: 1px solid rgba(225,180,90,.25); border-radius: 9px; background: rgba(0,25,24,.6); color: var(--muted); font-size: 11px; font-weight: 800; white-space: nowrap; cursor: pointer; transition: all .15s ease; }
 .rarity-filter.is-active, .rarity-filter:hover { color: #fff; border-color: var(--gold); background: rgba(225,180,90,.18); }
 .rarity-filter .count { display: inline-block; margin-left: 4px; padding: 1px 5px; border-radius: 4px; background: rgba(0,0,0,.45); font-size: 10px; }
 
-.powerups-grid { display: grid; gap: 12px; }
-.powerup-card { padding: 15px 18px; border: 1px solid rgba(219,174,89,.22); border-radius: 14px; background: rgba(1,22,21,.6); transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
-.powerup-card:hover { transform: translateY(-2px); border-color: var(--gold); background: rgba(4,32,30,.8); }
-.powerup-card.rarity-common { border-left: 4px solid #22c55e; }
-.powerup-card.rarity-rare { border-left: 4px solid #38bdf8; }
-.powerup-card.rarity-epic { border-left: 4px solid #c084fc; }
-.powerup-card.rarity-legendary { border-left: 4px solid #fbbf24; background: linear-gradient(100deg, rgba(251,191,36,.09), rgba(1,22,21,.6)); }
-
-.powerup-card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
-.powerup-card-title { display: flex; align-items: center; gap: 8px; }
-.powerup-card-icon { font-size: 22px; line-height: 1; }
-.powerup-card-title strong { font-size: 16px; color: #f8efd9; }
+.powerups-grid { display: grid; gap: 30px; }
+.powerup-rarity-group { --powerup-color: #22c55e; }
+.powerup-rarity-group.rarity-rare { --powerup-color: #38bdf8; }
+.powerup-rarity-group.rarity-epic { --powerup-color: #c084fc; }
+.powerup-rarity-group.rarity-legendary { --powerup-color: #fbbf24; }
+.powerup-group-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 11px; padding-bottom: 9px; border-bottom: 1px solid color-mix(in srgb, var(--powerup-color) 46%, transparent); }
+.powerup-group-heading div { display: flex; align-items: center; gap: 9px; }
+.powerup-group-heading strong { color: #fff1cf; font: 900 19px/1 Georgia, serif; }
+.powerup-group-heading small { color: var(--powerup-color); font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.powerup-group-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--powerup-color); box-shadow: 0 0 12px var(--powerup-color); }
+.powerup-group-cards { display: grid; gap: 11px; }
+.powerup-card { --powerup-color: #22c55e; display: grid; grid-template-columns: 66px minmax(0, 1fr); gap: 15px; padding: 15px; border: 1px solid color-mix(in srgb, var(--powerup-color) 40%, transparent); border-radius: 15px; background: linear-gradient(115deg, color-mix(in srgb, var(--powerup-color) 9%, transparent), rgba(1,22,21,.72) 42%); transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
+.powerup-card.rarity-rare { --powerup-color: #38bdf8; }
+.powerup-card.rarity-epic { --powerup-color: #c084fc; }
+.powerup-card.rarity-legendary { --powerup-color: #fbbf24; }
+.powerup-card:hover { transform: translateY(-2px); border-color: var(--powerup-color); }
+.powerup-card-icon { display: grid; place-items: center; align-self: start; width: 66px; aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--powerup-color) 65%, transparent); border-radius: 14px; background: radial-gradient(circle, color-mix(in srgb, var(--powerup-color) 24%, transparent), rgba(0,18,18,.82) 70%); font-size: 32px; line-height: 1; box-shadow: inset 0 0 18px rgba(0,0,0,.32); }
+.powerup-card-body { min-width: 0; }
+.powerup-card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.powerup-card-head > strong { color: #f8efd9; font: 900 18px/1.15 Georgia, serif; }
 .powerup-rarity-pill { padding: 3px 8px; border-radius: 5px; font-size: 9.5px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
 .powerup-rarity-pill.common { color: #052618; background: #22c55e; }
 .powerup-rarity-pill.rare { color: #04202c; background: #38bdf8; }
 .powerup-rarity-pill.epic { color: #210433; background: #c084fc; }
 .powerup-rarity-pill.legendary { color: #2a1b02; background: #fbbf24; }
-
-.powerup-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
-.powerup-tag { padding: 2px 7px; border-radius: 4px; background: rgba(52,137,119,.15); color: #84e1cd; font-size: 10.5px; font-weight: 700; }
-.powerup-tag.scope-run { color: #fbbf24; background: rgba(251,191,36,.12); }
-.powerup-tag.min-level { color: #94a3b8; background: rgba(255,255,255,.06); }
-.powerup-description { margin: 0; color: #b8d2cc; font-size: 13px; line-height: 1.45; }
+.powerup-effect { display: inline-block; margin-top: 8px; padding: 4px 9px; border-radius: 6px; color: #061c1a; background: var(--powerup-color); font-size: 12px; font-weight: 950; }
+.powerup-description { margin: 9px 0 12px; color: #c8ddd8; font-size: 13px; line-height: 1.45; }
+.powerup-facts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 6px; }
+.powerup-facts div { min-width: 0; padding: 7px 8px; border-radius: 7px; background: rgba(0,12,12,.38); }
+.powerup-facts span, .powerup-facts strong { display: block; }
+.powerup-facts span { margin-bottom: 3px; color: #7ea69d; font-size: 8px; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+.powerup-facts strong { color: #dff1ed; font-size: 10.5px; line-height: 1.25; }
 
 @media (max-width: 800px) {
   .wood-frame { inset: 5px; border-width: 3px; border-radius: 16px; }
@@ -408,6 +420,9 @@ tbody tr:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
   .history-profile-score { grid-column: 1 / -1; text-align: left; }
   .personal-insights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .history-run-stats { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .powerups-content { padding: 24px 20px 34px; }
+  .rarity-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .powerup-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 520px) {
@@ -418,4 +433,12 @@ tbody tr:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
   .hero-stats div { padding: 12px 10px; }
   .hero-stats strong { font-size: 17px; }
   .my-profile { gap: 12px; padding: 16px; }
+  .powerups-header { padding-right: 38px; }
+  .powerups-header h2 { font-size: 27px; }
+  .powerup-card { grid-template-columns: 52px minmax(0, 1fr); gap: 11px; padding: 12px; }
+  .powerup-card-icon { width: 52px; border-radius: 11px; font-size: 26px; }
+  .powerup-card-head { align-items: flex-start; }
+  .powerup-card-head > strong { font-size: 16px; }
+  .powerup-description { font-size: 12px; }
+  .powerup-facts { grid-template-columns: 1fr; }
 }
