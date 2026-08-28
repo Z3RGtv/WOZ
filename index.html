@@ -9,9 +9,9 @@
   <meta property="og:description" content="Recordes, runs e multiplicadores da comunidade Z3RGtv.">
   <title>Words on ZTR3AM — Leaderboard</title>
   <link rel="preconnect" href="https://static-cdn.jtvnw.net">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="app.js?v=12" defer></script>
+  <script src="app.js?v=13" defer></script>
 </head>
 <body>
   <div class="wood-frame" aria-hidden="true"></div>
@@ -49,10 +49,13 @@
             <span class="platform-badge youtube"><i aria-hidden="true"></i> YouTube</span>
           </div>
         </div>
-        <label class="search-box">
-          <span class="sr-only">Pesquisar jogador</span>
-          <input id="search-input" type="search" autocomplete="off" placeholder="Pesquisar jogador…">
-        </label>
+        <div class="toolbar-actions">
+          <button id="open-powerups-btn" class="open-powerups-btn" type="button" aria-label="Abrir compêndio de power-ups">⚡ Compêndio de Power-Ups</button>
+          <label class="search-box">
+            <span class="sr-only">Pesquisar jogador</span>
+            <input id="search-input" type="search" autocomplete="off" placeholder="Pesquisar jogador…">
+          </label>
+        </div>
       </div>
 
       <div class="table-wrap">
@@ -79,6 +82,27 @@
   <dialog id="player-history-dialog" class="player-history-dialog" aria-labelledby="history-title">
     <button id="history-close" class="history-close" type="button" aria-label="Fechar histórico">×</button>
     <div id="player-history-content"></div>
+  </dialog>
+
+  <dialog id="powerups-dialog" class="player-history-dialog powerups-dialog" aria-labelledby="powerups-title">
+    <button id="powerups-close" class="history-close" type="button" aria-label="Fechar compêndio">×</button>
+    <div id="powerups-content" class="powerups-content">
+      <header class="powerups-header">
+        <span class="eyebrow">GUIA ROGUELIKE</span>
+        <h2 id="powerups-title">⚡ Compêndio de Power-Ups</h2>
+        <p>Todos os bónus e melhorias que podem surgir nas votações do chat durante as partidas.</p>
+        
+        <div class="rarity-filters" role="tablist" aria-label="Filtrar por raridade">
+          <button type="button" class="rarity-filter is-active" data-rarity="all">Todos <span class="count" id="count-all">0</span></button>
+          <button type="button" class="rarity-filter common" data-rarity="common">🟢 Comum <span class="count" id="count-common">0</span></button>
+          <button type="button" class="rarity-filter rare" data-rarity="rare">🔵 Raro <span class="count" id="count-rare">0</span></button>
+          <button type="button" class="rarity-filter epic" data-rarity="epic">🟣 Épico <span class="count" id="count-epic">0</span></button>
+          <button type="button" class="rarity-filter legendary" data-rarity="legendary">🟡 Lendário <span class="count" id="count-legendary">0</span></button>
+        </div>
+      </header>
+
+      <div id="powerups-list" class="powerups-grid"></div>
+    </div>
   </dialog>
 
   <dialog id="youtube-login-dialog" class="youtube-login-dialog" aria-labelledby="youtube-dialog-title">
