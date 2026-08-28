@@ -147,9 +147,15 @@ async function fetchTwitchUsers(token, ids = []) {
 }
 
 function renderPowerups(filterRarity = 'all') {
-  const filtered = filterRarity === 'all'
-    ? gamePowerups
-    : gamePowerups.filter((p) => p.rarity === filterRarity);
+  const rarityOrder = ['common', 'rare', 'epic', 'legendary'];
+  const filtered = gamePowerups
+    .filter((powerup) => filterRarity === 'all' || powerup.rarity === filterRarity)
+    .sort((a, b) => {
+      const rarityDifference = rarityOrder.indexOf(a.rarity) - rarityOrder.indexOf(b.rarity);
+      if (rarityDifference !== 0) return rarityDifference;
+      const levelDifference = Number(a.minimumLevel || 2) - Number(b.minimumLevel || 2);
+      return levelDifference || a.name.localeCompare(b.name, 'pt-PT');
+    });
 
   if (elements.countAll) elements.countAll.textContent = gamePowerups.length;
   if (elements.countCommon) elements.countCommon.textContent = gamePowerups.filter((p) => p.rarity === 'common').length;
@@ -159,29 +165,47 @@ function renderPowerups(filterRarity = 'all') {
 
   if (!elements.powerupsList) return;
 
-  elements.powerupsList.innerHTML = filtered.map((powerup) => {
-    const isRunScope = powerup.scope === 'RUN';
-    const scopeLabel = isRunScope ? '♾️ Permanente (Run)' : '⚡ Próximo Nível';
-    const stackNote = Number(powerup.maxStacks || 1) > 1
-      ? `<span class="powerup-tag">Acumula até ${powerup.maxStacks}×</span>`
-      : '';
-    return `<article class="powerup-card rarity-${escapeHtml(powerup.rarity || 'common')}">
-      <div class="powerup-card-head">
-        <div class="powerup-card-title">
-          <span class="powerup-card-icon">${escapeHtml(powerup.icon || '⚡')}</span>
-          <strong>${escapeHtml(powerup.name)}</strong>
-        </div>
-        <span class="powerup-rarity-pill ${escapeHtml(powerup.rarity || 'common')}">${escapeHtml(RARITY_LABELS[powerup.rarity] || powerup.rarity)}</span>
-      </div>
-      <div class="powerup-card-tags">
-        <span class="powerup-tag ${isRunScope ? 'scope-run' : ''}">${scopeLabel}</span>
-        <span class="powerup-tag min-level">🎯 A partir do Nível ${Number(powerup.minimumLevel || 2)}</span>
-        ${powerup.effectLabel ? `<span class="powerup-tag">${escapeHtml(powerup.effectLabel)}</span>` : ''}
-        ${stackNote}
-      </div>
-      <p class="powerup-description">${escapeHtml(powerup.description)}</p>
-    </article>`;
-  }).join('');
+  const cardsByRarity = new Map(rarityOrder.map((rarity) => [rarity, []]));
+  filtered.forEach((powerup) => cardsByRarity.get(powerup.rarity || 'common')?.push(powerup));
+
+  const renderedGroups = rarityOrder
+    .filter((rarity) => cardsByRarity.get(rarity)?.length)
+    .map((rarity) => {
+      const cards = cardsByRarity.get(rarity).map((powerup) => {
+        const isRunScope = powerup.scope === 'RUN';
+        const scopeLabel = isRunScope ? 'Permanente nesta run' : 'Apenas no próximo nível';
+        const stackNote = Number(powerup.maxStacks || 1) > 1
+          ? `<div><span>Acumulação</span><strong>Até ${powerup.maxStacks}×</strong></div>`
+          : '';
+
+        return `<article class="powerup-card rarity-${escapeHtml(rarity)}">
+          <div class="powerup-card-icon" aria-hidden="true">${escapeHtml(powerup.icon || '⚡')}</div>
+          <div class="powerup-card-body">
+            <div class="powerup-card-head">
+              <strong>${escapeHtml(powerup.name)}</strong>
+              <span class="powerup-rarity-pill ${escapeHtml(rarity)}">${escapeHtml(RARITY_LABELS[rarity] || rarity)}</span>
+            </div>
+            ${powerup.effectLabel ? `<div class="powerup-effect">${escapeHtml(powerup.effectLabel)}</div>` : ''}
+            <p class="powerup-description">${escapeHtml(powerup.description)}</p>
+            <div class="powerup-facts">
+              <div><span>Disponível</span><strong>Desde o nível ${Number(powerup.minimumLevel || 2)}</strong></div>
+              <div><span>Duração</span><strong>${scopeLabel}</strong></div>
+              ${stackNote}
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+
+      return `<section class="powerup-rarity-group rarity-${escapeHtml(rarity)}">
+        <header class="powerup-group-heading">
+          <div><span class="powerup-group-dot" aria-hidden="true"></span><strong>${escapeHtml(RARITY_LABELS[rarity])}</strong></div>
+          <small>${cardsByRarity.get(rarity).length} ${cardsByRarity.get(rarity).length === 1 ? 'melhoria' : 'melhorias'}</small>
+        </header>
+        <div class="powerup-group-cards">${cards}</div>
+      </section>`;
+    }).join('');
+
+  elements.powerupsList.innerHTML = renderedGroups;
 }
 
 function openPowerupsDialog() {
