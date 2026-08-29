@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-29T22:25:42.542Z",
+  "updatedAt": "2026-08-29T22:35:18.143Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -194,10 +194,10 @@
       "name": "marquesrcarol",
       "maxPoints": 361.9,
       "maxBasePoints": 329,
-      "lastRunPoints": 287.1,
-      "lastRunBasePoints": 261,
+      "lastRunPoints": 124.3,
+      "lastRunBasePoints": 113,
       "runs": 3,
-      "totalGames": 3,
+      "totalGames": 4,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 261,
@@ -214,7 +214,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788042342538,
+      "updatedAt": 1788042918137,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
@@ -279,10 +279,10 @@
       "name": "sheisdani",
       "maxPoints": 275,
       "maxBasePoints": 250,
-      "lastRunPoints": 225.5,
-      "lastRunBasePoints": 205,
+      "lastRunPoints": 55,
+      "lastRunBasePoints": 50,
       "runs": 3,
-      "totalGames": 3,
+      "totalGames": 4,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 205,
@@ -299,7 +299,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788042342538,
+      "updatedAt": 1788042918137,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
@@ -481,10 +481,10 @@
       "name": "garzia17",
       "maxPoints": 140,
       "maxBasePoints": 140,
-      "lastRunPoints": 82,
-      "lastRunBasePoints": 82,
+      "lastRunPoints": 27,
+      "lastRunBasePoints": 27,
       "runs": 3,
-      "totalGames": 3,
+      "totalGames": 4,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 82,
@@ -501,7 +501,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788042342538,
+      "updatedAt": 1788042918137,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
@@ -1213,7 +1213,7 @@
       "lastRunPoints": 4,
       "lastRunBasePoints": 4,
       "runs": 3,
-      "totalGames": 3,
+      "totalGames": 4,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 4,
@@ -1230,7 +1230,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788042342538,
+      "updatedAt": 1788042918137,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
