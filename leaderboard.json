@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-29T21:56:16.687Z",
+  "updatedAt": "2026-08-29T22:25:42.542Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -194,15 +194,15 @@
       "name": "marquesrcarol",
       "maxPoints": 361.9,
       "maxBasePoints": 329,
-      "lastRunPoints": 361.9,
-      "lastRunBasePoints": 329,
-      "runs": 2,
-      "totalGames": 2,
+      "lastRunPoints": 287.1,
+      "lastRunBasePoints": 261,
+      "runs": 3,
+      "totalGames": 3,
       "bestLevel": 18,
-      "trackedRuns": 0,
-      "totalBasePoints": 0,
-      "totalWordsFound": 0,
-      "totalLevelsReached": 0,
+      "trackedRuns": 1,
+      "totalBasePoints": 261,
+      "totalWordsFound": 36,
+      "totalLevelsReached": 8,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -214,8 +214,54 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746,
-      "runHistory": [],
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 261,
+          "points": 287.1,
+          "wordsFound": 36,
+          "longestWord": "informar",
+          "averageWordLength": 4.67,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
       "bestRun": {
         "gameId": "historico-anterior",
         "endedAt": 1787869508746,
@@ -233,15 +279,15 @@
       "name": "sheisdani",
       "maxPoints": 275,
       "maxBasePoints": 250,
-      "lastRunPoints": 275,
-      "lastRunBasePoints": 250,
-      "runs": 2,
-      "totalGames": 2,
+      "lastRunPoints": 225.5,
+      "lastRunBasePoints": 205,
+      "runs": 3,
+      "totalGames": 3,
       "bestLevel": 18,
-      "trackedRuns": 0,
-      "totalBasePoints": 0,
-      "totalWordsFound": 0,
-      "totalLevelsReached": 0,
+      "trackedRuns": 1,
+      "totalBasePoints": 205,
+      "totalWordsFound": 36,
+      "totalLevelsReached": 8,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -253,8 +299,54 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746,
-      "runHistory": [],
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 205,
+          "points": 225.5,
+          "wordsFound": 36,
+          "longestWord": "programa",
+          "averageWordLength": 4.11,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
       "bestRun": {
         "gameId": "historico-anterior",
         "endedAt": 1787869508746,
@@ -389,15 +481,15 @@
       "name": "garzia17",
       "maxPoints": 140,
       "maxBasePoints": 140,
-      "lastRunPoints": 140,
-      "lastRunBasePoints": 140,
-      "runs": 2,
-      "totalGames": 2,
+      "lastRunPoints": 82,
+      "lastRunBasePoints": 82,
+      "runs": 3,
+      "totalGames": 3,
       "bestLevel": 18,
-      "trackedRuns": 0,
-      "totalBasePoints": 0,
-      "totalWordsFound": 0,
-      "totalLevelsReached": 0,
+      "trackedRuns": 1,
+      "totalBasePoints": 82,
+      "totalWordsFound": 16,
+      "totalLevelsReached": 8,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -409,8 +501,54 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746,
-      "runHistory": [],
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 82,
+          "points": 82,
+          "wordsFound": 16,
+          "longestWord": "passo",
+          "averageWordLength": 3.88,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
       "bestRun": {
         "gameId": "historico-anterior",
         "endedAt": 1787869508746,
@@ -467,15 +605,15 @@
       "name": "gui_z0",
       "maxPoints": 25.3,
       "maxBasePoints": 23,
-      "lastRunPoints": 25.3,
-      "lastRunBasePoints": 23,
-      "runs": 1,
-      "totalGames": 1,
+      "lastRunPoints": 0,
+      "lastRunBasePoints": 0,
+      "runs": 2,
+      "totalGames": 2,
       "bestLevel": 18,
-      "trackedRuns": 0,
+      "trackedRuns": 1,
       "totalBasePoints": 0,
       "totalWordsFound": 0,
-      "totalLevelsReached": 0,
+      "totalLevelsReached": 8,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -487,8 +625,54 @@
         "vip": true,
         "broadcaster": false
       },
-      "updatedAt": 1787869508746,
-      "runHistory": [],
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 0,
+          "points": 0,
+          "wordsFound": 0,
+          "longestWord": "",
+          "averageWordLength": 0,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
       "bestRun": {
         "gameId": "historico-anterior",
         "endedAt": 1787869508746,
@@ -502,19 +686,138 @@
       }
     },
     {
-      "id": "twitch:428320452",
-      "name": "ipowerlz",
-      "maxPoints": 8,
-      "maxBasePoints": 8,
-      "lastRunPoints": 8,
-      "lastRunBasePoints": 8,
+      "id": "twitch:631208483",
+      "name": "luciamm19",
+      "maxPoints": 20.9,
+      "maxBasePoints": 19,
+      "lastRunPoints": 20.9,
+      "lastRunBasePoints": 19,
       "runs": 1,
       "totalGames": 1,
-      "bestLevel": 6,
-      "trackedRuns": 0,
-      "totalBasePoints": 0,
-      "totalWordsFound": 0,
-      "totalLevelsReached": 0,
+      "bestLevel": 8,
+      "trackedRuns": 1,
+      "totalBasePoints": 19,
+      "totalWordsFound": 3,
+      "totalLevelsReached": 8,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1.1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1.1,
+      "roles": {
+        "subscriber": true,
+        "moderator": true,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 19,
+          "points": 20.9,
+          "wordsFound": 3,
+          "longestWord": "sócio",
+          "averageWordLength": 4.67,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
+      "bestRun": {
+        "gameId": "game-1788040768145",
+        "endedAt": 1788042342538,
+        "levelReached": 8,
+        "basePoints": 19,
+        "points": 20.9,
+        "wordsFound": 3,
+        "longestWord": "sócio",
+        "averageWordLength": 4.67,
+        "powerups": [
+          {
+            "id": "next_hint_extra_letter",
+            "name": "Pista Mais Nítida",
+            "icon": "🔍",
+            "rarity": "rare",
+            "effectLabel": "+1 letra já",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 2,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_extra_time",
+            "name": "Fôlego Extra",
+            "icon": "⏱️",
+            "rarity": "common",
+            "effectLabel": "+15s",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 4,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_head_start",
+            "name": "Arranque Lançado",
+            "icon": "🚀",
+            "rarity": "epic",
+            "effectLabel": "+10% arranque",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 7,
+            "votes": 3,
+            "isRandomDraw": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "twitch:1211211111",
+      "name": "lourenco_2015_marques",
+      "maxPoints": 12,
+      "maxBasePoints": 12,
+      "lastRunPoints": 12,
+      "lastRunBasePoints": 12,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 8,
+      "trackedRuns": 1,
+      "totalBasePoints": 12,
+      "totalWordsFound": 3,
+      "totalLevelsReached": 8,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -526,8 +829,173 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1787857234576,
-      "runHistory": [],
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 12,
+          "points": 12,
+          "wordsFound": 3,
+          "longestWord": "não",
+          "averageWordLength": 3,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
+      "bestRun": {
+        "gameId": "game-1788040768145",
+        "endedAt": 1788042342538,
+        "levelReached": 8,
+        "basePoints": 12,
+        "points": 12,
+        "wordsFound": 3,
+        "longestWord": "não",
+        "averageWordLength": 3,
+        "powerups": [
+          {
+            "id": "next_hint_extra_letter",
+            "name": "Pista Mais Nítida",
+            "icon": "🔍",
+            "rarity": "rare",
+            "effectLabel": "+1 letra já",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 2,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_extra_time",
+            "name": "Fôlego Extra",
+            "icon": "⏱️",
+            "rarity": "common",
+            "effectLabel": "+15s",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 4,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_head_start",
+            "name": "Arranque Lançado",
+            "icon": "🚀",
+            "rarity": "epic",
+            "effectLabel": "+10% arranque",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 7,
+            "votes": 3,
+            "isRandomDraw": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "twitch:428320452",
+      "name": "ipowerlz",
+      "maxPoints": 8,
+      "maxBasePoints": 8,
+      "lastRunPoints": 0,
+      "lastRunBasePoints": 0,
+      "runs": 2,
+      "totalGames": 2,
+      "bestLevel": 8,
+      "trackedRuns": 1,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 8,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 0,
+          "points": 0,
+          "wordsFound": 0,
+          "longestWord": "",
+          "averageWordLength": 0,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
       "bestRun": {
         "gameId": "historico-anterior",
         "endedAt": 1787857234576,
@@ -616,6 +1084,244 @@
         "longestWord": "",
         "averageWordLength": 0,
         "powerups": []
+      }
+    },
+    {
+      "id": "youtube:UCdb9XKwIPzOUQFPufsmbVIQ",
+      "name": "Z3RGTv",
+      "maxPoints": 4.4,
+      "maxBasePoints": 4,
+      "lastRunPoints": 4.4,
+      "lastRunBasePoints": 4,
+      "runs": 1,
+      "totalGames": 1,
+      "bestLevel": 8,
+      "trackedRuns": 1,
+      "totalBasePoints": 4,
+      "totalWordsFound": 1,
+      "totalLevelsReached": 8,
+      "platform": "youtube",
+      "profileImageUrl": "",
+      "multiplier": 1.1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1.1,
+      "roles": {
+        "subscriber": false,
+        "moderator": true,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 4,
+          "points": 4.4,
+          "wordsFound": 1,
+          "longestWord": "ora",
+          "averageWordLength": 3,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
+      "bestRun": {
+        "gameId": "game-1788040768145",
+        "endedAt": 1788042342538,
+        "levelReached": 8,
+        "basePoints": 4,
+        "points": 4.4,
+        "wordsFound": 1,
+        "longestWord": "ora",
+        "averageWordLength": 3,
+        "powerups": [
+          {
+            "id": "next_hint_extra_letter",
+            "name": "Pista Mais Nítida",
+            "icon": "🔍",
+            "rarity": "rare",
+            "effectLabel": "+1 letra já",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 2,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_extra_time",
+            "name": "Fôlego Extra",
+            "icon": "⏱️",
+            "rarity": "common",
+            "effectLabel": "+15s",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 4,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_head_start",
+            "name": "Arranque Lançado",
+            "icon": "🚀",
+            "rarity": "epic",
+            "effectLabel": "+10% arranque",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 7,
+            "votes": 3,
+            "isRandomDraw": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "twitch:1069376937",
+      "name": "manu12321_",
+      "maxPoints": 4,
+      "maxBasePoints": 4,
+      "lastRunPoints": 4,
+      "lastRunBasePoints": 4,
+      "runs": 3,
+      "totalGames": 3,
+      "bestLevel": 18,
+      "trackedRuns": 1,
+      "totalBasePoints": 4,
+      "totalWordsFound": 1,
+      "totalLevelsReached": 8,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1788042342538,
+      "runHistory": [
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 4,
+          "points": 4,
+          "wordsFound": 1,
+          "longestWord": "rio",
+          "averageWordLength": 3,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
+      "bestRun": {
+        "gameId": "game-1788040768145",
+        "endedAt": 1788042342538,
+        "levelReached": 8,
+        "basePoints": 4,
+        "points": 4,
+        "wordsFound": 1,
+        "longestWord": "rio",
+        "averageWordLength": 3,
+        "powerups": [
+          {
+            "id": "next_hint_extra_letter",
+            "name": "Pista Mais Nítida",
+            "icon": "🔍",
+            "rarity": "rare",
+            "effectLabel": "+1 letra já",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 2,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_extra_time",
+            "name": "Fôlego Extra",
+            "icon": "⏱️",
+            "rarity": "common",
+            "effectLabel": "+15s",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 4,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_head_start",
+            "name": "Arranque Lançado",
+            "icon": "🚀",
+            "rarity": "epic",
+            "effectLabel": "+10% arranque",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 7,
+            "votes": 3,
+            "isRandomDraw": false
+          }
+        ]
       }
     },
     {
