@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-30T19:48:49.930Z",
+  "updatedAt": "2026-08-30T19:52:35.064Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -194,10 +194,10 @@
       "name": "marquesrcarol",
       "maxPoints": 361.9,
       "maxBasePoints": 329,
-      "lastRunPoints": 124.3,
-      "lastRunBasePoints": 113,
+      "lastRunPoints": 0,
+      "lastRunBasePoints": 0,
       "runs": 3,
-      "totalGames": 4,
+      "totalGames": 5,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 261,
@@ -214,7 +214,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788042918137,
+      "updatedAt": 1788119555059,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
@@ -279,10 +279,10 @@
       "name": "sheisdani",
       "maxPoints": 275,
       "maxBasePoints": 250,
-      "lastRunPoints": 55,
-      "lastRunBasePoints": 50,
+      "lastRunPoints": 39.6,
+      "lastRunBasePoints": 36,
       "runs": 3,
-      "totalGames": 4,
+      "totalGames": 5,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 205,
@@ -299,7 +299,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788042918137,
+      "updatedAt": 1788119555059,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
@@ -481,10 +481,10 @@
       "name": "garzia17",
       "maxPoints": 140,
       "maxBasePoints": 140,
-      "lastRunPoints": 27,
-      "lastRunBasePoints": 27,
+      "lastRunPoints": 0,
+      "lastRunBasePoints": 0,
       "runs": 3,
-      "totalGames": 4,
+      "totalGames": 5,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 82,
@@ -501,7 +501,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788042918137,
+      "updatedAt": 1788119555059,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
@@ -608,7 +608,7 @@
       "lastRunPoints": 0,
       "lastRunBasePoints": 0,
       "runs": 2,
-      "totalGames": 2,
+      "totalGames": 3,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 0,
@@ -625,7 +625,7 @@
         "vip": true,
         "broadcaster": false
       },
-      "updatedAt": 1788042342538,
+      "updatedAt": 1788119555059,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
@@ -1087,6 +1087,35 @@
       }
     },
     {
+      "id": "twitch:436081031",
+      "name": "r_moreira16",
+      "maxPoints": 5,
+      "maxBasePoints": 5,
+      "lastRunPoints": 5,
+      "lastRunBasePoints": 5,
+      "runs": 0,
+      "totalGames": 1,
+      "bestLevel": 1,
+      "trackedRuns": 0,
+      "totalBasePoints": 0,
+      "totalWordsFound": 0,
+      "totalLevelsReached": 0,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1788119555059,
+      "runHistory": [],
+      "bestRun": null
+    },
+    {
       "id": "youtube:UCdb9XKwIPzOUQFPufsmbVIQ",
       "name": "Z3RGTv",
       "maxPoints": 4.4,
@@ -1210,10 +1239,10 @@
       "name": "manu12321_",
       "maxPoints": 4,
       "maxBasePoints": 4,
-      "lastRunPoints": 4,
-      "lastRunBasePoints": 4,
+      "lastRunPoints": 0,
+      "lastRunBasePoints": 0,
       "runs": 3,
-      "totalGames": 4,
+      "totalGames": 5,
       "bestLevel": 18,
       "trackedRuns": 1,
       "totalBasePoints": 4,
@@ -1230,7 +1259,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788042918137,
+      "updatedAt": 1788119555059,
       "runHistory": [
         {
           "gameId": "game-1788040768145",
