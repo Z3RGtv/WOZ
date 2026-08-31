@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-31T22:11:43.222Z",
+  "updatedAt": "2026-08-31T22:11:49.651Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -442,6 +442,213 @@
       }
     },
     {
+      "id": "twitch:134395626",
+      "name": "minichef9",
+      "maxPoints": 564.3,
+      "maxBasePoints": 513,
+      "lastRunPoints": 29.7,
+      "lastRunBasePoints": 27,
+      "runs": 1,
+      "totalGames": 3,
+      "bestLevel": 25,
+      "trackedRuns": 1,
+      "totalBasePoints": 513,
+      "totalWordsFound": 82,
+      "totalLevelsReached": 25,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1.1,
+      "regularityMultiplier": 1,
+      "roleMultiplier": 1.1,
+      "roles": {
+        "subscriber": true,
+        "moderator": false,
+        "vip": true,
+        "broadcaster": false
+      },
+      "updatedAt": 1788214309649,
+      "runHistory": [
+        {
+          "gameId": "game-1788119611678",
+          "endedAt": 1788124946103,
+          "levelReached": 25,
+          "basePoints": 513,
+          "points": 564.3,
+          "wordsFound": 82,
+          "longestWord": "estarmos",
+          "averageWordLength": 4.41,
+          "powerups": [
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "hint_words_plus_one",
+              "name": "Olhar Mais Atento",
+              "icon": "👓",
+              "rarity": "rare",
+              "effectLabel": "+1 palavra",
+              "scope": "RUN",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "permanent_target_reduction",
+              "name": "Lâmina da Meta",
+              "icon": "🗡️",
+              "rarity": "legendary",
+              "effectLabel": "−5% sempre",
+              "scope": "RUN",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 10,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 14,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_hint_all_words",
+              "name": "Tabuleiro Iluminado",
+              "icon": "💡",
+              "rarity": "legendary",
+              "effectLabel": "Todas",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 18,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "permanent_extra_time",
+              "name": "Relógio Melhorado",
+              "icon": "🕰️",
+              "rarity": "epic",
+              "effectLabel": "+15s sempre",
+              "scope": "RUN",
+              "selectedAfterLevel": 23,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
+      "bestRun": {
+        "gameId": "game-1788119611678",
+        "endedAt": 1788124946103,
+        "levelReached": 25,
+        "basePoints": 513,
+        "points": 564.3,
+        "wordsFound": 82,
+        "longestWord": "estarmos",
+        "averageWordLength": 4.41,
+        "powerups": [
+          {
+            "id": "score_multiplier_11",
+            "name": "Pontuação Afinada",
+            "icon": "🎯",
+            "rarity": "rare",
+            "effectLabel": "×1,1",
+            "scope": "RUN",
+            "selectedAfterLevel": 2,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "hint_words_plus_one",
+            "name": "Olhar Mais Atento",
+            "icon": "👓",
+            "rarity": "rare",
+            "effectLabel": "+1 palavra",
+            "scope": "RUN",
+            "selectedAfterLevel": 4,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "permanent_target_reduction",
+            "name": "Lâmina da Meta",
+            "icon": "🗡️",
+            "rarity": "legendary",
+            "effectLabel": "−5% sempre",
+            "scope": "RUN",
+            "selectedAfterLevel": 7,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "score_multiplier_11",
+            "name": "Pontuação Afinada",
+            "icon": "🎯",
+            "rarity": "rare",
+            "effectLabel": "×1,1",
+            "scope": "RUN",
+            "selectedAfterLevel": 10,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "score_multiplier_11",
+            "name": "Pontuação Afinada",
+            "icon": "🎯",
+            "rarity": "rare",
+            "effectLabel": "×1,1",
+            "scope": "RUN",
+            "selectedAfterLevel": 14,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_hint_all_words",
+            "name": "Tabuleiro Iluminado",
+            "icon": "💡",
+            "rarity": "legendary",
+            "effectLabel": "Todas",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 18,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "permanent_extra_time",
+            "name": "Relógio Melhorado",
+            "icon": "🕰️",
+            "rarity": "epic",
+            "effectLabel": "+15s sempre",
+            "scope": "RUN",
+            "selectedAfterLevel": 23,
+            "votes": 3,
+            "isRandomDraw": false
+          }
+        ]
+      }
+    },
+    {
       "id": "twitch:972248156",
       "name": "marquesrcarol",
       "maxPoints": 544.5,
@@ -612,213 +819,6 @@
         "wordsFound": 59,
         "longestWord": "negativo",
         "averageWordLength": 5.19,
-        "powerups": [
-          {
-            "id": "score_multiplier_11",
-            "name": "Pontuação Afinada",
-            "icon": "🎯",
-            "rarity": "rare",
-            "effectLabel": "×1,1",
-            "scope": "RUN",
-            "selectedAfterLevel": 2,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "hint_words_plus_one",
-            "name": "Olhar Mais Atento",
-            "icon": "👓",
-            "rarity": "rare",
-            "effectLabel": "+1 palavra",
-            "scope": "RUN",
-            "selectedAfterLevel": 4,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "permanent_target_reduction",
-            "name": "Lâmina da Meta",
-            "icon": "🗡️",
-            "rarity": "legendary",
-            "effectLabel": "−5% sempre",
-            "scope": "RUN",
-            "selectedAfterLevel": 7,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "score_multiplier_11",
-            "name": "Pontuação Afinada",
-            "icon": "🎯",
-            "rarity": "rare",
-            "effectLabel": "×1,1",
-            "scope": "RUN",
-            "selectedAfterLevel": 10,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "score_multiplier_11",
-            "name": "Pontuação Afinada",
-            "icon": "🎯",
-            "rarity": "rare",
-            "effectLabel": "×1,1",
-            "scope": "RUN",
-            "selectedAfterLevel": 14,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "next_hint_all_words",
-            "name": "Tabuleiro Iluminado",
-            "icon": "💡",
-            "rarity": "legendary",
-            "effectLabel": "Todas",
-            "scope": "NEXT_LEVEL",
-            "selectedAfterLevel": 18,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "permanent_extra_time",
-            "name": "Relógio Melhorado",
-            "icon": "🕰️",
-            "rarity": "epic",
-            "effectLabel": "+15s sempre",
-            "scope": "RUN",
-            "selectedAfterLevel": 23,
-            "votes": 3,
-            "isRandomDraw": false
-          }
-        ]
-      }
-    },
-    {
-      "id": "twitch:134395626",
-      "name": "minichef9",
-      "maxPoints": 513,
-      "maxBasePoints": 513,
-      "lastRunPoints": 27,
-      "lastRunBasePoints": 27,
-      "runs": 1,
-      "totalGames": 3,
-      "bestLevel": 25,
-      "trackedRuns": 1,
-      "totalBasePoints": 513,
-      "totalWordsFound": 82,
-      "totalLevelsReached": 25,
-      "platform": "twitch",
-      "profileImageUrl": "",
-      "multiplier": 1,
-      "regularityMultiplier": 1,
-      "roleMultiplier": 1,
-      "roles": {
-        "subscriber": false,
-        "moderator": false,
-        "vip": false,
-        "broadcaster": false
-      },
-      "updatedAt": 1788214303220,
-      "runHistory": [
-        {
-          "gameId": "game-1788119611678",
-          "endedAt": 1788124946103,
-          "levelReached": 25,
-          "basePoints": 513,
-          "points": 513,
-          "wordsFound": 82,
-          "longestWord": "estarmos",
-          "averageWordLength": 4.41,
-          "powerups": [
-            {
-              "id": "score_multiplier_11",
-              "name": "Pontuação Afinada",
-              "icon": "🎯",
-              "rarity": "rare",
-              "effectLabel": "×1,1",
-              "scope": "RUN",
-              "selectedAfterLevel": 2,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "hint_words_plus_one",
-              "name": "Olhar Mais Atento",
-              "icon": "👓",
-              "rarity": "rare",
-              "effectLabel": "+1 palavra",
-              "scope": "RUN",
-              "selectedAfterLevel": 4,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "permanent_target_reduction",
-              "name": "Lâmina da Meta",
-              "icon": "🗡️",
-              "rarity": "legendary",
-              "effectLabel": "−5% sempre",
-              "scope": "RUN",
-              "selectedAfterLevel": 7,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "score_multiplier_11",
-              "name": "Pontuação Afinada",
-              "icon": "🎯",
-              "rarity": "rare",
-              "effectLabel": "×1,1",
-              "scope": "RUN",
-              "selectedAfterLevel": 10,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "score_multiplier_11",
-              "name": "Pontuação Afinada",
-              "icon": "🎯",
-              "rarity": "rare",
-              "effectLabel": "×1,1",
-              "scope": "RUN",
-              "selectedAfterLevel": 14,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "next_hint_all_words",
-              "name": "Tabuleiro Iluminado",
-              "icon": "💡",
-              "rarity": "legendary",
-              "effectLabel": "Todas",
-              "scope": "NEXT_LEVEL",
-              "selectedAfterLevel": 18,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "permanent_extra_time",
-              "name": "Relógio Melhorado",
-              "icon": "🕰️",
-              "rarity": "epic",
-              "effectLabel": "+15s sempre",
-              "scope": "RUN",
-              "selectedAfterLevel": 23,
-              "votes": 3,
-              "isRandomDraw": false
-            }
-          ]
-        }
-      ],
-      "bestRun": {
-        "gameId": "game-1788119611678",
-        "endedAt": 1788124946103,
-        "levelReached": 25,
-        "basePoints": 513,
-        "points": 513,
-        "wordsFound": 82,
-        "longestWord": "estarmos",
-        "averageWordLength": 4.41,
         "powerups": [
           {
             "id": "score_multiplier_11",
