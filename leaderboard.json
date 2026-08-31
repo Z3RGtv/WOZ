@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-31T21:49:17.048Z",
+  "updatedAt": "2026-08-31T21:56:15.154Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -194,10 +194,10 @@
       "name": "sheisdani",
       "maxPoints": 601.7,
       "maxBasePoints": 547,
-      "lastRunPoints": 601.7,
-      "lastRunBasePoints": 547,
+      "lastRunPoints": 9.9,
+      "lastRunBasePoints": 9,
       "runs": 4,
-      "totalGames": 6,
+      "totalGames": 7,
       "bestLevel": 25,
       "trackedRuns": 2,
       "totalBasePoints": 752,
@@ -214,7 +214,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788125566309,
+      "updatedAt": 1788213375147,
       "runHistory": [
         {
           "gameId": "game-1788119611678",
@@ -446,10 +446,10 @@
       "name": "minichef9",
       "maxPoints": 564.3,
       "maxBasePoints": 513,
-      "lastRunPoints": 564.3,
-      "lastRunBasePoints": 513,
+      "lastRunPoints": 29.7,
+      "lastRunBasePoints": 27,
       "runs": 1,
-      "totalGames": 2,
+      "totalGames": 3,
       "bestLevel": 25,
       "trackedRuns": 1,
       "totalBasePoints": 513,
@@ -466,7 +466,7 @@
         "vip": true,
         "broadcaster": false
       },
-      "updatedAt": 1788124946103,
+      "updatedAt": 1788213375147,
       "runHistory": [
         {
           "gameId": "game-1788119611678",
@@ -1325,10 +1325,10 @@
       "name": "manodrico",
       "maxPoints": 169,
       "maxBasePoints": 169,
-      "lastRunPoints": 169,
-      "lastRunBasePoints": 169,
+      "lastRunPoints": 4,
+      "lastRunBasePoints": 4,
       "runs": 2,
-      "totalGames": 2,
+      "totalGames": 3,
       "bestLevel": 18,
       "trackedRuns": 0,
       "totalBasePoints": 0,
@@ -1345,7 +1345,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788212911974,
+      "updatedAt": 1788213375147,
       "runHistory": [],
       "bestRun": {
         "gameId": "historico-anterior",
@@ -1571,10 +1571,10 @@
       "name": "manu12321_",
       "maxPoints": 71,
       "maxBasePoints": 71,
-      "lastRunPoints": 71,
-      "lastRunBasePoints": 71,
+      "lastRunPoints": 12,
+      "lastRunBasePoints": 12,
       "runs": 4,
-      "totalGames": 6,
+      "totalGames": 7,
       "bestLevel": 25,
       "trackedRuns": 2,
       "totalBasePoints": 75,
@@ -1591,7 +1591,7 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788124946103,
+      "updatedAt": 1788213375147,
       "runHistory": [
         {
           "gameId": "game-1788119611678",
@@ -1862,10 +1862,10 @@
       "name": "gui_z0",
       "maxPoints": 25.3,
       "maxBasePoints": 23,
-      "lastRunPoints": 4.4,
-      "lastRunBasePoints": 4,
+      "lastRunPoints": 13.2,
+      "lastRunBasePoints": 12,
       "runs": 3,
-      "totalGames": 4,
+      "totalGames": 5,
       "bestLevel": 25,
       "trackedRuns": 2,
       "totalBasePoints": 4,
@@ -1882,7 +1882,7 @@
         "vip": true,
         "broadcaster": false
       },
-      "updatedAt": 1788124946103,
+      "updatedAt": 1788213375147,
       "runHistory": [
         {
           "gameId": "game-1788119611678",
