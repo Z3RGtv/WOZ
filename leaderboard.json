@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-31T22:12:29.768Z",
+  "updatedAt": "2026-08-31T22:12:31.718Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -192,21 +192,21 @@
     {
       "id": "twitch:645555689",
       "name": "sheisdani",
-      "maxPoints": 601.7,
+      "maxPoints": 656.4,
       "maxBasePoints": 547,
-      "lastRunPoints": 9.9,
-      "lastRunBasePoints": 9,
-      "runs": 4,
-      "totalGames": 7,
+      "lastRunPoints": 136.8,
+      "lastRunBasePoints": 114,
+      "runs": 5,
+      "totalGames": 8,
       "bestLevel": 25,
-      "trackedRuns": 2,
-      "totalBasePoints": 752,
-      "totalWordsFound": 123,
-      "totalLevelsReached": 33,
+      "trackedRuns": 3,
+      "totalBasePoints": 866,
+      "totalWordsFound": 142,
+      "totalLevelsReached": 38,
       "platform": "twitch",
       "profileImageUrl": "",
-      "multiplier": 1.1,
-      "regularityMultiplier": 1,
+      "multiplier": 1.2,
+      "regularityMultiplier": 1.1,
       "roleMultiplier": 1.1,
       "roles": {
         "subscriber": true,
@@ -214,14 +214,48 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788214349764,
+      "updatedAt": 1788214351708,
       "runHistory": [
+        {
+          "gameId": "game-1788213427636",
+          "endedAt": 1788214351708,
+          "levelReached": 5,
+          "basePoints": 114,
+          "points": 136.8,
+          "wordsFound": 19,
+          "longestWord": "padrinho",
+          "averageWordLength": 4.21,
+          "powerups": [
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 2,
+              "votes": 4,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        },
         {
           "gameId": "game-1788119611678",
           "endedAt": 1788124946103,
           "levelReached": 25,
           "basePoints": 547,
-          "points": 601.7,
+          "points": 656.4,
           "wordsFound": 87,
           "longestWord": "explodir",
           "averageWordLength": 4.36,
@@ -310,7 +344,7 @@
           "endedAt": 1788042342538,
           "levelReached": 8,
           "basePoints": 205,
-          "points": 225.5,
+          "points": 246,
           "wordsFound": 36,
           "longestWord": "programa",
           "averageWordLength": 4.11,
@@ -356,7 +390,7 @@
         "endedAt": 1788124946103,
         "levelReached": 25,
         "basePoints": 547,
-        "points": 601.7,
+        "points": 656.4,
         "wordsFound": 87,
         "longestWord": "explodir",
         "averageWordLength": 4.36,
@@ -446,15 +480,15 @@
       "name": "minichef9",
       "maxPoints": 564.3,
       "maxBasePoints": 513,
-      "lastRunPoints": 29.7,
-      "lastRunBasePoints": 27,
-      "runs": 1,
-      "totalGames": 3,
+      "lastRunPoints": 211.2,
+      "lastRunBasePoints": 192,
+      "runs": 2,
+      "totalGames": 4,
       "bestLevel": 25,
-      "trackedRuns": 1,
-      "totalBasePoints": 513,
-      "totalWordsFound": 82,
-      "totalLevelsReached": 25,
+      "trackedRuns": 2,
+      "totalBasePoints": 705,
+      "totalWordsFound": 115,
+      "totalLevelsReached": 30,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -466,8 +500,42 @@
         "vip": true,
         "broadcaster": false
       },
-      "updatedAt": 1788214309649,
+      "updatedAt": 1788214351708,
       "runHistory": [
+        {
+          "gameId": "game-1788213427636",
+          "endedAt": 1788214351708,
+          "levelReached": 5,
+          "basePoints": 192,
+          "points": 211.2,
+          "wordsFound": 33,
+          "longestWord": "castelo",
+          "averageWordLength": 4.15,
+          "powerups": [
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 2,
+              "votes": 4,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        },
         {
           "gameId": "game-1788119611678",
           "endedAt": 1788124946103,
@@ -1325,15 +1393,15 @@
       "name": "manodrico",
       "maxPoints": 169,
       "maxBasePoints": 169,
-      "lastRunPoints": 4,
-      "lastRunBasePoints": 4,
-      "runs": 2,
-      "totalGames": 3,
+      "lastRunPoints": 57,
+      "lastRunBasePoints": 57,
+      "runs": 3,
+      "totalGames": 4,
       "bestLevel": 18,
-      "trackedRuns": 0,
-      "totalBasePoints": 0,
-      "totalWordsFound": 0,
-      "totalLevelsReached": 0,
+      "trackedRuns": 1,
+      "totalBasePoints": 57,
+      "totalWordsFound": 7,
+      "totalLevelsReached": 5,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -1345,8 +1413,43 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788213375147,
-      "runHistory": [],
+      "updatedAt": 1788214351708,
+      "runHistory": [
+        {
+          "gameId": "game-1788213427636",
+          "endedAt": 1788214351708,
+          "levelReached": 5,
+          "basePoints": 57,
+          "points": 57,
+          "wordsFound": 7,
+          "longestWord": "desastre",
+          "averageWordLength": 5,
+          "powerups": [
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 2,
+              "votes": 4,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
       "bestRun": {
         "gameId": "historico-anterior",
         "endedAt": 1787869508746,
@@ -1357,6 +1460,292 @@
         "longestWord": "",
         "averageWordLength": 0,
         "powerups": []
+      }
+    },
+    {
+      "id": "twitch:1069376937",
+      "name": "manu12321_",
+      "maxPoints": 78.1,
+      "maxBasePoints": 71,
+      "lastRunPoints": 20.9,
+      "lastRunBasePoints": 19,
+      "runs": 5,
+      "totalGames": 8,
+      "bestLevel": 25,
+      "trackedRuns": 3,
+      "totalBasePoints": 94,
+      "totalWordsFound": 20,
+      "totalLevelsReached": 38,
+      "platform": "twitch",
+      "profileImageUrl": "",
+      "multiplier": 1.1,
+      "regularityMultiplier": 1.1,
+      "roleMultiplier": 1,
+      "roles": {
+        "subscriber": false,
+        "moderator": false,
+        "vip": false,
+        "broadcaster": false
+      },
+      "updatedAt": 1788214351708,
+      "runHistory": [
+        {
+          "gameId": "game-1788213427636",
+          "endedAt": 1788214351708,
+          "levelReached": 5,
+          "basePoints": 19,
+          "points": 20.9,
+          "wordsFound": 3,
+          "longestWord": "costa",
+          "averageWordLength": 4.67,
+          "powerups": [
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 2,
+              "votes": 4,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        },
+        {
+          "gameId": "game-1788119611678",
+          "endedAt": 1788124946103,
+          "levelReached": 25,
+          "basePoints": 71,
+          "points": 78.1,
+          "wordsFound": 16,
+          "longestWord": "rasto",
+          "averageWordLength": 3.31,
+          "powerups": [
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "hint_words_plus_one",
+              "name": "Olhar Mais Atento",
+              "icon": "👓",
+              "rarity": "rare",
+              "effectLabel": "+1 palavra",
+              "scope": "RUN",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "permanent_target_reduction",
+              "name": "Lâmina da Meta",
+              "icon": "🗡️",
+              "rarity": "legendary",
+              "effectLabel": "−5% sempre",
+              "scope": "RUN",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 10,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 14,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_hint_all_words",
+              "name": "Tabuleiro Iluminado",
+              "icon": "💡",
+              "rarity": "legendary",
+              "effectLabel": "Todas",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 18,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "permanent_extra_time",
+              "name": "Relógio Melhorado",
+              "icon": "🕰️",
+              "rarity": "epic",
+              "effectLabel": "+15s sempre",
+              "scope": "RUN",
+              "selectedAfterLevel": 23,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        },
+        {
+          "gameId": "game-1788040768145",
+          "endedAt": 1788042342538,
+          "levelReached": 8,
+          "basePoints": 4,
+          "points": 4.4,
+          "wordsFound": 1,
+          "longestWord": "rio",
+          "averageWordLength": 3,
+          "powerups": [
+            {
+              "id": "next_hint_extra_letter",
+              "name": "Pista Mais Nítida",
+              "icon": "🔍",
+              "rarity": "rare",
+              "effectLabel": "+1 letra já",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 2,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_extra_time",
+              "name": "Fôlego Extra",
+              "icon": "⏱️",
+              "rarity": "common",
+              "effectLabel": "+15s",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            },
+            {
+              "id": "next_head_start",
+              "name": "Arranque Lançado",
+              "icon": "🚀",
+              "rarity": "epic",
+              "effectLabel": "+10% arranque",
+              "scope": "NEXT_LEVEL",
+              "selectedAfterLevel": 7,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        }
+      ],
+      "bestRun": {
+        "gameId": "game-1788119611678",
+        "endedAt": 1788124946103,
+        "levelReached": 25,
+        "basePoints": 71,
+        "points": 78.1,
+        "wordsFound": 16,
+        "longestWord": "rasto",
+        "averageWordLength": 3.31,
+        "powerups": [
+          {
+            "id": "score_multiplier_11",
+            "name": "Pontuação Afinada",
+            "icon": "🎯",
+            "rarity": "rare",
+            "effectLabel": "×1,1",
+            "scope": "RUN",
+            "selectedAfterLevel": 2,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "hint_words_plus_one",
+            "name": "Olhar Mais Atento",
+            "icon": "👓",
+            "rarity": "rare",
+            "effectLabel": "+1 palavra",
+            "scope": "RUN",
+            "selectedAfterLevel": 4,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "permanent_target_reduction",
+            "name": "Lâmina da Meta",
+            "icon": "🗡️",
+            "rarity": "legendary",
+            "effectLabel": "−5% sempre",
+            "scope": "RUN",
+            "selectedAfterLevel": 7,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "score_multiplier_11",
+            "name": "Pontuação Afinada",
+            "icon": "🎯",
+            "rarity": "rare",
+            "effectLabel": "×1,1",
+            "scope": "RUN",
+            "selectedAfterLevel": 10,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "score_multiplier_11",
+            "name": "Pontuação Afinada",
+            "icon": "🎯",
+            "rarity": "rare",
+            "effectLabel": "×1,1",
+            "scope": "RUN",
+            "selectedAfterLevel": 14,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "next_hint_all_words",
+            "name": "Tabuleiro Iluminado",
+            "icon": "💡",
+            "rarity": "legendary",
+            "effectLabel": "Todas",
+            "scope": "NEXT_LEVEL",
+            "selectedAfterLevel": 18,
+            "votes": 3,
+            "isRandomDraw": false
+          },
+          {
+            "id": "permanent_extra_time",
+            "name": "Relógio Melhorado",
+            "icon": "🕰️",
+            "rarity": "epic",
+            "effectLabel": "+15s sempre",
+            "scope": "RUN",
+            "selectedAfterLevel": 23,
+            "votes": 3,
+            "isRandomDraw": false
+          }
+        ]
       }
     },
     {
@@ -1567,258 +1956,6 @@
       }
     },
     {
-      "id": "twitch:1069376937",
-      "name": "manu12321_",
-      "maxPoints": 71,
-      "maxBasePoints": 71,
-      "lastRunPoints": 12,
-      "lastRunBasePoints": 12,
-      "runs": 4,
-      "totalGames": 7,
-      "bestLevel": 25,
-      "trackedRuns": 2,
-      "totalBasePoints": 75,
-      "totalWordsFound": 17,
-      "totalLevelsReached": 33,
-      "platform": "twitch",
-      "profileImageUrl": "",
-      "multiplier": 1,
-      "regularityMultiplier": 1,
-      "roleMultiplier": 1,
-      "roles": {
-        "subscriber": false,
-        "moderator": false,
-        "vip": false,
-        "broadcaster": false
-      },
-      "updatedAt": 1788213375147,
-      "runHistory": [
-        {
-          "gameId": "game-1788119611678",
-          "endedAt": 1788124946103,
-          "levelReached": 25,
-          "basePoints": 71,
-          "points": 71,
-          "wordsFound": 16,
-          "longestWord": "rasto",
-          "averageWordLength": 3.31,
-          "powerups": [
-            {
-              "id": "score_multiplier_11",
-              "name": "Pontuação Afinada",
-              "icon": "🎯",
-              "rarity": "rare",
-              "effectLabel": "×1,1",
-              "scope": "RUN",
-              "selectedAfterLevel": 2,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "hint_words_plus_one",
-              "name": "Olhar Mais Atento",
-              "icon": "👓",
-              "rarity": "rare",
-              "effectLabel": "+1 palavra",
-              "scope": "RUN",
-              "selectedAfterLevel": 4,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "permanent_target_reduction",
-              "name": "Lâmina da Meta",
-              "icon": "🗡️",
-              "rarity": "legendary",
-              "effectLabel": "−5% sempre",
-              "scope": "RUN",
-              "selectedAfterLevel": 7,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "score_multiplier_11",
-              "name": "Pontuação Afinada",
-              "icon": "🎯",
-              "rarity": "rare",
-              "effectLabel": "×1,1",
-              "scope": "RUN",
-              "selectedAfterLevel": 10,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "score_multiplier_11",
-              "name": "Pontuação Afinada",
-              "icon": "🎯",
-              "rarity": "rare",
-              "effectLabel": "×1,1",
-              "scope": "RUN",
-              "selectedAfterLevel": 14,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "next_hint_all_words",
-              "name": "Tabuleiro Iluminado",
-              "icon": "💡",
-              "rarity": "legendary",
-              "effectLabel": "Todas",
-              "scope": "NEXT_LEVEL",
-              "selectedAfterLevel": 18,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "permanent_extra_time",
-              "name": "Relógio Melhorado",
-              "icon": "🕰️",
-              "rarity": "epic",
-              "effectLabel": "+15s sempre",
-              "scope": "RUN",
-              "selectedAfterLevel": 23,
-              "votes": 3,
-              "isRandomDraw": false
-            }
-          ]
-        },
-        {
-          "gameId": "game-1788040768145",
-          "endedAt": 1788042342538,
-          "levelReached": 8,
-          "basePoints": 4,
-          "points": 4,
-          "wordsFound": 1,
-          "longestWord": "rio",
-          "averageWordLength": 3,
-          "powerups": [
-            {
-              "id": "next_hint_extra_letter",
-              "name": "Pista Mais Nítida",
-              "icon": "🔍",
-              "rarity": "rare",
-              "effectLabel": "+1 letra já",
-              "scope": "NEXT_LEVEL",
-              "selectedAfterLevel": 2,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "next_extra_time",
-              "name": "Fôlego Extra",
-              "icon": "⏱️",
-              "rarity": "common",
-              "effectLabel": "+15s",
-              "scope": "NEXT_LEVEL",
-              "selectedAfterLevel": 4,
-              "votes": 3,
-              "isRandomDraw": false
-            },
-            {
-              "id": "next_head_start",
-              "name": "Arranque Lançado",
-              "icon": "🚀",
-              "rarity": "epic",
-              "effectLabel": "+10% arranque",
-              "scope": "NEXT_LEVEL",
-              "selectedAfterLevel": 7,
-              "votes": 3,
-              "isRandomDraw": false
-            }
-          ]
-        }
-      ],
-      "bestRun": {
-        "gameId": "game-1788119611678",
-        "endedAt": 1788124946103,
-        "levelReached": 25,
-        "basePoints": 71,
-        "points": 71,
-        "wordsFound": 16,
-        "longestWord": "rasto",
-        "averageWordLength": 3.31,
-        "powerups": [
-          {
-            "id": "score_multiplier_11",
-            "name": "Pontuação Afinada",
-            "icon": "🎯",
-            "rarity": "rare",
-            "effectLabel": "×1,1",
-            "scope": "RUN",
-            "selectedAfterLevel": 2,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "hint_words_plus_one",
-            "name": "Olhar Mais Atento",
-            "icon": "👓",
-            "rarity": "rare",
-            "effectLabel": "+1 palavra",
-            "scope": "RUN",
-            "selectedAfterLevel": 4,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "permanent_target_reduction",
-            "name": "Lâmina da Meta",
-            "icon": "🗡️",
-            "rarity": "legendary",
-            "effectLabel": "−5% sempre",
-            "scope": "RUN",
-            "selectedAfterLevel": 7,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "score_multiplier_11",
-            "name": "Pontuação Afinada",
-            "icon": "🎯",
-            "rarity": "rare",
-            "effectLabel": "×1,1",
-            "scope": "RUN",
-            "selectedAfterLevel": 10,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "score_multiplier_11",
-            "name": "Pontuação Afinada",
-            "icon": "🎯",
-            "rarity": "rare",
-            "effectLabel": "×1,1",
-            "scope": "RUN",
-            "selectedAfterLevel": 14,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "next_hint_all_words",
-            "name": "Tabuleiro Iluminado",
-            "icon": "💡",
-            "rarity": "legendary",
-            "effectLabel": "Todas",
-            "scope": "NEXT_LEVEL",
-            "selectedAfterLevel": 18,
-            "votes": 3,
-            "isRandomDraw": false
-          },
-          {
-            "id": "permanent_extra_time",
-            "name": "Relógio Melhorado",
-            "icon": "🕰️",
-            "rarity": "epic",
-            "effectLabel": "+15s sempre",
-            "scope": "RUN",
-            "selectedAfterLevel": 23,
-            "votes": 3,
-            "isRandomDraw": false
-          }
-        ]
-      }
-    },
-    {
       "id": "twitch:1352711259",
       "name": "igl_migaas",
       "maxPoints": 26,
@@ -1862,15 +1999,15 @@
       "name": "gui_z0",
       "maxPoints": 25.3,
       "maxBasePoints": 23,
-      "lastRunPoints": 13.2,
-      "lastRunBasePoints": 12,
-      "runs": 3,
-      "totalGames": 5,
+      "lastRunPoints": 0,
+      "lastRunBasePoints": 0,
+      "runs": 4,
+      "totalGames": 6,
       "bestLevel": 25,
-      "trackedRuns": 2,
+      "trackedRuns": 3,
       "totalBasePoints": 4,
       "totalWordsFound": 1,
-      "totalLevelsReached": 33,
+      "totalLevelsReached": 38,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1.1,
@@ -1882,8 +2019,42 @@
         "vip": true,
         "broadcaster": false
       },
-      "updatedAt": 1788213375147,
+      "updatedAt": 1788214351708,
       "runHistory": [
+        {
+          "gameId": "game-1788213427636",
+          "endedAt": 1788214351708,
+          "levelReached": 5,
+          "basePoints": 0,
+          "points": 0,
+          "wordsFound": 0,
+          "longestWord": "",
+          "averageWordLength": 0,
+          "powerups": [
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 2,
+              "votes": 4,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        },
         {
           "gameId": "game-1788119611678",
           "endedAt": 1788124946103,
@@ -2684,15 +2855,15 @@
       "name": "steve_osvaldo",
       "maxPoints": 4,
       "maxBasePoints": 4,
-      "lastRunPoints": 4,
-      "lastRunBasePoints": 4,
-      "runs": 1,
-      "totalGames": 1,
+      "lastRunPoints": 0,
+      "lastRunBasePoints": 0,
+      "runs": 2,
+      "totalGames": 2,
       "bestLevel": 25,
-      "trackedRuns": 1,
+      "trackedRuns": 2,
       "totalBasePoints": 4,
       "totalWordsFound": 1,
-      "totalLevelsReached": 25,
+      "totalLevelsReached": 30,
       "platform": "twitch",
       "profileImageUrl": "",
       "multiplier": 1,
@@ -2704,8 +2875,42 @@
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788124946103,
+      "updatedAt": 1788214351708,
       "runHistory": [
+        {
+          "gameId": "game-1788213427636",
+          "endedAt": 1788214351708,
+          "levelReached": 5,
+          "basePoints": 0,
+          "points": 0,
+          "wordsFound": 0,
+          "longestWord": "",
+          "averageWordLength": 0,
+          "powerups": [
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 2,
+              "votes": 4,
+              "isRandomDraw": false
+            },
+            {
+              "id": "score_multiplier_11",
+              "name": "Pontuação Afinada",
+              "icon": "🎯",
+              "rarity": "rare",
+              "effectLabel": "×1,1",
+              "scope": "RUN",
+              "selectedAfterLevel": 4,
+              "votes": 3,
+              "isRandomDraw": false
+            }
+          ]
+        },
         {
           "gameId": "game-1788119611678",
           "endedAt": 1788124946103,
