@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-08-31T21:56:15.154Z",
+  "updatedAt": "2026-08-31T22:11:40.845Z",
   "game": {
     "name": "Words on ZTR3AM",
     "minimumLevelForRun": 5,
@@ -209,12 +209,12 @@
       "regularityMultiplier": 1,
       "roleMultiplier": 1.1,
       "roles": {
-        "subscriber": true,
+        "subscriber": false,
         "moderator": true,
         "vip": false,
         "broadcaster": false
       },
-      "updatedAt": 1788213375147,
+      "updatedAt": 1788214300842,
       "runHistory": [
         {
           "gameId": "game-1788119611678",
