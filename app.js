@@ -35,6 +35,8 @@ const elements = {
   countRare: document.querySelector('#count-rare'),
   countEpic: document.querySelector('#count-epic'),
   countLegendary: document.querySelector('#count-legendary'),
+  gameEyebrow: document.querySelector('#game-eyebrow'),
+  rankingTitle: document.querySelector('#ranking-title'),
 };
 
 const DEFAULT_POWERUPS = [
@@ -67,6 +69,8 @@ let twitchUser = null;
 let youtubeUser = null;
 let twitchProfiles = new Map();
 let multiplierTiers = [...DEFAULT_MULTIPLIER_TIERS];
+let leaderboardDocument = null;
+let activeGameId = 'words-on-ztr3am';
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -227,10 +231,22 @@ function closePowerupsDialog() {
 async function loadLeaderboard() {
   const response = await fetch(`leaderboard.json?t=${Date.now()}`, { cache: 'no-store' });
   if (!response.ok) throw new Error('Não foi possível carregar a leaderboard.');
-  const document = await response.json();
-  leaderboard = Array.isArray(document.players) ? document.players : [];
-  if (Array.isArray(document.game?.multiplierTiers) && document.game.multiplierTiers.length > 0) {
-    multiplierTiers = document.game.multiplierTiers
+  leaderboardDocument = await response.json();
+  selectGame(leaderboardDocument.defaultGameId || 'words-on-ztr3am', false);
+  elements.updatedAt.textContent = leaderboardDocument.updatedAt
+    ? new Intl.DateTimeFormat('pt-PT', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }).format(new Date(leaderboardDocument.updatedAt))
+    : '—';
+}
+
+function selectGame(gameId, rerender = true) {
+  const fallback = { ...leaderboardDocument?.game, players: leaderboardDocument?.players || [] };
+  const game = leaderboardDocument?.games?.[gameId] || (gameId === 'words-on-ztr3am' ? fallback : null);
+  if (!game) return;
+  activeGameId = gameId;
+  leaderboard = Array.isArray(game.players) ? game.players : [];
+  multiplierTiers = [...DEFAULT_MULTIPLIER_TIERS];
+  if (Array.isArray(game.multiplierTiers) && game.multiplierTiers.length > 0) {
+    multiplierTiers = game.multiplierTiers
       .map((tier) => ({
         minimumRuns: Number(tier.minimumRuns),
         multiplier: Number(tier.multiplier),
@@ -238,13 +254,17 @@ async function loadLeaderboard() {
       .filter((tier) => Number.isFinite(tier.minimumRuns) && Number.isFinite(tier.multiplier))
       .sort((a, b) => a.minimumRuns - b.minimumRuns);
   }
-  if (Array.isArray(document.game?.powerUps) && document.game.powerUps.length > 0) {
-    gamePowerups = document.game.powerUps;
+  if (Array.isArray(game.powerUps) && game.powerUps.length > 0) {
+    gamePowerups = game.powerUps;
   }
+  document.querySelectorAll('[data-game-id]').forEach((button) => button.classList.toggle('is-active', button.dataset.gameId === activeGameId));
+  const isSoup = activeGameId === 'sopa-de-letras';
+  elements.gameEyebrow.textContent = isSoup ? 'HALL DA GRELHA' : 'HALL OF WORDS';
+  elements.rankingTitle.textContent = isSoup ? 'Recordes · Sopa de Letras' : 'Recordes · Words on ZTR3AM';
+  elements.openPowerupsBtn.hidden = isSoup;
+  elements.welcome.textContent = isSoup ? 'Recordes individuais da Sopa de Letras. Entra para veres as tuas runs e evolução.' : 'Recordes de todos os jogadores da Twitch e do YouTube. O login é opcional e serve para destacar o teu perfil.';
   renderPowerups(activeRarityFilter);
-  elements.updatedAt.textContent = document.updatedAt
-    ? new Intl.DateTimeFormat('pt-PT', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }).format(new Date(document.updatedAt))
-    : '—';
+  if (rerender) { renderPublicLeaderboard(); renderMyProfile(); }
 }
 
 function roleBadges(roles = {}, platform = 'twitch') {
@@ -589,11 +609,12 @@ function checkYouTubeSession() {
 function renderPublicLeaderboard() {
   elements.playerCount.textContent = leaderboard.length;
   elements.topScore.textContent = formatPoints(leaderboard[0]?.maxPoints ?? 0);
-  renderSignedOutAccount();
+  if (!twitchUser && !youtubeUser) renderSignedOutAccount();
   renderRows();
 }
 
 async function initialize() {
+  document.querySelectorAll('[data-game-id]').forEach((button) => button.addEventListener('click', () => selectGame(button.dataset.gameId)));
   elements.search.addEventListener('input', () => renderRows(elements.search.value));
 
   elements.body.addEventListener('click', (event) => {
