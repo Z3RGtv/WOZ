@@ -37,6 +37,7 @@ const elements = {
   countLegendary: document.querySelector('#count-legendary'),
   gameEyebrow: document.querySelector('#game-eyebrow'),
   rankingTitle: document.querySelector('#ranking-title'),
+  gameSwitcher: document.querySelector('#game-switcher'),
 };
 
 const DEFAULT_POWERUPS = [
@@ -60,6 +61,27 @@ const RARITY_LABELS = {
   rare: 'Raro',
   epic: 'Épico',
   legendary: 'Lendário',
+};
+
+const GAME_PRESENTATION = {
+  'words-on-ztr3am': {
+    mark: 'W',
+    description: 'Palavras com letras',
+    eyebrow: 'HALL OF WORDS',
+    welcome: 'Recordes de todos os jogadores da Twitch e do YouTube. O login é opcional e serve para destacar o teu perfil.',
+  },
+  'sopa-de-letras': {
+    mark: 'S',
+    description: 'Palavras na grelha',
+    eyebrow: 'HALL DA GRELHA',
+    welcome: 'Recordes individuais da Sopa de Letras. Entra para veres as tuas runs e evolução.',
+  },
+  'picture-perfect': {
+    mark: 'P',
+    description: 'Adivinhar a imagem',
+    eyebrow: 'HALL DA IMAGEM',
+    welcome: 'Recordes individuais do Picture Perfect. Entra para veres as tuas runs e evolução.',
+  },
 };
 
 let gamePowerups = [...DEFAULT_POWERUPS];
@@ -232,10 +254,36 @@ async function loadLeaderboard() {
   const response = await fetch(`leaderboard.json?t=${Date.now()}`, { cache: 'no-store' });
   if (!response.ok) throw new Error('Não foi possível carregar a leaderboard.');
   leaderboardDocument = await response.json();
+  renderGameSwitcher();
   selectGame(leaderboardDocument.defaultGameId || 'words-on-ztr3am', false);
   elements.updatedAt.textContent = leaderboardDocument.updatedAt
     ? new Intl.DateTimeFormat('pt-PT', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }).format(new Date(leaderboardDocument.updatedAt))
     : '—';
+}
+
+function presentationFor(gameId, game) {
+  const configured = GAME_PRESENTATION[gameId];
+  if (configured) return configured;
+  const name = String(game?.name || gameId || 'Jogo');
+  return {
+    mark: name.trim().slice(0, 1).toLocaleUpperCase('pt-PT') || 'J',
+    description: 'Leaderboard oficial',
+    eyebrow: 'HALL DA COMUNIDADE',
+    welcome: `Recordes individuais de ${name}. Entra para veres as tuas runs e evolução.`,
+  };
+}
+
+function renderGameSwitcher() {
+  if (!elements.gameSwitcher) return;
+  const games = leaderboardDocument?.games;
+  if (!games || typeof games !== 'object') return;
+  elements.gameSwitcher.innerHTML = Object.entries(games).map(([gameId, game]) => {
+    const presentation = presentationFor(gameId, game);
+    return `<button type="button" data-game-id="${escapeHtml(gameId)}">
+      <span class="switcher-mark" aria-hidden="true">${escapeHtml(presentation.mark)}</span>
+      <span><strong>${escapeHtml(game.name || gameId)}</strong><small>${escapeHtml(presentation.description)}</small></span>
+    </button>`;
+  }).join('');
 }
 
 function selectGame(gameId, rerender = true) {
@@ -254,15 +302,15 @@ function selectGame(gameId, rerender = true) {
       .filter((tier) => Number.isFinite(tier.minimumRuns) && Number.isFinite(tier.multiplier))
       .sort((a, b) => a.minimumRuns - b.minimumRuns);
   }
-  if (Array.isArray(game.powerUps) && game.powerUps.length > 0) {
-    gamePowerups = game.powerUps;
-  }
+  gamePowerups = Array.isArray(game.powerUps) && game.powerUps.length > 0
+    ? game.powerUps
+    : activeGameId === 'words-on-ztr3am' ? [...DEFAULT_POWERUPS] : [];
   document.querySelectorAll('[data-game-id]').forEach((button) => button.classList.toggle('is-active', button.dataset.gameId === activeGameId));
-  const isSoup = activeGameId === 'sopa-de-letras';
-  elements.gameEyebrow.textContent = isSoup ? 'HALL DA GRELHA' : 'HALL OF WORDS';
-  elements.rankingTitle.textContent = isSoup ? 'Recordes · Sopa de Letras' : 'Recordes · Words on ZTR3AM';
-  elements.openPowerupsBtn.hidden = isSoup;
-  elements.welcome.textContent = isSoup ? 'Recordes individuais da Sopa de Letras. Entra para veres as tuas runs e evolução.' : 'Recordes de todos os jogadores da Twitch e do YouTube. O login é opcional e serve para destacar o teu perfil.';
+  const presentation = presentationFor(activeGameId, game);
+  elements.gameEyebrow.textContent = presentation.eyebrow;
+  elements.rankingTitle.textContent = `Recordes · ${game.name || activeGameId}`;
+  elements.openPowerupsBtn.hidden = gamePowerups.length === 0;
+  elements.welcome.textContent = presentation.welcome;
   renderPowerups(activeRarityFilter);
   if (rerender) { renderPublicLeaderboard(); renderMyProfile(); }
 }
@@ -614,7 +662,10 @@ function renderPublicLeaderboard() {
 }
 
 async function initialize() {
-  document.querySelectorAll('[data-game-id]').forEach((button) => button.addEventListener('click', () => selectGame(button.dataset.gameId)));
+  elements.gameSwitcher?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-game-id]');
+    if (button) selectGame(button.dataset.gameId);
+  });
   elements.search.addEventListener('input', () => renderRows(elements.search.value));
 
   elements.body.addEventListener('click', (event) => {
