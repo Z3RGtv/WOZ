@@ -6,7 +6,7 @@
     "shortName": "Z3RG Games",
     "description": "Hub multistream de jogos para a comunidade Z3RGtv"
   },
-  "updatedAt": "2026-09-01T07:23:09.282Z",
+  "updatedAt": "2026-09-01T07:25:11.545Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
@@ -3199,7 +3199,110 @@
       ],
       "roleBonus": {},
       "powerUps": [],
-      "players": []
+      "players": [
+        {
+          "id": "twitch:player1",
+          "name": "Player One",
+          "maxPoints": 20,
+          "maxBasePoints": 20,
+          "lastRunPoints": 20,
+          "lastRunBasePoints": 0,
+          "runs": 1,
+          "totalGames": 1,
+          "bestLevel": 0,
+          "trackedRuns": 0,
+          "totalBasePoints": 0,
+          "totalWordsFound": 0,
+          "totalLevelsReached": 0,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": false,
+            "moderator": false,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "pp-1788247421317-1",
+              "endedAt": 1788247511544,
+              "levelReached": 0,
+              "basePoints": 20,
+              "points": 20,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            }
+          ],
+          "bestRun": {
+            "gameId": "pp-1788247421317-1",
+            "endedAt": 1788247511544,
+            "levelReached": 0,
+            "basePoints": 20,
+            "points": 20,
+            "wordsFound": 0,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": []
+          }
+        },
+        {
+          "id": "twitch:cheater_test",
+          "name": "Cheater",
+          "maxPoints": 0,
+          "maxBasePoints": 0,
+          "lastRunPoints": 0,
+          "lastRunBasePoints": 0,
+          "runs": 1,
+          "totalGames": 1,
+          "bestLevel": 0,
+          "trackedRuns": 0,
+          "totalBasePoints": 0,
+          "totalWordsFound": 0,
+          "totalLevelsReached": 0,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": false,
+            "moderator": false,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "pp-1788247421317-1",
+              "endedAt": 1788247511544,
+              "levelReached": 0,
+              "basePoints": 0,
+              "points": 0,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            }
+          ],
+          "bestRun": {
+            "gameId": "pp-1788247421317-1",
+            "endedAt": 1788247511544,
+            "levelReached": 0,
+            "basePoints": 0,
+            "points": 0,
+            "wordsFound": 0,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": []
+          }
+        }
+      ]
     }
   },
   "game": {
