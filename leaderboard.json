@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-09-01T03:04:44.156Z",
+  "updatedAt": "2026-09-01T05:55:09.520Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
@@ -3137,6 +3137,32 @@
     "sopa-de-letras": {
       "id": "sopa-de-letras",
       "name": "Sopa de Letras",
+      "minimumLevelForRun": 0,
+      "multiplierTiers": [
+        {
+          "minimumRuns": 5,
+          "multiplier": 1.1
+        },
+        {
+          "minimumRuns": 15,
+          "multiplier": 1.2
+        },
+        {
+          "minimumRuns": 30,
+          "multiplier": 1.3
+        },
+        {
+          "minimumRuns": 50,
+          "multiplier": 1.4
+        }
+      ],
+      "roleBonus": {},
+      "powerUps": [],
+      "players": []
+    },
+    "picture-perfect": {
+      "id": "picture-perfect",
+      "name": "Picture Perfect",
       "minimumLevelForRun": 0,
       "multiplierTiers": [
         {
