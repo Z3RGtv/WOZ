@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#082f2c">
-  <meta name="description" content="Classificação oficial do Words on ZTR3AM.">
-  <meta property="og:title" content="Words on ZTR3AM — Leaderboard">
+  <meta name="description" content="Classificações oficiais dos jogos da comunidade Z3RGtv.">
+  <meta property="og:title" content="Z3RG Stream Games — Leaderboards">
   <meta property="og:description" content="Recordes, runs e multiplicadores da comunidade Z3RGtv.">
-  <title>Words on ZTR3AM — Leaderboard</title>
+  <title>Z3RG Stream Games — Leaderboards</title>
   <link rel="preconnect" href="https://static-cdn.jtvnw.net">
   <link rel="stylesheet" href="styles.css?v=17">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -24,10 +24,15 @@
       <div id="account-area" class="account-area"></div>
     </header>
 
+    <nav class="game-switcher" aria-label="Escolher jogo">
+      <button type="button" class="is-active" data-game-id="words-on-ztr3am"><span class="switcher-mark">W</span><span><strong>Words on ZTR3AM</strong><small>Palavras com letras</small></span></button>
+      <button type="button" data-game-id="sopa-de-letras"><span class="switcher-mark">S</span><span><strong>Sopa de Letras</strong><small>Palavras na grelha</small></span></button>
+    </nav>
+
     <section id="leaderboard-view" class="leaderboard-view">
       <div class="hero-row">
         <div>
-          <p class="eyebrow">HALL OF WORDS</p>
+          <p id="game-eyebrow" class="eyebrow">HALL OF WORDS</p>
           <h1>Leaderboard</h1>
           <p id="welcome-copy" class="hero-copy">Recordes de todos os jogadores da Twitch e do YouTube. O login é opcional e serve para destacar o teu perfil.</p>
         </div>
@@ -42,7 +47,7 @@
 
       <div class="toolbar">
         <div>
-          <h2>Classificação geral</h2>
+          <h2 id="ranking-title">Classificação geral</h2>
           <p>O melhor resultado de sempre de cada jogador, numa tabela conjunta.</p>
           <div class="platform-legend" aria-label="Plataformas">
             <span class="platform-badge twitch"><i aria-hidden="true"></i> Twitch</span>
