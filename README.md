@@ -1,6 +1,8 @@
-# Words on ZTR3AM — Leaderboard
+# Z3RG Stream Games — Leaderboards
 
 Site estático oficial da leaderboard, publicado por GitHub Pages em `https://z3rgtv.github.io/woz/`.
+
+- Existe uma secção por jogo no mesmo endereço. O seletor é criado automaticamente a partir dos jogos presentes em `leaderboard.json`, permitindo acrescentar jogos futuros sem criar outro site.
 
 - O login usa OAuth da Twitch ou Google/YouTube com clientes públicos.
 - O token de sessão existe apenas no `sessionStorage` do navegador.
