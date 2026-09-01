@@ -1,11 +1,20 @@
 {
   "version": 3,
-  "updatedAt": "2026-09-01T06:37:49.091Z",
+  "platform": {
+    "id": "z3rg-stream-games",
+    "name": "Z3RG Stream Games",
+    "shortName": "Z3RG Games",
+    "description": "Hub multistream de jogos para a comunidade Z3RGtv"
+  },
+  "updatedAt": "2026-09-01T07:23:09.282Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
       "id": "words-on-ztr3am",
       "name": "Words on ZTR3AM",
+      "mark": "W",
+      "description": "Palavras com letras",
+      "eyebrow": "HALL OF WORDS",
       "minimumLevelForRun": 5,
       "multiplierTiers": [
         {
@@ -3137,6 +3146,9 @@
     "sopa-de-letras": {
       "id": "sopa-de-letras",
       "name": "Sopa de Letras",
+      "mark": "S",
+      "description": "Palavras na grelha",
+      "eyebrow": "HALL DA GRELHA",
       "minimumLevelForRun": 0,
       "multiplierTiers": [
         {
@@ -3163,6 +3175,9 @@
     "picture-perfect": {
       "id": "picture-perfect",
       "name": "Picture Perfect",
+      "mark": "P",
+      "description": "Adivinhar a imagem",
+      "eyebrow": "HALL DA IMAGEM",
       "minimumLevelForRun": 0,
       "multiplierTiers": [
         {
@@ -3188,7 +3203,11 @@
     }
   },
   "game": {
+    "id": "words-on-ztr3am",
     "name": "Words on ZTR3AM",
+    "mark": "W",
+    "description": "Palavras com letras",
+    "eyebrow": "HALL OF WORDS",
     "minimumLevelForRun": 5,
     "multiplierTiers": [
       {
