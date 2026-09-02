@@ -6,7 +6,7 @@
     "shortName": "Z3RG Games",
     "description": "Hub multistream de jogos para a comunidade Z3RGtv"
   },
-  "updatedAt": "2026-09-02T21:28:59.562Z",
+  "updatedAt": "2026-09-02T21:30:41.389Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
@@ -4312,6 +4312,57 @@
           }
         },
         {
+          "id": "twitch:972248156",
+          "name": "marquesrcarol",
+          "maxPoints": 22,
+          "maxBasePoints": 20,
+          "lastRunPoints": 22,
+          "lastRunBasePoints": 0,
+          "runs": 1,
+          "totalGames": 1,
+          "bestLevel": 0,
+          "trackedRuns": 0,
+          "totalBasePoints": 0,
+          "totalWordsFound": 0,
+          "totalLevelsReached": 0,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1.1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": true,
+            "moderator": true,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "pp-1788384548048-3",
+              "endedAt": 1788384641386,
+              "levelReached": 0,
+              "basePoints": 20,
+              "points": 22,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            }
+          ],
+          "bestRun": {
+            "gameId": "pp-1788384548048-3",
+            "endedAt": 1788384641386,
+            "levelReached": 0,
+            "basePoints": 20,
+            "points": 22,
+            "wordsFound": 0,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": []
+          }
+        },
+        {
           "id": "twitch:player1",
           "name": "Player One",
           "maxPoints": 20,
@@ -4356,6 +4407,57 @@
             "levelReached": 0,
             "basePoints": 20,
             "points": 20,
+            "wordsFound": 0,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": []
+          }
+        },
+        {
+          "id": "twitch:423908473",
+          "name": "garzia17",
+          "maxPoints": 10,
+          "maxBasePoints": 10,
+          "lastRunPoints": 10,
+          "lastRunBasePoints": 0,
+          "runs": 1,
+          "totalGames": 1,
+          "bestLevel": 0,
+          "trackedRuns": 0,
+          "totalBasePoints": 0,
+          "totalWordsFound": 0,
+          "totalLevelsReached": 0,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": false,
+            "moderator": false,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "pp-1788384548048-3",
+              "endedAt": 1788384641386,
+              "levelReached": 0,
+              "basePoints": 10,
+              "points": 10,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            }
+          ],
+          "bestRun": {
+            "gameId": "pp-1788384548048-3",
+            "endedAt": 1788384641386,
+            "levelReached": 0,
+            "basePoints": 10,
+            "points": 10,
             "wordsFound": 0,
             "longestWord": "",
             "averageWordLength": 0,
