@@ -6,7 +6,7 @@
     "shortName": "Z3RG Games",
     "description": "Hub multistream de jogos para a comunidade Z3RGtv"
   },
-  "updatedAt": "2026-09-02T21:36:22.728Z",
+  "updatedAt": "2026-09-02T21:41:56.600Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
@@ -3959,10 +3959,10 @@
           "name": "manodrico",
           "maxPoints": 765,
           "maxBasePoints": 765,
-          "lastRunPoints": 665,
+          "lastRunPoints": 0,
           "lastRunBasePoints": 0,
-          "runs": 1,
-          "totalGames": 1,
+          "runs": 2,
+          "totalGames": 2,
           "bestLevel": 15,
           "trackedRuns": 0,
           "totalBasePoints": 0,
@@ -3981,6 +3981,17 @@
           },
           "updatedAt": 0,
           "runHistory": [
+            {
+              "gameId": "pp-1788385223355-8",
+              "endedAt": 1788385316596,
+              "levelReached": 0,
+              "basePoints": 50,
+              "points": 0,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            },
             {
               "gameId": "pp-1788316212397-2",
               "endedAt": 1788317167417,
@@ -4161,12 +4172,12 @@
         {
           "id": "twitch:972248156",
           "name": "marquesrcarol",
-          "maxPoints": 134,
+          "maxPoints": 148,
           "maxBasePoints": 122,
-          "lastRunPoints": 0,
+          "lastRunPoints": 22,
           "lastRunBasePoints": 0,
-          "runs": 4,
-          "totalGames": 4,
+          "runs": 5,
+          "totalGames": 5,
           "bestLevel": 2,
           "trackedRuns": 0,
           "totalBasePoints": 0,
@@ -4174,7 +4185,7 @@
           "totalLevelsReached": 0,
           "platform": "twitch",
           "profileImageUrl": "",
-          "multiplier": 1.1,
+          "multiplier": 1.21,
           "regularityMultiplier": 1,
           "roleMultiplier": 1,
           "roles": {
@@ -4185,6 +4196,17 @@
           },
           "updatedAt": 0,
           "runHistory": [
+            {
+              "gameId": "pp-1788385223355-8",
+              "endedAt": 1788385316596,
+              "levelReached": 0,
+              "basePoints": 20,
+              "points": 22,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            },
             {
               "gameId": "pp-1788384889466-6",
               "endedAt": 1788384982723,
@@ -4298,10 +4320,10 @@
           "name": "maxlou2013",
           "maxPoints": 40,
           "maxBasePoints": 40,
-          "lastRunPoints": 40,
+          "lastRunPoints": 10,
           "lastRunBasePoints": 0,
-          "runs": 1,
-          "totalGames": 1,
+          "runs": 2,
+          "totalGames": 2,
           "bestLevel": 2,
           "trackedRuns": 0,
           "totalBasePoints": 0,
@@ -4320,6 +4342,17 @@
           },
           "updatedAt": 0,
           "runHistory": [
+            {
+              "gameId": "pp-1788385223355-8",
+              "endedAt": 1788385316596,
+              "levelReached": 0,
+              "basePoints": 10,
+              "points": 10,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            },
             {
               "gameId": "pp-1788384748087-5",
               "endedAt": 1788384881595,
@@ -4504,8 +4537,8 @@
           "maxBasePoints": 10,
           "lastRunPoints": 11,
           "lastRunBasePoints": 0,
-          "runs": 1,
-          "totalGames": 1,
+          "runs": 2,
+          "totalGames": 2,
           "bestLevel": 2,
           "trackedRuns": 0,
           "totalBasePoints": 0,
@@ -4524,6 +4557,17 @@
           },
           "updatedAt": 0,
           "runHistory": [
+            {
+              "gameId": "pp-1788385223355-8",
+              "endedAt": 1788385316596,
+              "levelReached": 0,
+              "basePoints": 10,
+              "points": 11,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            },
             {
               "gameId": "pp-1788384748087-5",
               "endedAt": 1788384881595,
