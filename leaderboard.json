@@ -6,7 +6,7 @@
     "shortName": "Z3RG Games",
     "description": "Hub multistream de jogos para a comunidade Z3RGtv"
   },
-  "updatedAt": "2026-09-02T21:32:23.500Z",
+  "updatedAt": "2026-09-02T21:34:41.601Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
@@ -4159,6 +4159,79 @@
           }
         },
         {
+          "id": "twitch:972248156",
+          "name": "marquesrcarol",
+          "maxPoints": 134,
+          "maxBasePoints": 122,
+          "lastRunPoints": 88,
+          "lastRunBasePoints": 0,
+          "runs": 3,
+          "totalGames": 3,
+          "bestLevel": 2,
+          "trackedRuns": 0,
+          "totalBasePoints": 0,
+          "totalWordsFound": 0,
+          "totalLevelsReached": 0,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1.1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": true,
+            "moderator": true,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "pp-1788384748087-5",
+              "endedAt": 1788384881595,
+              "levelReached": 0,
+              "basePoints": 122,
+              "points": 88,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            },
+            {
+              "gameId": "pp-1788384650155-4",
+              "endedAt": 1788384743497,
+              "levelReached": 0,
+              "basePoints": 30,
+              "points": 33,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            },
+            {
+              "gameId": "pp-1788384548048-3",
+              "endedAt": 1788384641386,
+              "levelReached": 0,
+              "basePoints": 20,
+              "points": 22,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            }
+          ],
+          "bestRun": {
+            "gameId": "pp-1788384748087-5",
+            "endedAt": 1788384881595,
+            "levelReached": 0,
+            "basePoints": 122,
+            "points": 88,
+            "wordsFound": 0,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": []
+          }
+        },
+        {
           "id": "twitch:636817789",
           "name": "hugoandre07",
           "maxPoints": 129,
@@ -4210,6 +4283,57 @@
           }
         },
         {
+          "id": "twitch:1138920699",
+          "name": "maxlou2013",
+          "maxPoints": 40,
+          "maxBasePoints": 40,
+          "lastRunPoints": 40,
+          "lastRunBasePoints": 0,
+          "runs": 1,
+          "totalGames": 1,
+          "bestLevel": 2,
+          "trackedRuns": 0,
+          "totalBasePoints": 0,
+          "totalWordsFound": 0,
+          "totalLevelsReached": 0,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": false,
+            "moderator": false,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "pp-1788384748087-5",
+              "endedAt": 1788384881595,
+              "levelReached": 0,
+              "basePoints": 40,
+              "points": 40,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            }
+          ],
+          "bestRun": {
+            "gameId": "pp-1788384748087-5",
+            "endedAt": 1788384881595,
+            "levelReached": 0,
+            "basePoints": 40,
+            "points": 40,
+            "wordsFound": 0,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": []
+          }
+        },
+        {
           "id": "twitch:932779495",
           "name": "gui_z0",
           "maxPoints": 33,
@@ -4254,68 +4378,6 @@
             "levelReached": 0,
             "basePoints": 30,
             "points": 11,
-            "wordsFound": 0,
-            "longestWord": "",
-            "averageWordLength": 0,
-            "powerups": []
-          }
-        },
-        {
-          "id": "twitch:972248156",
-          "name": "marquesrcarol",
-          "maxPoints": 33,
-          "maxBasePoints": 30,
-          "lastRunPoints": 33,
-          "lastRunBasePoints": 0,
-          "runs": 2,
-          "totalGames": 2,
-          "bestLevel": 0,
-          "trackedRuns": 0,
-          "totalBasePoints": 0,
-          "totalWordsFound": 0,
-          "totalLevelsReached": 0,
-          "platform": "twitch",
-          "profileImageUrl": "",
-          "multiplier": 1.1,
-          "regularityMultiplier": 1,
-          "roleMultiplier": 1,
-          "roles": {
-            "subscriber": true,
-            "moderator": true,
-            "vip": false,
-            "broadcaster": false
-          },
-          "updatedAt": 0,
-          "runHistory": [
-            {
-              "gameId": "pp-1788384650155-4",
-              "endedAt": 1788384743497,
-              "levelReached": 0,
-              "basePoints": 30,
-              "points": 33,
-              "wordsFound": 0,
-              "longestWord": "",
-              "averageWordLength": 0,
-              "powerups": []
-            },
-            {
-              "gameId": "pp-1788384548048-3",
-              "endedAt": 1788384641386,
-              "levelReached": 0,
-              "basePoints": 20,
-              "points": 22,
-              "wordsFound": 0,
-              "longestWord": "",
-              "averageWordLength": 0,
-              "powerups": []
-            }
-          ],
-          "bestRun": {
-            "gameId": "pp-1788384650155-4",
-            "endedAt": 1788384743497,
-            "levelReached": 0,
-            "basePoints": 30,
-            "points": 33,
             "wordsFound": 0,
             "longestWord": "",
             "averageWordLength": 0,
@@ -4418,6 +4480,57 @@
             "levelReached": 0,
             "basePoints": 20,
             "points": 20,
+            "wordsFound": 0,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": []
+          }
+        },
+        {
+          "id": "twitch:645555689",
+          "name": "sheisdani",
+          "maxPoints": 11,
+          "maxBasePoints": 10,
+          "lastRunPoints": 11,
+          "lastRunBasePoints": 0,
+          "runs": 1,
+          "totalGames": 1,
+          "bestLevel": 2,
+          "trackedRuns": 0,
+          "totalBasePoints": 0,
+          "totalWordsFound": 0,
+          "totalLevelsReached": 0,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1.1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": true,
+            "moderator": true,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "pp-1788384748087-5",
+              "endedAt": 1788384881595,
+              "levelReached": 0,
+              "basePoints": 10,
+              "points": 11,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            }
+          ],
+          "bestRun": {
+            "gameId": "pp-1788384748087-5",
+            "endedAt": 1788384881595,
+            "levelReached": 0,
+            "basePoints": 10,
+            "points": 11,
             "wordsFound": 0,
             "longestWord": "",
             "averageWordLength": 0,
