@@ -6,7 +6,7 @@
     "shortName": "Z3RG Games",
     "description": "Hub multistream de jogos para a comunidade Z3RGtv"
   },
-  "updatedAt": "2026-09-02T02:27:34.075Z",
+  "updatedAt": "2026-09-02T02:28:04.431Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
@@ -3169,7 +3169,104 @@
         }
       ],
       "roleBonus": {},
-      "powerUps": [],
+      "powerUps": [
+        {
+          "id": "sopa_next_extra_time",
+          "name": "Fôlego Extra",
+          "icon": "⏱️",
+          "rarity": "common",
+          "effectLabel": "+15s",
+          "scope": "NEXT_LEVEL",
+          "minimumLevel": 2,
+          "description": "Acrescenta 15 segundos ao próximo nível.",
+          "maxStacks": 1,
+          "maxValue": null
+        },
+        {
+          "id": "sopa_next_score_boost",
+          "name": "Caça Acelerada",
+          "icon": "⚡",
+          "rarity": "common",
+          "effectLabel": "×1,1 próximo",
+          "scope": "NEXT_LEVEL",
+          "minimumLevel": 2,
+          "description": "Todas as palavras dão mais 10% de pontos no próximo nível.",
+          "maxStacks": 1,
+          "maxValue": null
+        },
+        {
+          "id": "sopa_next_target_reduction",
+          "name": "Meta Acessível",
+          "icon": "✂️",
+          "rarity": "rare",
+          "effectLabel": "−10% meta",
+          "scope": "NEXT_LEVEL",
+          "minimumLevel": 2,
+          "description": "Reduz em 10% a meta necessária no próximo nível.",
+          "maxStacks": 1,
+          "maxValue": null
+        },
+        {
+          "id": "sopa_progress_multiplier",
+          "name": "Pontuação Afinada",
+          "icon": "🎯",
+          "rarity": "rare",
+          "effectLabel": "×1,1",
+          "scope": "RUN",
+          "minimumLevel": 2,
+          "description": "Soma +0,1 aos pontos de todas as descobertas até ao máximo de ×1,3 nesta run.",
+          "maxStacks": 3,
+          "maxValue": 1.3
+        },
+        {
+          "id": "sopa_permanent_extra_time",
+          "name": "Relógio Melhorado",
+          "icon": "🕰️",
+          "rarity": "epic",
+          "effectLabel": "+15s sempre",
+          "scope": "RUN",
+          "minimumLevel": 4,
+          "description": "Todos os próximos níveis recebem mais 15 segundos, até ao máximo de +45s.",
+          "maxStacks": 3,
+          "maxValue": 45000
+        },
+        {
+          "id": "sopa_deep_target_cut",
+          "name": "Atalho na Grelha",
+          "icon": "🧭",
+          "rarity": "epic",
+          "effectLabel": "−20% meta",
+          "scope": "NEXT_LEVEL",
+          "minimumLevel": 4,
+          "description": "Reduz em 20% a meta necessária apenas no próximo nível.",
+          "maxStacks": 1,
+          "maxValue": null
+        },
+        {
+          "id": "sopa_permanent_target_reduction",
+          "name": "Lâmina da Meta",
+          "icon": "🗡️",
+          "rarity": "legendary",
+          "effectLabel": "−5% sempre",
+          "scope": "RUN",
+          "minimumLevel": 7,
+          "description": "Reduz em 5% a meta de todos os próximos níveis, acumulando até −15%.",
+          "maxStacks": 3,
+          "maxValue": 0.15
+        },
+        {
+          "id": "sopa_long_word_boost",
+          "name": "Mestre das Palavras",
+          "icon": "🏆",
+          "rarity": "legendary",
+          "effectLabel": "7+ ×1,25",
+          "scope": "RUN",
+          "minimumLevel": 7,
+          "description": "Palavras com 7 ou mais letras recebem ×1,25, acumulando até ×1,5.",
+          "maxStacks": 2,
+          "maxValue": 1.5
+        }
+      ],
       "players": [
         {
           "id": "twitch:645555689",
