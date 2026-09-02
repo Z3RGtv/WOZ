@@ -6,7 +6,7 @@
     "shortName": "Z3RG Games",
     "description": "Hub multistream de jogos para a comunidade Z3RGtv"
   },
-  "updatedAt": "2026-09-02T21:34:41.601Z",
+  "updatedAt": "2026-09-02T21:36:22.728Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
@@ -4163,10 +4163,10 @@
           "name": "marquesrcarol",
           "maxPoints": 134,
           "maxBasePoints": 122,
-          "lastRunPoints": 88,
+          "lastRunPoints": 0,
           "lastRunBasePoints": 0,
-          "runs": 3,
-          "totalGames": 3,
+          "runs": 4,
+          "totalGames": 4,
           "bestLevel": 2,
           "trackedRuns": 0,
           "totalBasePoints": 0,
@@ -4185,6 +4185,17 @@
           },
           "updatedAt": 0,
           "runHistory": [
+            {
+              "gameId": "pp-1788384889466-6",
+              "endedAt": 1788384982723,
+              "levelReached": 0,
+              "basePoints": 30,
+              "points": 0,
+              "wordsFound": 0,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            },
             {
               "gameId": "pp-1788384748087-5",
               "endedAt": 1788384881595,
