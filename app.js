@@ -1,9 +1,9 @@
 const TWITCH_CLIENT_ID = '3rg5uodkyj3s4oa9eec66td49uc1qt';
 const GOOGLE_CLIENT_ID = '128990685472-2ef08a8s9n0ah76sd3nikru5am2vf3n7.apps.googleusercontent.com';
-const REDIRECT_URI = 'https://z3rgtv.github.io/woz/';
-const TOKEN_KEY = 'woz_twitch_access_token';
-const YOUTUBE_USER_KEY = 'woz_youtube_user';
-const OAUTH_STATE_KEY = 'woz_oauth_state';
+const REDIRECT_URI = new URL('./', window.location.href).href;
+const TOKEN_KEY = 'z3rg_games_twitch_access_token';
+const YOUTUBE_USER_KEY = 'z3rg_games_youtube_user';
+const OAUTH_STATE_KEY = 'z3rg_games_oauth_state';
 
 const DEFAULT_MULTIPLIER_TIERS = [
   { minimumRuns: 5, multiplier: 1.1 },
@@ -262,14 +262,13 @@ async function loadLeaderboard() {
 }
 
 function presentationFor(gameId, game) {
-  const configured = GAME_PRESENTATION[gameId];
-  if (configured) return configured;
+  const fallback = GAME_PRESENTATION[gameId];
   const name = String(game?.name || gameId || 'Jogo');
   return {
-    mark: name.trim().slice(0, 1).toLocaleUpperCase('pt-PT') || 'J',
-    description: 'Leaderboard oficial',
-    eyebrow: 'HALL DA COMUNIDADE',
-    welcome: `Recordes individuais de ${name}. Entra para veres as tuas runs e evolução.`,
+    mark: String(game?.mark || fallback?.mark || name.trim().slice(0, 1).toLocaleUpperCase('pt-PT') || 'J'),
+    description: String(game?.description || fallback?.description || 'Leaderboard oficial'),
+    eyebrow: String(game?.eyebrow || fallback?.eyebrow || 'HALL DA COMUNIDADE'),
+    welcome: String(game?.welcome || fallback?.welcome || `Recordes individuais de ${name}. Entra para veres as tuas runs e evolução.`),
   };
 }
 
