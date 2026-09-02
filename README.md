@@ -1,8 +1,10 @@
 # Z3RG Stream Games — Leaderboards
 
-Site estático oficial da leaderboard, publicado por GitHub Pages em `https://z3rgtv.github.io/woz/`.
+Site estático oficial das leaderboards de todos os jogos. O endereço público é definido uma única vez em `config/platform-config.json`.
 
 - Existe uma secção por jogo no mesmo endereço. O seletor é criado automaticamente a partir dos jogos presentes em `leaderboard.json`, permitindo acrescentar jogos futuros sem criar outro site.
+
+- O nome do repositório GitHub Pages continua separado da identidade da plataforma e pode ser migrado sem alterar os jogos nem os recordes.
 
 - O login usa OAuth da Twitch ou Google/YouTube com clientes públicos.
 - O token de sessão existe apenas no `sessionStorage` do navegador.
