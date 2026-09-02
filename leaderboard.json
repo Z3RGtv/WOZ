@@ -6,7 +6,7 @@
     "shortName": "Z3RG Games",
     "description": "Hub multistream de jogos para a comunidade Z3RGtv"
   },
-  "updatedAt": "2026-09-02T21:03:32.655Z",
+  "updatedAt": "2026-09-02T21:17:06.649Z",
   "defaultGameId": "words-on-ztr3am",
   "games": {
     "words-on-ztr3am": {
@@ -3273,14 +3273,14 @@
           "name": "sheisdani",
           "maxPoints": 3377,
           "maxBasePoints": 3070,
-          "lastRunPoints": 3377,
-          "lastRunBasePoints": 3070,
-          "runs": 2,
-          "totalGames": 2,
+          "lastRunPoints": 1993,
+          "lastRunBasePoints": 1812,
+          "runs": 3,
+          "totalGames": 3,
           "bestLevel": 5,
-          "trackedRuns": 2,
+          "trackedRuns": 3,
           "totalBasePoints": 3070,
-          "totalWordsFound": 87,
+          "totalWordsFound": 117,
           "totalLevelsReached": 5,
           "platform": "twitch",
           "profileImageUrl": "",
@@ -3295,6 +3295,29 @@
           },
           "updatedAt": 0,
           "runHistory": [
+            {
+              "gameId": "sopa-1788383073747-1",
+              "endedAt": 1788383826642,
+              "levelReached": 2,
+              "basePoints": 1812,
+              "points": 1993,
+              "wordsFound": 30,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": [
+                {
+                  "id": "sopa_next_score_boost",
+                  "name": "Caça Acelerada",
+                  "icon": "⚡",
+                  "rarity": "common",
+                  "effectLabel": "×1,1 próximo",
+                  "scope": "NEXT_LEVEL",
+                  "selectedAfterLevel": 2,
+                  "votes": 2,
+                  "isRandomDraw": false
+                }
+              ]
+            },
             {
               "gameId": "sopa-1788303529653-3",
               "endedAt": 1788304816512,
@@ -3397,14 +3420,14 @@
           "name": "garzia17",
           "maxPoints": 1900,
           "maxBasePoints": 1900,
-          "lastRunPoints": 1900,
-          "lastRunBasePoints": 1900,
-          "runs": 2,
-          "totalGames": 2,
+          "lastRunPoints": 240,
+          "lastRunBasePoints": 240,
+          "runs": 3,
+          "totalGames": 3,
           "bestLevel": 5,
-          "trackedRuns": 2,
+          "trackedRuns": 3,
           "totalBasePoints": 1900,
-          "totalWordsFound": 49,
+          "totalWordsFound": 54,
           "totalLevelsReached": 5,
           "platform": "twitch",
           "profileImageUrl": "",
@@ -3419,6 +3442,29 @@
           },
           "updatedAt": 0,
           "runHistory": [
+            {
+              "gameId": "sopa-1788383073747-1",
+              "endedAt": 1788383826642,
+              "levelReached": 2,
+              "basePoints": 240,
+              "points": 240,
+              "wordsFound": 5,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": [
+                {
+                  "id": "sopa_next_score_boost",
+                  "name": "Caça Acelerada",
+                  "icon": "⚡",
+                  "rarity": "common",
+                  "effectLabel": "×1,1 próximo",
+                  "scope": "NEXT_LEVEL",
+                  "selectedAfterLevel": 2,
+                  "votes": 2,
+                  "isRandomDraw": false
+                }
+              ]
+            },
             {
               "gameId": "sopa-1788303529653-3",
               "endedAt": 1788304816512,
@@ -3452,6 +3498,81 @@
             "longestWord": "",
             "averageWordLength": 0,
             "powerups": []
+          }
+        },
+        {
+          "id": "twitch:972248156",
+          "name": "marquesrcarol",
+          "maxPoints": 1065,
+          "maxBasePoints": 968,
+          "lastRunPoints": 1065,
+          "lastRunBasePoints": 968,
+          "runs": 1,
+          "totalGames": 1,
+          "bestLevel": 2,
+          "trackedRuns": 1,
+          "totalBasePoints": 968,
+          "totalWordsFound": 15,
+          "totalLevelsReached": 2,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1.1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": true,
+            "moderator": true,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "sopa-1788383073747-1",
+              "endedAt": 1788383826642,
+              "levelReached": 2,
+              "basePoints": 968,
+              "points": 1065,
+              "wordsFound": 15,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": [
+                {
+                  "id": "sopa_next_score_boost",
+                  "name": "Caça Acelerada",
+                  "icon": "⚡",
+                  "rarity": "common",
+                  "effectLabel": "×1,1 próximo",
+                  "scope": "NEXT_LEVEL",
+                  "selectedAfterLevel": 2,
+                  "votes": 2,
+                  "isRandomDraw": false
+                }
+              ]
+            }
+          ],
+          "bestRun": {
+            "gameId": "sopa-1788383073747-1",
+            "endedAt": 1788383826642,
+            "levelReached": 2,
+            "basePoints": 968,
+            "points": 1065,
+            "wordsFound": 15,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": [
+              {
+                "id": "sopa_next_score_boost",
+                "name": "Caça Acelerada",
+                "icon": "⚡",
+                "rarity": "common",
+                "effectLabel": "×1,1 próximo",
+                "scope": "NEXT_LEVEL",
+                "selectedAfterLevel": 2,
+                "votes": 2,
+                "isRandomDraw": false
+              }
+            ]
           }
         },
         {
@@ -3517,6 +3638,92 @@
           }
         },
         {
+          "id": "twitch:1069376937",
+          "name": "manu12321_",
+          "maxPoints": 220,
+          "maxBasePoints": 220,
+          "lastRunPoints": 220,
+          "lastRunBasePoints": 220,
+          "runs": 2,
+          "totalGames": 2,
+          "bestLevel": 5,
+          "trackedRuns": 2,
+          "totalBasePoints": 220,
+          "totalWordsFound": 5,
+          "totalLevelsReached": 5,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": false,
+            "moderator": false,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "sopa-1788383073747-1",
+              "endedAt": 1788383826642,
+              "levelReached": 2,
+              "basePoints": 220,
+              "points": 220,
+              "wordsFound": 4,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": [
+                {
+                  "id": "sopa_next_score_boost",
+                  "name": "Caça Acelerada",
+                  "icon": "⚡",
+                  "rarity": "common",
+                  "effectLabel": "×1,1 próximo",
+                  "scope": "NEXT_LEVEL",
+                  "selectedAfterLevel": 2,
+                  "votes": 2,
+                  "isRandomDraw": false
+                }
+              ]
+            },
+            {
+              "gameId": "sopa-1788303529653-3",
+              "endedAt": 1788304816512,
+              "levelReached": 5,
+              "basePoints": 50,
+              "points": 50,
+              "wordsFound": 1,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": []
+            }
+          ],
+          "bestRun": {
+            "gameId": "sopa-1788383073747-1",
+            "endedAt": 1788383826642,
+            "levelReached": 2,
+            "basePoints": 220,
+            "points": 220,
+            "wordsFound": 4,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": [
+              {
+                "id": "sopa_next_score_boost",
+                "name": "Caça Acelerada",
+                "icon": "⚡",
+                "rarity": "common",
+                "effectLabel": "×1,1 próximo",
+                "scope": "NEXT_LEVEL",
+                "selectedAfterLevel": 2,
+                "votes": 2,
+                "isRandomDraw": false
+              }
+            ]
+          }
+        },
+        {
           "id": "twitch:119908556",
           "name": "wdwpp",
           "maxPoints": 140,
@@ -3568,19 +3775,19 @@
           }
         },
         {
-          "id": "twitch:1069376937",
-          "name": "manu12321_",
-          "maxPoints": 50,
-          "maxBasePoints": 50,
-          "lastRunPoints": 50,
-          "lastRunBasePoints": 50,
+          "id": "twitch:436081031",
+          "name": "r_moreira16",
+          "maxPoints": 130,
+          "maxBasePoints": 130,
+          "lastRunPoints": 130,
+          "lastRunBasePoints": 130,
           "runs": 1,
           "totalGames": 1,
-          "bestLevel": 5,
+          "bestLevel": 2,
           "trackedRuns": 1,
-          "totalBasePoints": 50,
-          "totalWordsFound": 1,
-          "totalLevelsReached": 5,
+          "totalBasePoints": 130,
+          "totalWordsFound": 2,
+          "totalLevelsReached": 2,
           "platform": "twitch",
           "profileImageUrl": "",
           "multiplier": 1,
@@ -3595,27 +3802,126 @@
           "updatedAt": 0,
           "runHistory": [
             {
-              "gameId": "sopa-1788303529653-3",
-              "endedAt": 1788304816512,
-              "levelReached": 5,
-              "basePoints": 50,
-              "points": 50,
-              "wordsFound": 1,
+              "gameId": "sopa-1788383073747-1",
+              "endedAt": 1788383826642,
+              "levelReached": 2,
+              "basePoints": 130,
+              "points": 130,
+              "wordsFound": 2,
               "longestWord": "",
               "averageWordLength": 0,
-              "powerups": []
+              "powerups": [
+                {
+                  "id": "sopa_next_score_boost",
+                  "name": "Caça Acelerada",
+                  "icon": "⚡",
+                  "rarity": "common",
+                  "effectLabel": "×1,1 próximo",
+                  "scope": "NEXT_LEVEL",
+                  "selectedAfterLevel": 2,
+                  "votes": 2,
+                  "isRandomDraw": false
+                }
+              ]
             }
           ],
           "bestRun": {
-            "gameId": "sopa-1788303529653-3",
-            "endedAt": 1788304816512,
-            "levelReached": 5,
-            "basePoints": 50,
-            "points": 50,
+            "gameId": "sopa-1788383073747-1",
+            "endedAt": 1788383826642,
+            "levelReached": 2,
+            "basePoints": 130,
+            "points": 130,
+            "wordsFound": 2,
+            "longestWord": "",
+            "averageWordLength": 0,
+            "powerups": [
+              {
+                "id": "sopa_next_score_boost",
+                "name": "Caça Acelerada",
+                "icon": "⚡",
+                "rarity": "common",
+                "effectLabel": "×1,1 próximo",
+                "scope": "NEXT_LEVEL",
+                "selectedAfterLevel": 2,
+                "votes": 2,
+                "isRandomDraw": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "twitch:1138920699",
+          "name": "maxlou2013",
+          "maxPoints": 80,
+          "maxBasePoints": 80,
+          "lastRunPoints": 80,
+          "lastRunBasePoints": 80,
+          "runs": 1,
+          "totalGames": 1,
+          "bestLevel": 2,
+          "trackedRuns": 1,
+          "totalBasePoints": 80,
+          "totalWordsFound": 1,
+          "totalLevelsReached": 2,
+          "platform": "twitch",
+          "profileImageUrl": "",
+          "multiplier": 1,
+          "regularityMultiplier": 1,
+          "roleMultiplier": 1,
+          "roles": {
+            "subscriber": false,
+            "moderator": false,
+            "vip": false,
+            "broadcaster": false
+          },
+          "updatedAt": 0,
+          "runHistory": [
+            {
+              "gameId": "sopa-1788383073747-1",
+              "endedAt": 1788383826642,
+              "levelReached": 2,
+              "basePoints": 80,
+              "points": 80,
+              "wordsFound": 1,
+              "longestWord": "",
+              "averageWordLength": 0,
+              "powerups": [
+                {
+                  "id": "sopa_next_score_boost",
+                  "name": "Caça Acelerada",
+                  "icon": "⚡",
+                  "rarity": "common",
+                  "effectLabel": "×1,1 próximo",
+                  "scope": "NEXT_LEVEL",
+                  "selectedAfterLevel": 2,
+                  "votes": 2,
+                  "isRandomDraw": false
+                }
+              ]
+            }
+          ],
+          "bestRun": {
+            "gameId": "sopa-1788383073747-1",
+            "endedAt": 1788383826642,
+            "levelReached": 2,
+            "basePoints": 80,
+            "points": 80,
             "wordsFound": 1,
             "longestWord": "",
             "averageWordLength": 0,
-            "powerups": []
+            "powerups": [
+              {
+                "id": "sopa_next_score_boost",
+                "name": "Caça Acelerada",
+                "icon": "⚡",
+                "rarity": "common",
+                "effectLabel": "×1,1 próximo",
+                "scope": "NEXT_LEVEL",
+                "selectedAfterLevel": 2,
+                "votes": 2,
+                "isRandomDraw": false
+              }
+            ]
           }
         }
       ]
